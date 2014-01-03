@@ -1,3 +1,8 @@
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-03 13:55:59
 project --topLevelPackage pl.wroc.pwr.wiz.io.psi --projectName eSothebys --java 7 --packaging WAR
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-03 13:56:07
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-03 14:59:53
+hint
+help logging
+logging setup --level DEBUG 
+ jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY 
