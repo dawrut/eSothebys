@@ -33,3 +33,9 @@ enum type --class ~.model.SposobAktywacji
 enum constant --name PAY_U
 enum constant --name PRZELEW
 enum constant --name KOD_AKTYWACYJNY
+enum type --class ~.model.StanKonta
+enum constant --name SPRZEDAJACY
+enum constant --name KUPUJACY
+enum constant --name NIEAKTYWOWANE
+enum constant --name OCZEKUJACE_NA_DECYZJE
+enum constant --name ZAMKNIETE
