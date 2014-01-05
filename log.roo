@@ -43,3 +43,8 @@ enum type --class ~.model.PowodZmianyDanych
 enum constant --name ZMIANA_STANU_CYWILNEGO
 enum constant --name PRAWNIE_ZATWIERDZONA_ZMIANA
 enum constant --name BLEDNIE_PODANE_DANE
+entity jpa --class pl.wroc.pwr.wiz.io.psi.model.WniosekRejestracyjny --testAutomatically 
+field string --fieldName haslo --notNull 
+field date --fieldName dataUrodzenia --type java.util.Date --persistenceType JPA_DATE --dateFormat SHORT --notNull 
+field string --fieldName email --notNull 
+field date --fieldName dataZlozenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
