@@ -6,3 +6,19 @@ hint
 help logging
 logging setup --level DEBUG 
  jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY 
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-05 23:18:25
+entity jpa --class pl.wroc.pwr.wiz.io.psi.model.Aukcja --testAutomatically 
+field string --fieldName tytul --notNull 
+field string --fieldName opisPrzedmiotu --notNull 
+field number --fieldName liczbaPrzedmiotow --type int 
+field number --fieldName cenaKupTeraz --type double 
+field string --fieldName dodatkoweInformacjeODostawiePlatnosci 
+field boolean --fieldName kosztPrzesylkiPokrywaKupujacy 
+field boolean --fieldName wysylkaZaGranice
+field boolean --fieldName fakturaVAT
+field number --fieldName numberKonta1 --type int
+field number --fieldName numberKonta2 --type int
+field boolean --fieldName szablon
+field number --fieldName liczbaOdwiedzin --type int
+field date --fieldName terminRozpoczecia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
+field date --fieldName terminOstatnichOdwiedzin --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
