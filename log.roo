@@ -22,3 +22,5 @@ field boolean --fieldName szablon
 field number --fieldName liczbaOdwiedzin --type int
 field date --fieldName terminRozpoczecia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
 field date --fieldName terminOstatnichOdwiedzin --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
+entity jpa --class pl.wroc.pwr.wiz.io.psi.model.NaruszeniaRegulaminu --testAutomatically 
+field date --fieldName dataZgloszenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
