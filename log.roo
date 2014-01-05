@@ -29,3 +29,7 @@ enum constant --name ODSTAPIENIE
 enum constant --name ZAMKNIECIE_PRZEZ_UZYTKOWNIKA
 enum constant --name ZAMKNIECIE_PRZEZ_ESOTHEBYS
 enum constant --name BRAK_AKCEPTACJI_REGULAMINU
+enum type --class ~.model.SposobAktywacji
+enum constant --name PAY_U
+enum constant --name PRZELEW
+enum constant --name KOD_AKTYWACYJNY
