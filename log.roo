@@ -39,3 +39,7 @@ enum constant --name KUPUJACY
 enum constant --name NIEAKTYWOWANE
 enum constant --name OCZEKUJACE_NA_DECYZJE
 enum constant --name ZAMKNIETE
+enum type --class ~.model.PowodZmianyDanych
+enum constant --name ZMIANA_STANU_CYWILNEGO
+enum constant --name PRAWNIE_ZATWIERDZONA_ZMIANA
+enum constant --name BLEDNIE_PODANE_DANE
