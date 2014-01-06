@@ -178,3 +178,5 @@ field number --fieldName kodAktywacyjny --type int --notNull
 field date --fieldName dataZamowienia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
 field date --fieldName dataWyslania --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
 field boolean --fieldName wpisanyPoprawnie
+entity jpa --class ~.model.KategoriaPowodu --testAutomatically 
+field string --fieldName nazwa --notNull 
