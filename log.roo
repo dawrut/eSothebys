@@ -111,3 +111,9 @@ enum type --class ~.model.RodzajAukcji
 enum constant --name LICYTACJA
 enum constant --name KUP_TERAZ
 enum constant --name LICYTACJA_Z_KUP_TERAZ
+enum type --class ~.model.TerminPrzypomnienia
+enum constant --name DZIESIEC_MINUT
+enum constant --name DWADZIESCIA_MINUT
+enum constant --name TRZYDZIESCI_MINUT
+enum constant --name GODZINA
+enum constant --name TRZY_GODZINY
