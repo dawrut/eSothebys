@@ -211,3 +211,7 @@ enum constant --name CO_DRUGI_DZIEN
 // [failed] enum constant --name CO_DRUGI_DZIEN
 enum constant --name CO_TRZY_DNI
 enum constant --name RAZ_W_TYGODNIU
+enum type --class ~.model.SposobPrezentacji
+enum constant --name JAKO_TEKST_I_OBRAZEK
+enum constant --name JAKO_TEKST
+enum constant --name JAKO_OBRAZEK
