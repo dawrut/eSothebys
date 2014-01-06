@@ -184,3 +184,9 @@ entity jpa --class ~.model.PowodZgloszenia --testAutomatically
 field string --fieldName tresc --notNull 
 entity jpa --class ~.model.WniosekOUniewaznienie --testAutomatically 
 field date --fieldName dataZgloszenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+entity jpa --class ~.model.Komentarz --testAutomatically 
+enum type --class ~.model.RodzajKomentarza
+enum constant --name POZYTYWNY
+enum constant --name NEGATYWNY
+enum constant --name NEUTRALNY
+focus --class ~.model.Komentarz
