@@ -135,3 +135,13 @@ field date --fieldName dataRozpoczecia --type java.util.Date --persistenceType J
 // [failed] field date --fieldName dataRozpoczecia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
 
 field date --fieldName dataZakonczenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
+entity jpa --class ~.model.UstawieniaSprzedazy --testAutomatically 
+field number --fieldName numerKonta1 --type int 
+field boolean --fieldName widocznyNumerKonta1
+field number --fieldName numerKonta2 --type int 
+field boolean --fieldName widocznyNumerKonta2
+field string --fieldName wiadomoscDlaKupujacych
+field enum --fieldName kolorZnakuWodnego --type ~.model.Kolor --enumType STRING 
+field number --fieldName lokalizacjaZnakuWodnego --type int
+field number --fieldName przezroczystoscZnakuWodnego --type int
+field boolean --fieldName domyslnieZnakWodny --value false
