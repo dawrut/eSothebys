@@ -168,3 +168,8 @@ field date --fieldName odKiedy --type java.util.Date --persistenceType JPA_DATE 
 
 entity jpa --class ~.model.Umowa --testAutomatically 
 field number --fieldName liczbaSztuk --type int
+entity jpa --class ~.model.Oferta --testAutomatically 
+field number --fieldName liczbaSztuk --type int --notNull 
+field date --fieldName terminZlozenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field date --fieldName terminOdrzucenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
+field string --fieldName powodOdrzucenia
