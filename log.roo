@@ -239,3 +239,7 @@ field boolean --fieldName dostepnaPlatoscKarta --value true
 field boolean --fieldName dostepnaPlatoscPrzezPayU --value true
 entity jpa --class ~.model.Zdjecie --testAutomatically 
 field string --fieldName opis
+enum type --class ~.model.FormaPlatnosci
+enum constant --name PRZY_ODBIORZE
+enum constant --name PAY_U
+enum constant --name PRZELEW
