@@ -88,3 +88,14 @@ enum constant --name LICYTUJ
 enum constant --name WSTAW_LICYTACJE
 enum constant --name WYSLIJ_WIADOMOSC
 enum constant --name NAPISZ_KOMENTARZ
+enum type --class ~.model.TerminWysylki
+enum constant --name NATYCHMIAST
+enum constant --name DZIEN
+enum constant --name DWA_DNI
+enum constant --name TRZY_DNI
+enum constant --name CZTERY_DNI
+enum constant --name PIEC_DNI
+enum constant --name TYDZIEN
+enum constant --name DZIESIEC_DNI
+enum constant --name DWA_TYGODNIE
+enum constant --name TRZY_TYGODNIE
