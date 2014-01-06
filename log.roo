@@ -117,3 +117,6 @@ enum constant --name DWADZIESCIA_MINUT
 enum constant --name TRZYDZIESCI_MINUT
 enum constant --name GODZINA
 enum constant --name TRZY_GODZINY
+enum type --class ~.model.RodzajPlatnosci
+enum constant --name PRZY_ODBIORZE
+enum constant --name Z_GORY
