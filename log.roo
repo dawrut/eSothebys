@@ -255,3 +255,5 @@ field string --fieldName imie --notNull
 field string --fieldName nazwisko --notNull 
 field date --fieldName dataZlozenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
 field enum --fieldName powod --type ~.model.PowodZmianyDanych
+entity jpa --class ~.model.Powiadomienie --testAutomatically 
+field string --fieldName tresc --notNull 
