@@ -173,3 +173,8 @@ field number --fieldName liczbaSztuk --type int --notNull
 field date --fieldName terminZlozenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
 field date --fieldName terminOdrzucenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
 field string --fieldName powodOdrzucenia
+entity jpa --class ~.model.ListAktywacyjny --testAutomatically
+field number --fieldName kodAktywacyjny --type int --notNull 
+field date --fieldName dataZamowienia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field date --fieldName dataWyslania --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field boolean --fieldName wpisanyPoprawnie
