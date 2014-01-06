@@ -61,3 +61,9 @@ entity jpa --class ~.model.DaneDoWysylki --testAutomatically
 field string --fieldName imie --notNull 
 field string --fieldName nazwisko --notNull 
 field string --fieldName firma --notNull 
+entity jpa --class ~.model.Adres --testAutomatically 
+field string --fieldName ulicaZNumerem --notNull 
+field string --fieldName kodPocztowy
+field string --fieldName miejscowosc
+// [failed] field string --fieldName ulicaZNumerem
+field string --fieldName ulicaZNumerem
