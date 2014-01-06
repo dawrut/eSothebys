@@ -260,3 +260,6 @@ field string --fieldName tresc --notNull
 entity jpa --class ~.model.Subskrypcja --testAutomatically 
 field enum --fieldName czestotliwoscSubskrypcji --type ~.model.CzestotliwoscSubskrypcji
 field enum --fieldName wyswietlenie --type ~.model.SposobPrezentacji
+entity jpa --class ~.model.KontoFakturowe --testAutomatically 
+field string --fieldName nip --notNull 
+field string --fieldName nazwaDoFaktury
