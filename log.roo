@@ -128,3 +128,10 @@ enum constant --name NIEBIESKI
 enum constant --name POMARANCZOWY
 enum constant --name ZIELONY
 enum constant --name ZOLTY
+entity jpa --class ~.model.Urlop --testAutomatically 
+
+field date --fieldName dataRozpoczecia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
+
+// [failed] field date --fieldName dataRozpoczecia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
+
+field date --fieldName dataZakonczenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
