@@ -217,3 +217,5 @@ enum constant --name JAKO_TEKST
 enum constant --name JAKO_OBRAZEK
 entity jpa --class ~.model.Wojewodztwo --testAutomatically 
 field string --fieldName nazwa --notNull 
+entity jpa --class ~.model.Kraj --testAutomatically 
+field string --fieldName nazwa --notNull 
