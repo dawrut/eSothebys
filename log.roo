@@ -152,3 +152,9 @@ entity jpa --class ~.model.SzczegolyDostawy --testAutomatically
 field number --fieldName kosztPierwszejSztuki --type double
 field number --fieldName kosztKolejnejSztuki --type double
 field number --fieldName liczbaWPaczce --type int
+entity jpa --class ~.model.SposobDostawy --testAutomatically 
+field string --fieldName nazwa
+field string --fieldName nazwa --notNull 
+field boolean --fieldName edytowalny --value false
+field number --fieldName czasDostawy --type int
+field enum --fieldName rodzajPlatnosci --type ~.model.RodzajPlatnosci --enumType STRING --notNull 
