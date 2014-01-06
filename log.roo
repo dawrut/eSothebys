@@ -76,3 +76,9 @@ enum constant --name WOJEWODZTWO
 enum constant --name MOJE_WOJEWODZTWO
 enum constant --name MOJA_MIEJSCOWOSC
 enum constant --name INNA_MIEJSCOWOSC
+enum type --class ~.model.StanKonta
+enum constant --name SPRZEDAJACY
+enum constant --name KUPUJACY
+enum constant --name NIEAKTYWOWANE
+enum constant --name OCZEKUJACE_NA_DECYZJE
+enum constant --name ZAMKNIETE
