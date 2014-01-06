@@ -57,3 +57,7 @@ field string --fieldName powod --notNull
 field date --fieldName dataOd --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
 field date --fieldName dataDo --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
 field boolean --fieldName czyPerm --value false
+entity jpa --class ~.model.DaneDoWysylki --testAutomatically 
+field string --fieldName imie --notNull 
+field string --fieldName nazwisko --notNull 
+field string --fieldName firma --notNull 
