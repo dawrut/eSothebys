@@ -228,3 +228,5 @@ field string --fieldName nazwa --notNull
 field enum --fieldName typ --type ~.model.Parametr --enumType STRING 
 field string --fieldName jednostka --notNull 
 field boolean --fieldName obligatoryjny --value false
+entity jpa --class ~.model.Wartosc --testAutomatically 
+field string --fieldName wartosc --notNull 
