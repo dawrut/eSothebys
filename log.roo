@@ -103,3 +103,7 @@ enum type --class ~.model.DefinicjaJednostkiPrzedmiotu
 enum constant --name SZTUKA
 enum constant --name KOMPLET
 enum constant --name PARA
+entity jpa --class pl.wroc.pwr.wiz.io.psi.model.HistoriaZmianOpisu --testAutomatically 
+
+field string --fieldName tresc --notNull 
+field date --fieldName dataModyfikacji --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
