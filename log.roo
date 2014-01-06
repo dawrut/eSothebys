@@ -180,3 +180,5 @@ field date --fieldName dataWyslania --type java.util.Date --persistenceType JPA_
 field boolean --fieldName wpisanyPoprawnie
 entity jpa --class ~.model.KategoriaPowodu --testAutomatically 
 field string --fieldName nazwa --notNull 
+entity jpa --class ~.model.PowodZgloszenia --testAutomatically 
+field string --fieldName tresc --notNull 
