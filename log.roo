@@ -166,3 +166,5 @@ entity jpa --class ~.model.Regulamin --testAutomatically
 field string --fieldName tresc --notNull 
 field date --fieldName odKiedy --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
 
+entity jpa --class ~.model.Umowa --testAutomatically 
+field number --fieldName liczbaSztuk --type int
