@@ -199,3 +199,5 @@ field string --fieldName tresc --notNull
 field date --fieldName dataWystawienia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
 entity jpa --class ~.model.GraficznaOcenaSprzedazy --testAutomatically 
 field date --fieldName dataWystawienia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+entity jpa --class ~.model.ObszarSprzedazy --testAutomatically 
+field string --fieldName nazwa --notNull 
