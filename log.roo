@@ -62,8 +62,11 @@ field string --fieldName imie --notNull
 field string --fieldName nazwisko --notNull 
 field string --fieldName firma --notNull 
 entity jpa --class ~.model.Adres --testAutomatically 
-field string --fieldName ulicaZNumerem --notNull 
 field string --fieldName kodPocztowy
 field string --fieldName miejscowosc
 // [failed] field string --fieldName ulicaZNumerem
 field string --fieldName ulicaZNumerem
+enum type --class ~.model.FormaSprzedazy 
+enum constant --name WSZYSTKIE
+enum constant --name TYLKO_LICYTACJA
+enum constant --name TYLKO_KUP_TERAZ
