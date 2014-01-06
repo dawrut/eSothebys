@@ -223,3 +223,8 @@ enum type --class ~.model.TypParametru
 enum constant --name textBox
 enum constant --name comboBox
 enum constant --name checkBoxList
+entity jpa --class ~.model.Parametr --testAutomatically 
+field string --fieldName nazwa --notNull 
+field enum --fieldName typ --type ~.model.Parametr --enumType STRING 
+field string --fieldName jednostka --notNull 
+field boolean --fieldName obligatoryjny --value false
