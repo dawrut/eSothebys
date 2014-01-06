@@ -232,3 +232,8 @@ entity jpa --class ~.model.Wartosc --testAutomatically
 field string --fieldName wartosc --notNull 
 entity jpa --class ~.model.Szczegoly --testAutomatically 
 field string --fieldName wprowadzonaWartosc
+entity jpa --class ~.model.Kategoria --testAutomatically 
+field string --fieldName nazwa --notNull 
+field boolean --fieldName aukcjeJednoprzedmiotowe --value false
+field boolean --fieldName dostepnaPlatoscKarta --value true
+field boolean --fieldName dostepnaPlatoscPrzezPayU --value true
