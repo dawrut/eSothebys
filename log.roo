@@ -190,3 +190,7 @@ enum constant --name POZYTYWNY
 enum constant --name NEGATYWNY
 enum constant --name NEUTRALNY
 focus --class ~.model.Komentarz
+field enum --fieldName rodzaj --type ~.model.RodzajKomentarza --enumType STRING 
+field string --fieldName tresc --notNull
+field date --fieldName dataWystawienia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field boolean --fieldName uniewazniony --value false
