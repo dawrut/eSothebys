@@ -160,3 +160,5 @@ field number --fieldName czasDostawy --type int
 field enum --fieldName rodzajPlatnosci --type ~.model.RodzajPlatnosci --enumType STRING --notNull 
 entity jpa --class ~.model.SzczegolyWykluczenia --testAutomatically 
 field string --fieldName notatka
+entity jpa --class ~.model.SzczegolyObserwacji --testAutomatically 
+field enum --fieldName przypomnienie --type ~.model.TerminPrzypomnienia --enumType STRING
