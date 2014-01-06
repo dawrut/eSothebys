@@ -237,3 +237,5 @@ field string --fieldName nazwa --notNull
 field boolean --fieldName aukcjeJednoprzedmiotowe --value false
 field boolean --fieldName dostepnaPlatoscKarta --value true
 field boolean --fieldName dostepnaPlatoscPrzezPayU --value true
+entity jpa --class ~.model.Zdjecie --testAutomatically 
+field string --fieldName opis
