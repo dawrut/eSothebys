@@ -219,3 +219,7 @@ entity jpa --class ~.model.Wojewodztwo --testAutomatically
 field string --fieldName nazwa --notNull 
 entity jpa --class ~.model.Kraj --testAutomatically 
 field string --fieldName nazwa --notNull 
+enum type --class ~.model.TypParametru
+enum constant --name textBox
+enum constant --name comboBox
+enum constant --name checkBoxList
