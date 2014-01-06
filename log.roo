@@ -243,3 +243,5 @@ enum type --class ~.model.FormaPlatnosci
 enum constant --name PRZY_ODBIORZE
 enum constant --name PAY_U
 enum constant --name PRZELEW
+entity jpa --class ~.model.SubskrypcjaUlubionejKategorii --testAutomatically 
+field boolean --fieldName tylkoKupTeraz
