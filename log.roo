@@ -145,3 +145,6 @@ field enum --fieldName kolorZnakuWodnego --type ~.model.Kolor --enumType STRING
 field number --fieldName lokalizacjaZnakuWodnego --type int
 field number --fieldName przezroczystoscZnakuWodnego --type int
 field boolean --fieldName domyslnieZnakWodny --value false
+entity jpa --class ~.model.CennikDostaw --testAutomatically 
+field string --fieldName nazwa
+field boolean --fieldName szablon --value false
