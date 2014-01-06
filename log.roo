@@ -120,3 +120,11 @@ enum constant --name TRZY_GODZINY
 enum type --class ~.model.RodzajPlatnosci
 enum constant --name PRZY_ODBIORZE
 enum constant --name Z_GORY
+enum type --class ~.model.Kolor
+enum constant --name BIALY
+enum constant --name CZARNY
+enum constant --name CZERWONY
+enum constant --name NIEBIESKI
+enum constant --name POMARANCZOWY
+enum constant --name ZIELONY
+enum constant --name ZOLTY
