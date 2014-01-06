@@ -70,3 +70,9 @@ enum type --class ~.model.FormaSprzedazy
 enum constant --name WSZYSTKIE
 enum constant --name TYLKO_LICYTACJA
 enum constant --name TYLKO_KUP_TERAZ
+enum type --class ~.model.TypLokalizacji
+enum constant --name KRAJ
+enum constant --name WOJEWODZTWO
+enum constant --name MOJE_WOJEWODZTWO
+enum constant --name MOJA_MIEJSCOWOSC
+enum constant --name INNA_MIEJSCOWOSC
