@@ -182,3 +182,5 @@ entity jpa --class ~.model.KategoriaPowodu --testAutomatically
 field string --fieldName nazwa --notNull 
 entity jpa --class ~.model.PowodZgloszenia --testAutomatically 
 field string --fieldName tresc --notNull 
+entity jpa --class ~.model.WniosekOUniewaznienie --testAutomatically 
+field date --fieldName dataZgloszenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
