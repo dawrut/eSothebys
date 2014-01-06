@@ -117,3 +117,149 @@ enum constant --name DWADZIESCIA_MINUT
 enum constant --name TRZYDZIESCI_MINUT
 enum constant --name GODZINA
 enum constant --name TRZY_GODZINY
+enum type --class ~.model.RodzajPlatnosci
+enum constant --name PRZY_ODBIORZE
+enum constant --name Z_GORY
+enum type --class ~.model.Kolor
+enum constant --name BIALY
+enum constant --name CZARNY
+enum constant --name CZERWONY
+enum constant --name NIEBIESKI
+enum constant --name POMARANCZOWY
+enum constant --name ZIELONY
+enum constant --name ZOLTY
+entity jpa --class ~.model.Urlop --testAutomatically 
+
+field date --fieldName dataRozpoczecia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
+
+// [failed] field date --fieldName dataRozpoczecia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
+
+field date --fieldName dataZakonczenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
+entity jpa --class ~.model.UstawieniaSprzedazy --testAutomatically 
+field number --fieldName numerKonta1 --type int 
+field boolean --fieldName widocznyNumerKonta1
+field number --fieldName numerKonta2 --type int 
+field boolean --fieldName widocznyNumerKonta2
+field string --fieldName wiadomoscDlaKupujacych
+field enum --fieldName kolorZnakuWodnego --type ~.model.Kolor --enumType STRING 
+field number --fieldName lokalizacjaZnakuWodnego --type int
+field number --fieldName przezroczystoscZnakuWodnego --type int
+field boolean --fieldName domyslnieZnakWodny --value false
+entity jpa --class ~.model.CennikDostaw --testAutomatically 
+field string --fieldName nazwa
+field boolean --fieldName szablon --value false
+entity jpa --class ~.model.SzczegolyDostawy --testAutomatically 
+field number --fieldName kosztPierwszejSztuki --type double
+field number --fieldName kosztKolejnejSztuki --type double
+field number --fieldName liczbaWPaczce --type int
+entity jpa --class ~.model.SposobDostawy --testAutomatically 
+field string --fieldName nazwa
+field string --fieldName nazwa --notNull 
+field boolean --fieldName edytowalny --value false
+field number --fieldName czasDostawy --type int
+field enum --fieldName rodzajPlatnosci --type ~.model.RodzajPlatnosci --enumType STRING --notNull 
+entity jpa --class ~.model.SzczegolyWykluczenia --testAutomatically 
+field string --fieldName notatka
+entity jpa --class ~.model.SzczegolyObserwacji --testAutomatically 
+field enum --fieldName przypomnienie --type ~.model.TerminPrzypomnienia --enumType STRING
+entity jpa --class ~.model.Regulamin --testAutomatically 
+field string --fieldName tresc --notNull 
+field date --fieldName odKiedy --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
+
+entity jpa --class ~.model.Umowa --testAutomatically 
+field number --fieldName liczbaSztuk --type int
+entity jpa --class ~.model.Oferta --testAutomatically 
+field number --fieldName liczbaSztuk --type int --notNull 
+field date --fieldName terminZlozenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field date --fieldName terminOdrzucenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
+field string --fieldName powodOdrzucenia
+entity jpa --class ~.model.ListAktywacyjny --testAutomatically
+field number --fieldName kodAktywacyjny --type int --notNull 
+field date --fieldName dataZamowienia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field date --fieldName dataWyslania --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field boolean --fieldName wpisanyPoprawnie
+entity jpa --class ~.model.KategoriaPowodu --testAutomatically 
+field string --fieldName nazwa --notNull 
+entity jpa --class ~.model.PowodZgloszenia --testAutomatically 
+field string --fieldName tresc --notNull 
+entity jpa --class ~.model.WniosekOUniewaznienie --testAutomatically 
+field date --fieldName dataZgloszenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+entity jpa --class ~.model.Komentarz --testAutomatically 
+enum type --class ~.model.RodzajKomentarza
+enum constant --name POZYTYWNY
+enum constant --name NEGATYWNY
+enum constant --name NEUTRALNY
+focus --class ~.model.Komentarz
+field enum --fieldName rodzaj --type ~.model.RodzajKomentarza --enumType STRING 
+field string --fieldName tresc --notNull
+field date --fieldName dataWystawienia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field boolean --fieldName uniewazniony --value false
+entity jpa --class ~.model.Odpowiedz --testAutomatically 
+field string --fieldName tresc --notNull 
+field date --fieldName dataWystawienia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+entity jpa --class ~.model.GraficznaOcenaSprzedazy --testAutomatically 
+field date --fieldName dataWystawienia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+entity jpa --class ~.model.ObszarSprzedazy --testAutomatically 
+field string --fieldName nazwa --notNull 
+entity jpa --class ~.model.PowodOceny --testAutomatically 
+field string --fieldName powod --notNull 
+entity jpa --class ~.model.OcenaObszaru --testAutomatically 
+field number --fieldName punkty --type int
+enum type --class ~.model.CzestotliwoscSubskrypcji
+enum constant --name CODZIENNIE
+enum constant --name CO_DRUGI_DZIEN
+// [failed] enum constant --name CO_DRUGI_DZIEN
+enum constant --name CO_TRZY_DNI
+enum constant --name RAZ_W_TYGODNIU
+enum type --class ~.model.SposobPrezentacji
+enum constant --name JAKO_TEKST_I_OBRAZEK
+enum constant --name JAKO_TEKST
+enum constant --name JAKO_OBRAZEK
+entity jpa --class ~.model.Wojewodztwo --testAutomatically 
+field string --fieldName nazwa --notNull 
+entity jpa --class ~.model.Kraj --testAutomatically 
+field string --fieldName nazwa --notNull 
+enum type --class ~.model.TypParametru
+enum constant --name textBox
+enum constant --name comboBox
+enum constant --name checkBoxList
+entity jpa --class ~.model.Parametr --testAutomatically 
+field string --fieldName nazwa --notNull 
+field enum --fieldName typ --type ~.model.Parametr --enumType STRING 
+field string --fieldName jednostka --notNull 
+field boolean --fieldName obligatoryjny --value false
+entity jpa --class ~.model.Wartosc --testAutomatically 
+field string --fieldName wartosc --notNull 
+entity jpa --class ~.model.Szczegoly --testAutomatically 
+field string --fieldName wprowadzonaWartosc
+entity jpa --class ~.model.Kategoria --testAutomatically 
+field string --fieldName nazwa --notNull 
+field boolean --fieldName aukcjeJednoprzedmiotowe --value false
+field boolean --fieldName dostepnaPlatoscKarta --value true
+field boolean --fieldName dostepnaPlatoscPrzezPayU --value true
+entity jpa --class ~.model.Zdjecie --testAutomatically 
+field string --fieldName opis
+enum type --class ~.model.FormaPlatnosci
+enum constant --name PRZY_ODBIORZE
+enum constant --name PAY_U
+enum constant --name PRZELEW
+entity jpa --class ~.model.SubskrypcjaUlubionejKategorii --testAutomatically 
+field boolean --fieldName tylkoKupTeraz
+focus --class ~.model.SposobAktywacji
+enum constant --name BRAK
+entity jpa --class ~.model.Uzytkownik --testAutomatically 
+field string --fieldName email --notNull --unique true
+field string --fieldName haslo --notNull 
+entity jpa --class ~.model.WniosekZmianyImieniaINazwiska --testAutomatically 
+field string --fieldName imie --notNull 
+field string --fieldName nazwisko --notNull 
+field date --fieldName dataZlozenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field enum --fieldName powod --type ~.model.PowodZmianyDanych
+entity jpa --class ~.model.Powiadomienie --testAutomatically 
+field string --fieldName tresc --notNull 
+entity jpa --class ~.model.Subskrypcja --testAutomatically 
+field enum --fieldName czestotliwoscSubskrypcji --type ~.model.CzestotliwoscSubskrypcji
+field enum --fieldName wyswietlenie --type ~.model.SposobPrezentacji
+entity jpa --class ~.model.KontoFakturowe --testAutomatically 
+field string --fieldName nip --notNull 
+field string --fieldName nazwaDoFaktury
