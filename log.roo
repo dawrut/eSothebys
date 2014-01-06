@@ -250,3 +250,8 @@ enum constant --name BRAK
 entity jpa --class ~.model.Uzytkownik --testAutomatically 
 field string --fieldName email --notNull --unique true
 field string --fieldName haslo --notNull 
+entity jpa --class ~.model.WniosekZmianyImieniaINazwiska --testAutomatically 
+field string --fieldName imie --notNull 
+field string --fieldName nazwisko --notNull 
+field date --fieldName dataZlozenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field enum --fieldName powod --type ~.model.PowodZmianyDanych
