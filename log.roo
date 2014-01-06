@@ -99,3 +99,7 @@ enum constant --name TYDZIEN
 enum constant --name DZIESIEC_DNI
 enum constant --name DWA_TYGODNIE
 enum constant --name TRZY_TYGODNIE
+enum type --class ~.model.DefinicjaJednostkiPrzedmiotu
+enum constant --name SZTUKA
+enum constant --name KOMPLET
+enum constant --name PARA
