@@ -215,3 +215,5 @@ enum type --class ~.model.SposobPrezentacji
 enum constant --name JAKO_TEKST_I_OBRAZEK
 enum constant --name JAKO_TEKST
 enum constant --name JAKO_OBRAZEK
+entity jpa --class ~.model.Wojewodztwo --testAutomatically 
+field string --fieldName nazwa --notNull 
