@@ -162,3 +162,7 @@ entity jpa --class ~.model.SzczegolyWykluczenia --testAutomatically
 field string --fieldName notatka
 entity jpa --class ~.model.SzczegolyObserwacji --testAutomatically 
 field enum --fieldName przypomnienie --type ~.model.TerminPrzypomnienia --enumType STRING
+entity jpa --class ~.model.Regulamin --testAutomatically 
+field string --fieldName tresc --notNull 
+field date --fieldName odKiedy --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
+
