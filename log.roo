@@ -48,3 +48,7 @@ field string --fieldName haslo --notNull
 field date --fieldName dataUrodzenia --type java.util.Date --persistenceType JPA_DATE --dateFormat SHORT --notNull 
 field string --fieldName email --notNull 
 field date --fieldName dataZlozenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-06 00:24:46
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-06 12:09:19
+entity jpa --class ~.model.OgraniczonaFunkcjonalnosc --testAutomatically 
+field date --fieldName odKiedy --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
