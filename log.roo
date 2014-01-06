@@ -148,3 +148,7 @@ field boolean --fieldName domyslnieZnakWodny --value false
 entity jpa --class ~.model.CennikDostaw --testAutomatically 
 field string --fieldName nazwa
 field boolean --fieldName szablon --value false
+entity jpa --class ~.model.SzczegolyDostawy --testAutomatically 
+field number --fieldName kosztPierwszejSztuki --type double
+field number --fieldName kosztKolejnejSztuki --type double
+field number --fieldName liczbaWPaczce --type int
