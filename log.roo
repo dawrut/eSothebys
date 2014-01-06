@@ -230,3 +230,5 @@ field string --fieldName jednostka --notNull
 field boolean --fieldName obligatoryjny --value false
 entity jpa --class ~.model.Wartosc --testAutomatically 
 field string --fieldName wartosc --notNull 
+entity jpa --class ~.model.Szczegoly --testAutomatically 
+field string --fieldName wprowadzonaWartosc
