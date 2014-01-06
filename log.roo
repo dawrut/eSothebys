@@ -205,3 +205,9 @@ entity jpa --class ~.model.PowodOceny --testAutomatically
 field string --fieldName powod --notNull 
 entity jpa --class ~.model.OcenaObszaru --testAutomatically 
 field number --fieldName punkty --type int
+enum type --class ~.model.CzestotliwoscSubskrypcji
+enum constant --name CODZIENNIE
+enum constant --name CO_DRUGI_DZIEN
+// [failed] enum constant --name CO_DRUGI_DZIEN
+enum constant --name CO_TRZY_DNI
+enum constant --name RAZ_W_TYGODNIU
