@@ -247,3 +247,6 @@ entity jpa --class ~.model.SubskrypcjaUlubionejKategorii --testAutomatically
 field boolean --fieldName tylkoKupTeraz
 focus --class ~.model.SposobAktywacji
 enum constant --name BRAK
+entity jpa --class ~.model.Uzytkownik --testAutomatically 
+field string --fieldName email --notNull --unique true
+field string --fieldName haslo --notNull 
