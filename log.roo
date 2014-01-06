@@ -52,3 +52,8 @@ field date --fieldName dataZlozenia --type java.util.Date --persistenceType JPA_
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-06 12:09:19
 entity jpa --class ~.model.OgraniczonaFunkcjonalnosc --testAutomatically 
 field date --fieldName odKiedy --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
+entity jpa --class ~.model.ZawieszenieKonta --testAutomatically 
+field string --fieldName powod --notNull 
+field date --fieldName dataOd --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
+field date --fieldName dataDo --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
+field boolean --fieldName czyPerm --value false
