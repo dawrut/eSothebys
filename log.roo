@@ -82,3 +82,9 @@ enum constant --name KUPUJACY
 enum constant --name NIEAKTYWOWANE
 enum constant --name OCZEKUJACE_NA_DECYZJE
 enum constant --name ZAMKNIETE
+enum type --class ~.model.FunkcjonalnoscSerwisu
+enum constant --name KUP_TERAZ
+enum constant --name LICYTUJ
+enum constant --name WSTAW_LICYTACJE
+enum constant --name WYSLIJ_WIADOMOSC
+enum constant --name NAPISZ_KOMENTARZ
