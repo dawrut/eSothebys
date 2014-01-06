@@ -107,3 +107,7 @@ entity jpa --class pl.wroc.pwr.wiz.io.psi.model.HistoriaZmianOpisu --testAutomat
 
 field string --fieldName tresc --notNull 
 field date --fieldName dataModyfikacji --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+enum type --class ~.model.RodzajAukcji
+enum constant --name LICYTACJA
+enum constant --name KUP_TERAZ
+enum constant --name LICYTACJA_Z_KUP_TERAZ
