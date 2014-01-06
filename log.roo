@@ -203,3 +203,5 @@ entity jpa --class ~.model.ObszarSprzedazy --testAutomatically
 field string --fieldName nazwa --notNull 
 entity jpa --class ~.model.PowodOceny --testAutomatically 
 field string --fieldName powod --notNull 
+entity jpa --class ~.model.OcenaObszaru --testAutomatically 
+field number --fieldName punkty --type int
