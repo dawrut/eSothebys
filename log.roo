@@ -194,3 +194,6 @@ field enum --fieldName rodzaj --type ~.model.RodzajKomentarza --enumType STRING
 field string --fieldName tresc --notNull
 field date --fieldName dataWystawienia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
 field boolean --fieldName uniewazniony --value false
+entity jpa --class ~.model.Odpowiedz --testAutomatically 
+field string --fieldName tresc --notNull 
+field date --fieldName dataWystawienia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
