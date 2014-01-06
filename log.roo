@@ -245,3 +245,5 @@ enum constant --name PAY_U
 enum constant --name PRZELEW
 entity jpa --class ~.model.SubskrypcjaUlubionejKategorii --testAutomatically 
 field boolean --fieldName tylkoKupTeraz
+focus --class ~.model.SposobAktywacji
+enum constant --name BRAK
