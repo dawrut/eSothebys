@@ -4,6 +4,7 @@
 package pl.wroc.pwr.wiz.io.psi.model;
 
 import java.util.Date;
+import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
 import pl.wroc.pwr.wiz.io.psi.model.Oferta;
 
 privileged aspect Oferta_Roo_JavaBean {
@@ -38,6 +39,14 @@ privileged aspect Oferta_Roo_JavaBean {
     
     public void Oferta.setPowodOdrzucenia(String powodOdrzucenia) {
         this.powodOdrzucenia = powodOdrzucenia;
+    }
+    
+    public Aukcja Oferta.getAukcja() {
+        return this.aukcja;
+    }
+    
+    public void Oferta.setAukcja(Aukcja aukcja) {
+        this.aukcja = aukcja;
     }
     
 }

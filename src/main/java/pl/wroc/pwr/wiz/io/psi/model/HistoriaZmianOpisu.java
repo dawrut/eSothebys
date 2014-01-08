@@ -7,6 +7,7 @@ import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
+import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
@@ -24,4 +25,9 @@ public class HistoriaZmianOpisu {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(style = "M-")
     private Date dataModyfikacji;
+
+    /**
+     */
+    @ManyToOne
+    private Aukcja aukcja;
 }

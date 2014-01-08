@@ -13,9 +13,14 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
 import pl.wroc.pwr.wiz.io.psi.model.AukcjaDataOnDemand;
+import pl.wroc.pwr.wiz.io.psi.model.DefinicjaJednostkiPrzedmiotu;
+import pl.wroc.pwr.wiz.io.psi.model.RodzajAukcji;
+import pl.wroc.pwr.wiz.io.psi.model.TerminWysylki;
+import pl.wroc.pwr.wiz.io.psi.model.ZdjecieDataOnDemand;
 
 privileged aspect AukcjaDataOnDemand_Roo_DataOnDemand {
     
@@ -25,20 +30,28 @@ privileged aspect AukcjaDataOnDemand_Roo_DataOnDemand {
     
     private List<Aukcja> AukcjaDataOnDemand.data;
     
+    @Autowired
+    ZdjecieDataOnDemand AukcjaDataOnDemand.zdjecieDataOnDemand;
+    
     public Aukcja AukcjaDataOnDemand.getNewTransientAukcja(int index) {
         Aukcja obj = new Aukcja();
         setCenaKupTeraz(obj, index);
+        setCenaMinimalna(obj, index);
+        setCenaWywolawcza(obj, index);
         setDodatkoweInformacjeODostawiePlatnosci(obj, index);
         setFakturaVAT(obj, index);
+        setJednostka(obj, index);
         setKosztPrzesylkiPokrywaKupujacy(obj, index);
         setLiczbaOdwiedzin(obj, index);
         setLiczbaPrzedmiotow(obj, index);
         setNumberKonta1(obj, index);
         setNumberKonta2(obj, index);
         setOpisPrzedmiotu(obj, index);
+        setRodzajAukcji(obj, index);
         setSzablon(obj, index);
         setTerminOstatnichOdwiedzin(obj, index);
         setTerminRozpoczecia(obj, index);
+        setTerminWysylki(obj, index);
         setTytul(obj, index);
         setWysylkaZaGranice(obj, index);
         return obj;
@@ -49,6 +62,16 @@ privileged aspect AukcjaDataOnDemand_Roo_DataOnDemand {
         obj.setCenaKupTeraz(cenaKupTeraz);
     }
     
+    public void AukcjaDataOnDemand.setCenaMinimalna(Aukcja obj, int index) {
+        double cenaMinimalna = new Integer(index).doubleValue();
+        obj.setCenaMinimalna(cenaMinimalna);
+    }
+    
+    public void AukcjaDataOnDemand.setCenaWywolawcza(Aukcja obj, int index) {
+        double cenaWywolawcza = new Integer(index).doubleValue();
+        obj.setCenaWywolawcza(cenaWywolawcza);
+    }
+    
     public void AukcjaDataOnDemand.setDodatkoweInformacjeODostawiePlatnosci(Aukcja obj, int index) {
         String dodatkoweInformacjeODostawiePlatnosci = "dodatkoweInformacjeODostawiePlatnosci_" + index;
         obj.setDodatkoweInformacjeODostawiePlatnosci(dodatkoweInformacjeODostawiePlatnosci);
@@ -57,6 +80,11 @@ privileged aspect AukcjaDataOnDemand_Roo_DataOnDemand {
     public void AukcjaDataOnDemand.setFakturaVAT(Aukcja obj, int index) {
         Boolean fakturaVAT = Boolean.TRUE;
         obj.setFakturaVAT(fakturaVAT);
+    }
+    
+    public void AukcjaDataOnDemand.setJednostka(Aukcja obj, int index) {
+        DefinicjaJednostkiPrzedmiotu jednostka = DefinicjaJednostkiPrzedmiotu.class.getEnumConstants()[0];
+        obj.setJednostka(jednostka);
     }
     
     public void AukcjaDataOnDemand.setKosztPrzesylkiPokrywaKupujacy(Aukcja obj, int index) {
@@ -89,6 +117,11 @@ privileged aspect AukcjaDataOnDemand_Roo_DataOnDemand {
         obj.setOpisPrzedmiotu(opisPrzedmiotu);
     }
     
+    public void AukcjaDataOnDemand.setRodzajAukcji(Aukcja obj, int index) {
+        RodzajAukcji rodzajAukcji = RodzajAukcji.class.getEnumConstants()[0];
+        obj.setRodzajAukcji(rodzajAukcji);
+    }
+    
     public void AukcjaDataOnDemand.setSzablon(Aukcja obj, int index) {
         Boolean szablon = Boolean.TRUE;
         obj.setSzablon(szablon);
@@ -102,6 +135,11 @@ privileged aspect AukcjaDataOnDemand_Roo_DataOnDemand {
     public void AukcjaDataOnDemand.setTerminRozpoczecia(Aukcja obj, int index) {
         Date terminRozpoczecia = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
         obj.setTerminRozpoczecia(terminRozpoczecia);
+    }
+    
+    public void AukcjaDataOnDemand.setTerminWysylki(Aukcja obj, int index) {
+        TerminWysylki terminWysylki = TerminWysylki.class.getEnumConstants()[0];
+        obj.setTerminWysylki(terminWysylki);
     }
     
     public void AukcjaDataOnDemand.setTytul(Aukcja obj, int index) {

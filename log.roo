@@ -263,3 +263,29 @@ field enum --fieldName wyswietlenie --type ~.model.SposobPrezentacji
 entity jpa --class ~.model.KontoFakturowe --testAutomatically 
 field string --fieldName nip --notNull 
 field string --fieldName nazwaDoFaktury
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-08 14:08:59
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-08 17:43:09
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-08 20:34:49
+focus --class ~.model.Aukcja
+field enum --fieldName rodzajAukcji --type ~.model.RodzajAukcji --enumType STRING 
+field enum --fieldName jednostka --type ~.model.DefinicjaJednostkiPrzedmiotu --enumType STRING 
+field number --fieldName cenaWywolawcza --type double
+// [failed] field number --fieldName cenaWywolawcza --type double --min 0
+field number --fieldName cenaMinimalna --type double --min 0
+field enum --fieldName terminWysylki --type ~.model.TerminWysylki --enumType STRING 
+field set --fieldName zmianyOpisu --type ~.model.HistoriaZmianOpisu --cardinality ONE_TO_MANY --mappedBy aukcja
+focus --class ~.model.HistoriaZmianOpisu 
+field reference --fieldName aukcja --type ~.model.Aukcja --cardinality MANY_TO_ONE 
+focus --class ~.model.Aukcja
+field set --fieldName zdjecia --type ~.model.Zdjecie --cardinality ONE_TO_MANY --mappedBy aukcja
+focus --class ~.model.Zdjecie
+field reference --fieldName aukcja --type ~.model.Aukcja --cardinality MANY_TO_ONE 
+focus --class ~.model.Aukcja
+field reference --fieldName miniatura --type ~.model.Zdjecie --cardinality ONE_TO_ONE 
+field set --fieldName zgloszeniaNaruszenia --type ~.model.NaruszeniaRegulaminu --cardinality ONE_TO_MANY --mappedBy aukcja
+focus --class ~.model.NaruszeniaRegulaminu
+field reference --fieldName aukcja --type ~.model.Aukcja --cardinality MANY_TO_ONE 
+focus --class ~.model.Aukcja
+field set --fieldName oferty --type ~.model.Oferta --cardinality ONE_TO_MANY --mappedBy aukcja
+focus --class ~.model.Oferta 
+field reference --fieldName aukcja --type ~.model.Aukcja --cardinality MANY_TO_ONE 

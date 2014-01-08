@@ -7,6 +7,14 @@ import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.validation.constraints.Min;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @RooJavaBean
 @RooToString
@@ -74,4 +82,53 @@ public class Aukcja {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(style = "M-")
     private Date terminOstatnichOdwiedzin;
+
+    /**
+     */
+    @Enumerated(EnumType.STRING)
+    private RodzajAukcji rodzajAukcji;
+
+    /**
+     */
+    @Enumerated(EnumType.STRING)
+    private DefinicjaJednostkiPrzedmiotu jednostka;
+
+    /**
+     */
+    private double cenaWywolawcza;
+
+    /**
+     */
+    @Min(0L)
+    private double cenaMinimalna;
+
+    /**
+     */
+    @Enumerated(EnumType.STRING)
+    private TerminWysylki terminWysylki;
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "aukcja")
+    private Set<HistoriaZmianOpisu> zmianyOpisu = new HashSet<HistoriaZmianOpisu>();
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "aukcja")
+    private Set<Zdjecie> zdjecia = new HashSet<Zdjecie>();
+
+    /**
+     */
+    @OneToOne
+    private Zdjecie miniatura;
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "aukcja")
+    private Set<NaruszeniaRegulaminu> zgloszeniaNaruszenia = new HashSet<NaruszeniaRegulaminu>();
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "aukcja")
+    private Set<Oferta> oferty = new HashSet<Oferta>();
 }

@@ -7,6 +7,7 @@ import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
+import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
@@ -34,4 +35,9 @@ public class Oferta {
     /**
      */
     private String powodOdrzucenia;
+
+    /**
+     */
+    @ManyToOne
+    private Aukcja aukcja;
 }

@@ -4,7 +4,15 @@
 package pl.wroc.pwr.wiz.io.psi.model;
 
 import java.util.Date;
+import java.util.Set;
 import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
+import pl.wroc.pwr.wiz.io.psi.model.DefinicjaJednostkiPrzedmiotu;
+import pl.wroc.pwr.wiz.io.psi.model.HistoriaZmianOpisu;
+import pl.wroc.pwr.wiz.io.psi.model.NaruszeniaRegulaminu;
+import pl.wroc.pwr.wiz.io.psi.model.Oferta;
+import pl.wroc.pwr.wiz.io.psi.model.RodzajAukcji;
+import pl.wroc.pwr.wiz.io.psi.model.TerminWysylki;
+import pl.wroc.pwr.wiz.io.psi.model.Zdjecie;
 
 privileged aspect Aukcja_Roo_JavaBean {
     
@@ -118,6 +126,86 @@ privileged aspect Aukcja_Roo_JavaBean {
     
     public void Aukcja.setTerminOstatnichOdwiedzin(Date terminOstatnichOdwiedzin) {
         this.terminOstatnichOdwiedzin = terminOstatnichOdwiedzin;
+    }
+    
+    public RodzajAukcji Aukcja.getRodzajAukcji() {
+        return this.rodzajAukcji;
+    }
+    
+    public void Aukcja.setRodzajAukcji(RodzajAukcji rodzajAukcji) {
+        this.rodzajAukcji = rodzajAukcji;
+    }
+    
+    public DefinicjaJednostkiPrzedmiotu Aukcja.getJednostka() {
+        return this.jednostka;
+    }
+    
+    public void Aukcja.setJednostka(DefinicjaJednostkiPrzedmiotu jednostka) {
+        this.jednostka = jednostka;
+    }
+    
+    public double Aukcja.getCenaWywolawcza() {
+        return this.cenaWywolawcza;
+    }
+    
+    public void Aukcja.setCenaWywolawcza(double cenaWywolawcza) {
+        this.cenaWywolawcza = cenaWywolawcza;
+    }
+    
+    public double Aukcja.getCenaMinimalna() {
+        return this.cenaMinimalna;
+    }
+    
+    public void Aukcja.setCenaMinimalna(double cenaMinimalna) {
+        this.cenaMinimalna = cenaMinimalna;
+    }
+    
+    public TerminWysylki Aukcja.getTerminWysylki() {
+        return this.terminWysylki;
+    }
+    
+    public void Aukcja.setTerminWysylki(TerminWysylki terminWysylki) {
+        this.terminWysylki = terminWysylki;
+    }
+    
+    public Set<HistoriaZmianOpisu> Aukcja.getZmianyOpisu() {
+        return this.zmianyOpisu;
+    }
+    
+    public void Aukcja.setZmianyOpisu(Set<HistoriaZmianOpisu> zmianyOpisu) {
+        this.zmianyOpisu = zmianyOpisu;
+    }
+    
+    public Set<Zdjecie> Aukcja.getZdjecia() {
+        return this.zdjecia;
+    }
+    
+    public void Aukcja.setZdjecia(Set<Zdjecie> zdjecia) {
+        this.zdjecia = zdjecia;
+    }
+    
+    public Zdjecie Aukcja.getMiniatura() {
+        return this.miniatura;
+    }
+    
+    public void Aukcja.setMiniatura(Zdjecie miniatura) {
+        this.miniatura = miniatura;
+    }
+    
+    public Set<NaruszeniaRegulaminu> Aukcja.getZgloszeniaNaruszenia() {
+        return this.zgloszeniaNaruszenia;
+    }
+    
+    public void Aukcja.setZgloszeniaNaruszenia(Set<NaruszeniaRegulaminu> zgloszeniaNaruszenia) {
+        this.zgloszeniaNaruszenia = zgloszeniaNaruszenia;
+    }
+    
+    public Set<Oferta> Aukcja.getOferty() {
+        return this.oferty;
+    }
+    
+    public void Aukcja.setOferty(Set<Oferta> oferty) {
+        this.oferty = oferty;
     }
     
 }

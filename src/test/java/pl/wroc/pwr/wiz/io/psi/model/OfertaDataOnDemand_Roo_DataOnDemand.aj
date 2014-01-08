@@ -13,7 +13,9 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pl.wroc.pwr.wiz.io.psi.model.AukcjaDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.Oferta;
 import pl.wroc.pwr.wiz.io.psi.model.OfertaDataOnDemand;
 
@@ -24,6 +26,9 @@ privileged aspect OfertaDataOnDemand_Roo_DataOnDemand {
     private Random OfertaDataOnDemand.rnd = new SecureRandom();
     
     private List<Oferta> OfertaDataOnDemand.data;
+    
+    @Autowired
+    AukcjaDataOnDemand OfertaDataOnDemand.aukcjaDataOnDemand;
     
     public Oferta OfertaDataOnDemand.getNewTransientOferta(int index) {
         Oferta obj = new Oferta();

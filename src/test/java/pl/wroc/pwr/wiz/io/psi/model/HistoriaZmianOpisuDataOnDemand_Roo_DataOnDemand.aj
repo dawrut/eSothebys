@@ -13,7 +13,9 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pl.wroc.pwr.wiz.io.psi.model.AukcjaDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.HistoriaZmianOpisu;
 import pl.wroc.pwr.wiz.io.psi.model.HistoriaZmianOpisuDataOnDemand;
 
@@ -24,6 +26,9 @@ privileged aspect HistoriaZmianOpisuDataOnDemand_Roo_DataOnDemand {
     private Random HistoriaZmianOpisuDataOnDemand.rnd = new SecureRandom();
     
     private List<HistoriaZmianOpisu> HistoriaZmianOpisuDataOnDemand.data;
+    
+    @Autowired
+    AukcjaDataOnDemand HistoriaZmianOpisuDataOnDemand.aukcjaDataOnDemand;
     
     public HistoriaZmianOpisu HistoriaZmianOpisuDataOnDemand.getNewTransientHistoriaZmianOpisu(int index) {
         HistoriaZmianOpisu obj = new HistoriaZmianOpisu();

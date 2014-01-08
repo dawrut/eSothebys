@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pl.wroc.pwr.wiz.io.psi.model.AukcjaDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.Zdjecie;
 import pl.wroc.pwr.wiz.io.psi.model.ZdjecieDataOnDemand;
 
@@ -21,6 +23,9 @@ privileged aspect ZdjecieDataOnDemand_Roo_DataOnDemand {
     private Random ZdjecieDataOnDemand.rnd = new SecureRandom();
     
     private List<Zdjecie> ZdjecieDataOnDemand.data;
+    
+    @Autowired
+    AukcjaDataOnDemand ZdjecieDataOnDemand.aukcjaDataOnDemand;
     
     public Zdjecie ZdjecieDataOnDemand.getNewTransientZdjecie(int index) {
         Zdjecie obj = new Zdjecie();

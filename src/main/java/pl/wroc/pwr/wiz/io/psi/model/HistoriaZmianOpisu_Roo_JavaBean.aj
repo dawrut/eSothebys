@@ -4,6 +4,7 @@
 package pl.wroc.pwr.wiz.io.psi.model;
 
 import java.util.Date;
+import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
 import pl.wroc.pwr.wiz.io.psi.model.HistoriaZmianOpisu;
 
 privileged aspect HistoriaZmianOpisu_Roo_JavaBean {
@@ -22,6 +23,14 @@ privileged aspect HistoriaZmianOpisu_Roo_JavaBean {
     
     public void HistoriaZmianOpisu.setDataModyfikacji(Date dataModyfikacji) {
         this.dataModyfikacji = dataModyfikacji;
+    }
+    
+    public Aukcja HistoriaZmianOpisu.getAukcja() {
+        return this.aukcja;
+    }
+    
+    public void HistoriaZmianOpisu.setAukcja(Aukcja aukcja) {
+        this.aukcja = aukcja;
     }
     
 }

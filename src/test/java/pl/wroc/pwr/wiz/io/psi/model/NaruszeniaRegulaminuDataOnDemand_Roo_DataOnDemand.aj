@@ -13,7 +13,9 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pl.wroc.pwr.wiz.io.psi.model.AukcjaDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.NaruszeniaRegulaminu;
 import pl.wroc.pwr.wiz.io.psi.model.NaruszeniaRegulaminuDataOnDemand;
 
@@ -24,6 +26,9 @@ privileged aspect NaruszeniaRegulaminuDataOnDemand_Roo_DataOnDemand {
     private Random NaruszeniaRegulaminuDataOnDemand.rnd = new SecureRandom();
     
     private List<NaruszeniaRegulaminu> NaruszeniaRegulaminuDataOnDemand.data;
+    
+    @Autowired
+    AukcjaDataOnDemand NaruszeniaRegulaminuDataOnDemand.aukcjaDataOnDemand;
     
     public NaruszeniaRegulaminu NaruszeniaRegulaminuDataOnDemand.getNewTransientNaruszeniaRegulaminu(int index) {
         NaruszeniaRegulaminu obj = new NaruszeniaRegulaminu();

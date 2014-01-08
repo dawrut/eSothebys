@@ -3,6 +3,7 @@
 
 package pl.wroc.pwr.wiz.io.psi.model;
 
+import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
 import pl.wroc.pwr.wiz.io.psi.model.Zdjecie;
 
 privileged aspect Zdjecie_Roo_JavaBean {
@@ -13,6 +14,14 @@ privileged aspect Zdjecie_Roo_JavaBean {
     
     public void Zdjecie.setOpis(String opis) {
         this.opis = opis;
+    }
+    
+    public Aukcja Zdjecie.getAukcja() {
+        return this.aukcja;
+    }
+    
+    public void Zdjecie.setAukcja(Aukcja aukcja) {
+        this.aukcja = aukcja;
     }
     
 }

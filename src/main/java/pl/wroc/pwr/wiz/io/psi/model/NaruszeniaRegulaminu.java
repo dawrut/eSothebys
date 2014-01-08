@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
+import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
@@ -17,4 +18,9 @@ public class NaruszeniaRegulaminu {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(style = "M-")
     private Date dataZgloszenia;
+
+    /**
+     */
+    @ManyToOne
+    private Aukcja aukcja;
 }
