@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pl.wroc.pwr.wiz.io.psi.model.KategoriaPowoduDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.PowodZgloszenia;
 import pl.wroc.pwr.wiz.io.psi.model.PowodZgloszeniaDataOnDemand;
 
@@ -21,6 +23,9 @@ privileged aspect PowodZgloszeniaDataOnDemand_Roo_DataOnDemand {
     private Random PowodZgloszeniaDataOnDemand.rnd = new SecureRandom();
     
     private List<PowodZgloszenia> PowodZgloszeniaDataOnDemand.data;
+    
+    @Autowired
+    KategoriaPowoduDataOnDemand PowodZgloszeniaDataOnDemand.kategoriaPowoduDataOnDemand;
     
     public PowodZgloszenia PowodZgloszeniaDataOnDemand.getNewTransientPowodZgloszenia(int index) {
         PowodZgloszenia obj = new PowodZgloszenia();

@@ -4,6 +4,10 @@ import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 import javax.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Value;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
@@ -29,4 +33,9 @@ public class Kategoria {
      */
     @Value("true")
     private Boolean dostepnaPlatoscPrzezPayU;
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "kategoria")
+    private Set<Aukcja> aukcje = new HashSet<Aukcja>();
 }

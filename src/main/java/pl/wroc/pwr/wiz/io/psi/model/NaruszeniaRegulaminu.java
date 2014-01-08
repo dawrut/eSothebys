@@ -23,4 +23,9 @@ public class NaruszeniaRegulaminu {
      */
     @ManyToOne
     private Aukcja aukcja;
+
+    /**
+     */
+    @ManyToOne
+    private PowodZgloszenia powod;
 }

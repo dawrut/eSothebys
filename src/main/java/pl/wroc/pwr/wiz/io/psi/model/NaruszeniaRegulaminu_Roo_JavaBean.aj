@@ -6,6 +6,7 @@ package pl.wroc.pwr.wiz.io.psi.model;
 import java.util.Date;
 import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
 import pl.wroc.pwr.wiz.io.psi.model.NaruszeniaRegulaminu;
+import pl.wroc.pwr.wiz.io.psi.model.PowodZgloszenia;
 
 privileged aspect NaruszeniaRegulaminu_Roo_JavaBean {
     
@@ -23,6 +24,14 @@ privileged aspect NaruszeniaRegulaminu_Roo_JavaBean {
     
     public void NaruszeniaRegulaminu.setAukcja(Aukcja aukcja) {
         this.aukcja = aukcja;
+    }
+    
+    public PowodZgloszenia NaruszeniaRegulaminu.getPowod() {
+        return this.powod;
+    }
+    
+    public void NaruszeniaRegulaminu.setPowod(PowodZgloszenia powod) {
+        this.powod = powod;
     }
     
 }

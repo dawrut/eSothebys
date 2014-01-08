@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
 import pl.wroc.pwr.wiz.io.psi.model.AukcjaDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.DefinicjaJednostkiPrzedmiotu;
+import pl.wroc.pwr.wiz.io.psi.model.KategoriaDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.RodzajAukcji;
 import pl.wroc.pwr.wiz.io.psi.model.TerminWysylki;
 import pl.wroc.pwr.wiz.io.psi.model.ZdjecieDataOnDemand;
@@ -29,6 +30,9 @@ privileged aspect AukcjaDataOnDemand_Roo_DataOnDemand {
     private Random AukcjaDataOnDemand.rnd = new SecureRandom();
     
     private List<Aukcja> AukcjaDataOnDemand.data;
+    
+    @Autowired
+    KategoriaDataOnDemand AukcjaDataOnDemand.kategoriaDataOnDemand;
     
     @Autowired
     ZdjecieDataOnDemand AukcjaDataOnDemand.zdjecieDataOnDemand;

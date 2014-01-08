@@ -3,7 +3,9 @@
 
 package pl.wroc.pwr.wiz.io.psi.model;
 
+import java.util.Set;
 import pl.wroc.pwr.wiz.io.psi.model.KategoriaPowodu;
+import pl.wroc.pwr.wiz.io.psi.model.PowodZgloszenia;
 
 privileged aspect KategoriaPowodu_Roo_JavaBean {
     
@@ -13,6 +15,14 @@ privileged aspect KategoriaPowodu_Roo_JavaBean {
     
     public void KategoriaPowodu.setNazwa(String nazwa) {
         this.nazwa = nazwa;
+    }
+    
+    public Set<PowodZgloszenia> KategoriaPowodu.getPowody() {
+        return this.powody;
+    }
+    
+    public void KategoriaPowodu.setPowody(Set<PowodZgloszenia> powody) {
+        this.powody = powody;
     }
     
 }

@@ -8,6 +8,7 @@ import java.util.Set;
 import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
 import pl.wroc.pwr.wiz.io.psi.model.DefinicjaJednostkiPrzedmiotu;
 import pl.wroc.pwr.wiz.io.psi.model.HistoriaZmianOpisu;
+import pl.wroc.pwr.wiz.io.psi.model.Kategoria;
 import pl.wroc.pwr.wiz.io.psi.model.NaruszeniaRegulaminu;
 import pl.wroc.pwr.wiz.io.psi.model.Oferta;
 import pl.wroc.pwr.wiz.io.psi.model.RodzajAukcji;
@@ -206,6 +207,14 @@ privileged aspect Aukcja_Roo_JavaBean {
     
     public void Aukcja.setOferty(Set<Oferta> oferty) {
         this.oferty = oferty;
+    }
+    
+    public Kategoria Aukcja.getKategoria() {
+        return this.kategoria;
+    }
+    
+    public void Aukcja.setKategoria(Kategoria kategoria) {
+        this.kategoria = kategoria;
     }
     
 }

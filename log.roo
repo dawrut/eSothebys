@@ -289,3 +289,15 @@ focus --class ~.model.Aukcja
 field set --fieldName oferty --type ~.model.Oferta --cardinality ONE_TO_MANY --mappedBy aukcja
 focus --class ~.model.Oferta 
 field reference --fieldName aukcja --type ~.model.Aukcja --cardinality MANY_TO_ONE 
+focus --class ~.model.Aukcja
+focus --class ~.model.NaruszeniaRegulaminu
+field reference --fieldName powod --type ~.model.PowodZgloszenia --cardinality MANY_TO_ONE 
+focus --class ~.model.PowodZgloszenia
+focus --class ~.model.KategoriaPowodu
+field set --fieldName powody --type ~.model.PowodZgloszenia --cardinality ONE_TO_MANY --mappedBy kategoria
+focus --class ~.model.PowodZgloszenia
+field reference --fieldName kategoria --type ~.model.KategoriaPowodu --cardinality MANY_TO_ONE 
+focus --class ~.model.Kategoria
+field set --fieldName aukcje --type ~.model.Aukcja --cardinality ONE_TO_MANY --mappedBy kategoria
+focus --class ~.model.Aukcja
+field reference --fieldName kategoria --type ~.model.Kategoria --cardinality MANY_TO_ONE 

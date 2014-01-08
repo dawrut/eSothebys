@@ -3,6 +3,7 @@
 
 package pl.wroc.pwr.wiz.io.psi.model;
 
+import pl.wroc.pwr.wiz.io.psi.model.KategoriaPowodu;
 import pl.wroc.pwr.wiz.io.psi.model.PowodZgloszenia;
 
 privileged aspect PowodZgloszenia_Roo_JavaBean {
@@ -13,6 +14,14 @@ privileged aspect PowodZgloszenia_Roo_JavaBean {
     
     public void PowodZgloszenia.setTresc(String tresc) {
         this.tresc = tresc;
+    }
+    
+    public KategoriaPowodu PowodZgloszenia.getKategoria() {
+        return this.kategoria;
+    }
+    
+    public void PowodZgloszenia.setKategoria(KategoriaPowodu kategoria) {
+        this.kategoria = kategoria;
     }
     
 }

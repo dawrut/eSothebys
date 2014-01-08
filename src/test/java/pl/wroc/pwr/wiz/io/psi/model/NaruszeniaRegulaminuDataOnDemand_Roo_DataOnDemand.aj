@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 import pl.wroc.pwr.wiz.io.psi.model.AukcjaDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.NaruszeniaRegulaminu;
 import pl.wroc.pwr.wiz.io.psi.model.NaruszeniaRegulaminuDataOnDemand;
+import pl.wroc.pwr.wiz.io.psi.model.PowodZgloszeniaDataOnDemand;
 
 privileged aspect NaruszeniaRegulaminuDataOnDemand_Roo_DataOnDemand {
     
@@ -29,6 +30,9 @@ privileged aspect NaruszeniaRegulaminuDataOnDemand_Roo_DataOnDemand {
     
     @Autowired
     AukcjaDataOnDemand NaruszeniaRegulaminuDataOnDemand.aukcjaDataOnDemand;
+    
+    @Autowired
+    PowodZgloszeniaDataOnDemand NaruszeniaRegulaminuDataOnDemand.powodZgloszeniaDataOnDemand;
     
     public NaruszeniaRegulaminu NaruszeniaRegulaminuDataOnDemand.getNewTransientNaruszeniaRegulaminu(int index) {
         NaruszeniaRegulaminu obj = new NaruszeniaRegulaminu();

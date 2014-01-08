@@ -3,6 +3,8 @@
 
 package pl.wroc.pwr.wiz.io.psi.model;
 
+import java.util.Set;
+import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
 import pl.wroc.pwr.wiz.io.psi.model.Kategoria;
 
 privileged aspect Kategoria_Roo_JavaBean {
@@ -37,6 +39,14 @@ privileged aspect Kategoria_Roo_JavaBean {
     
     public void Kategoria.setDostepnaPlatoscPrzezPayU(Boolean dostepnaPlatoscPrzezPayU) {
         this.dostepnaPlatoscPrzezPayU = dostepnaPlatoscPrzezPayU;
+    }
+    
+    public Set<Aukcja> Kategoria.getAukcje() {
+        return this.aukcje;
+    }
+    
+    public void Kategoria.setAukcje(Set<Aukcja> aukcje) {
+        this.aukcje = aukcje;
     }
     
 }
