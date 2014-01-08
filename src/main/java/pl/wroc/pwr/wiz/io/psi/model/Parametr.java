@@ -6,6 +6,11 @@ import javax.validation.constraints.NotNull;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import org.springframework.beans.factory.annotation.Value;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
@@ -31,4 +36,19 @@ public class Parametr {
      */
     @Value("false")
     private Boolean obligatoryjny;
+
+    /**
+     */
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "parametry")
+    private Set<Aukcja> towary = new HashSet<Aukcja>();
+
+    /**
+     */
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "parametry")
+    private Set<Kategoria> kategorie = new HashSet<Kategoria>();
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametr")
+    private Set<Wartosc> mozliweWartosci = new HashSet<Wartosc>();
 }

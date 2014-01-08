@@ -322,3 +322,16 @@ field boolean --fieldName zamowioneZestawienieTransakcji
 field date --fieldName dataRozpoczeciaZamknieciaKonta --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
 field date --fieldName dataZamknieciaKonta --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
 field string --fieldName powodZamknieciaKonta
+focus --class ~.model.Aukcja
+field set --fieldName parametry --type ~.model.Parametr --cardinality MANY_TO_MANY --mappedBy towary
+focus --class ~.model.Parametr
+field set --fieldName towary --type ~.model.Aukcja --cardinality MANY_TO_MANY --mappedBy parametry
+field set --fieldName kategorie --type ~.model.Kategoria --cardinality MANY_TO_MANY --mappedBy parametry
+focus --class ~.model.Kategoria
+field set --fieldName parametry --type ~.model.Parametr --cardinality MANY_TO_MANY --mappedBy kategorie
+focus --class ~.model.Parametr
+field set --fieldName mozliweWartosci --type ~.model.Wartosc --cardinality ONE_TO_MANY --mappedBy parametr
+focus --class ~.model.Wartosc
+field reference --fieldName parametr --type ~.model.Parametr --cardinality MANY_TO_ONE 
+focus --class ~.model.Szczegoly
+field set --fieldName wybraneWartosci --type ~.model.Wartosc --cardinality MANY_TO_MANY 

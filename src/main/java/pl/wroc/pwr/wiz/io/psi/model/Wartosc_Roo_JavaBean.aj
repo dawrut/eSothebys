@@ -3,6 +3,7 @@
 
 package pl.wroc.pwr.wiz.io.psi.model;
 
+import pl.wroc.pwr.wiz.io.psi.model.Parametr;
 import pl.wroc.pwr.wiz.io.psi.model.Wartosc;
 
 privileged aspect Wartosc_Roo_JavaBean {
@@ -13,6 +14,14 @@ privileged aspect Wartosc_Roo_JavaBean {
     
     public void Wartosc.setWartosc(String wartosc) {
         this.wartosc = wartosc;
+    }
+    
+    public Parametr Wartosc.getParametr() {
+        return this.parametr;
+    }
+    
+    public void Wartosc.setParametr(Parametr parametr) {
+        this.parametr = parametr;
     }
     
 }

@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @RooJavaBean
 @RooToString
@@ -38,4 +39,9 @@ public class Kategoria {
      */
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "kategoria")
     private Set<Aukcja> aukcje = new HashSet<Aukcja>();
+
+    /**
+     */
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "kategorie")
+    private Set<Parametr> parametry = new HashSet<Parametr>();
 }

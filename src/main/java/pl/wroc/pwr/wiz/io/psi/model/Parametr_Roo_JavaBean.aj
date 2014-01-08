@@ -3,7 +3,11 @@
 
 package pl.wroc.pwr.wiz.io.psi.model;
 
+import java.util.Set;
+import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
+import pl.wroc.pwr.wiz.io.psi.model.Kategoria;
 import pl.wroc.pwr.wiz.io.psi.model.Parametr;
+import pl.wroc.pwr.wiz.io.psi.model.Wartosc;
 
 privileged aspect Parametr_Roo_JavaBean {
     
@@ -37,6 +41,30 @@ privileged aspect Parametr_Roo_JavaBean {
     
     public void Parametr.setObligatoryjny(Boolean obligatoryjny) {
         this.obligatoryjny = obligatoryjny;
+    }
+    
+    public Set<Aukcja> Parametr.getTowary() {
+        return this.towary;
+    }
+    
+    public void Parametr.setTowary(Set<Aukcja> towary) {
+        this.towary = towary;
+    }
+    
+    public Set<Kategoria> Parametr.getKategorie() {
+        return this.kategorie;
+    }
+    
+    public void Parametr.setKategorie(Set<Kategoria> kategorie) {
+        this.kategorie = kategorie;
+    }
+    
+    public Set<Wartosc> Parametr.getMozliweWartosci() {
+        return this.mozliweWartosci;
+    }
+    
+    public void Parametr.setMozliweWartosci(Set<Wartosc> mozliweWartosci) {
+        this.mozliweWartosci = mozliweWartosci;
     }
     
 }

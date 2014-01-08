@@ -16,6 +16,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 
 @RooJavaBean
 @RooToString
@@ -137,4 +138,9 @@ public class Aukcja {
      */
     @ManyToOne
     private Kategoria kategoria;
+
+    /**
+     */
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "towary")
+    private Set<Parametr> parametry = new HashSet<Parametr>();
 }

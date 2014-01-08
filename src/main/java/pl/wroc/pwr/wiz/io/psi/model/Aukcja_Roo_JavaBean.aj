@@ -11,6 +11,7 @@ import pl.wroc.pwr.wiz.io.psi.model.HistoriaZmianOpisu;
 import pl.wroc.pwr.wiz.io.psi.model.Kategoria;
 import pl.wroc.pwr.wiz.io.psi.model.NaruszeniaRegulaminu;
 import pl.wroc.pwr.wiz.io.psi.model.Oferta;
+import pl.wroc.pwr.wiz.io.psi.model.Parametr;
 import pl.wroc.pwr.wiz.io.psi.model.RodzajAukcji;
 import pl.wroc.pwr.wiz.io.psi.model.TerminWysylki;
 import pl.wroc.pwr.wiz.io.psi.model.Zdjecie;
@@ -215,6 +216,14 @@ privileged aspect Aukcja_Roo_JavaBean {
     
     public void Aukcja.setKategoria(Kategoria kategoria) {
         this.kategoria = kategoria;
+    }
+    
+    public Set<Parametr> Aukcja.getParametry() {
+        return this.parametry;
+    }
+    
+    public void Aukcja.setParametry(Set<Parametr> parametry) {
+        this.parametry = parametry;
     }
     
 }

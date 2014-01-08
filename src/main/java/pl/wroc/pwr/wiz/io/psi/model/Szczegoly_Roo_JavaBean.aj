@@ -3,7 +3,9 @@
 
 package pl.wroc.pwr.wiz.io.psi.model;
 
+import java.util.Set;
 import pl.wroc.pwr.wiz.io.psi.model.Szczegoly;
+import pl.wroc.pwr.wiz.io.psi.model.Wartosc;
 
 privileged aspect Szczegoly_Roo_JavaBean {
     
@@ -13,6 +15,14 @@ privileged aspect Szczegoly_Roo_JavaBean {
     
     public void Szczegoly.setWprowadzonaWartosc(String wprowadzonaWartosc) {
         this.wprowadzonaWartosc = wprowadzonaWartosc;
+    }
+    
+    public Set<Wartosc> Szczegoly.getWybraneWartosci() {
+        return this.wybraneWartosci;
+    }
+    
+    public void Szczegoly.setWybraneWartosci(Set<Wartosc> wybraneWartosci) {
+        this.wybraneWartosci = wybraneWartosci;
     }
     
 }

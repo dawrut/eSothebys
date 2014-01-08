@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pl.wroc.pwr.wiz.io.psi.model.ParametrDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.Wartosc;
 import pl.wroc.pwr.wiz.io.psi.model.WartoscDataOnDemand;
 
@@ -21,6 +23,9 @@ privileged aspect WartoscDataOnDemand_Roo_DataOnDemand {
     private Random WartoscDataOnDemand.rnd = new SecureRandom();
     
     private List<Wartosc> WartoscDataOnDemand.data;
+    
+    @Autowired
+    ParametrDataOnDemand WartoscDataOnDemand.parametrDataOnDemand;
     
     public Wartosc WartoscDataOnDemand.getNewTransientWartosc(int index) {
         Wartosc obj = new Wartosc();

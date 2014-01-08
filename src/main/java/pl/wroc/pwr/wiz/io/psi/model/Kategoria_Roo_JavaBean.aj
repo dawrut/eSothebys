@@ -6,6 +6,7 @@ package pl.wroc.pwr.wiz.io.psi.model;
 import java.util.Set;
 import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
 import pl.wroc.pwr.wiz.io.psi.model.Kategoria;
+import pl.wroc.pwr.wiz.io.psi.model.Parametr;
 
 privileged aspect Kategoria_Roo_JavaBean {
     
@@ -47,6 +48,14 @@ privileged aspect Kategoria_Roo_JavaBean {
     
     public void Kategoria.setAukcje(Set<Aukcja> aukcje) {
         this.aukcje = aukcje;
+    }
+    
+    public Set<Parametr> Kategoria.getParametry() {
+        return this.parametry;
+    }
+    
+    public void Kategoria.setParametry(Set<Parametr> parametry) {
+        this.parametry = parametry;
     }
     
 }
