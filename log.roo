@@ -301,3 +301,24 @@ focus --class ~.model.Kategoria
 field set --fieldName aukcje --type ~.model.Aukcja --cardinality ONE_TO_MANY --mappedBy kategoria
 focus --class ~.model.Aukcja
 field reference --fieldName kategoria --type ~.model.Kategoria --cardinality MANY_TO_ONE 
+entity jpa --class ~.model.Uczestnik --testAutomatically 
+field string --fieldName imie 
+field string --fieldName nazwisko
+field string --fieldName firma
+field string --fieldName pesel
+field string --fieldName login --unique 
+field string --fieldName telefon
+field string --fieldName drugiTelefon
+field date --fieldName dataUrodzenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
+field date --fieldName dataUtworzenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field date --fieldName dataOstatniegoLogowania --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
+field enum --fieldName stanKonta --type ~.model.StanKonta --enumType STRING 
+field boolean --fieldName czyWykonalAkcje --value false
+field date --fieldName odKiedyZawieszone --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
+field date --fieldName akceptacjaZmianRegulaminu --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
+field enum --fieldName sposobAktywacji --type ~.model.SposobAktywacji --enumType STRING 
+field number --fieldName kodAktywacyjny --type int
+field boolean --fieldName zamowioneZestawienieTransakcji 
+field date --fieldName dataRozpoczeciaZamknieciaKonta --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
+field date --fieldName dataZamknieciaKonta --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
+field string --fieldName powodZamknieciaKonta
