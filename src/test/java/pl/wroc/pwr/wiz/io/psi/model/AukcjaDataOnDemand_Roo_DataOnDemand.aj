@@ -15,12 +15,14 @@ import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pl.wroc.pwr.wiz.io.psi.model.AdresDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
 import pl.wroc.pwr.wiz.io.psi.model.AukcjaDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.DefinicjaJednostkiPrzedmiotu;
 import pl.wroc.pwr.wiz.io.psi.model.KategoriaDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.RodzajAukcji;
 import pl.wroc.pwr.wiz.io.psi.model.TerminWysylki;
+import pl.wroc.pwr.wiz.io.psi.model.UczestnikDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.ZdjecieDataOnDemand;
 
 privileged aspect AukcjaDataOnDemand_Roo_DataOnDemand {
@@ -35,13 +37,20 @@ privileged aspect AukcjaDataOnDemand_Roo_DataOnDemand {
     KategoriaDataOnDemand AukcjaDataOnDemand.kategoriaDataOnDemand;
     
     @Autowired
+    AdresDataOnDemand AukcjaDataOnDemand.adresDataOnDemand;
+    
+    @Autowired
     ZdjecieDataOnDemand AukcjaDataOnDemand.zdjecieDataOnDemand;
+    
+    @Autowired
+    UczestnikDataOnDemand AukcjaDataOnDemand.uczestnikDataOnDemand;
     
     public Aukcja AukcjaDataOnDemand.getNewTransientAukcja(int index) {
         Aukcja obj = new Aukcja();
         setCenaKupTeraz(obj, index);
         setCenaMinimalna(obj, index);
         setCenaWywolawcza(obj, index);
+        setCennikDostawy(obj, index);
         setDodatkoweInformacjeODostawiePlatnosci(obj, index);
         setFakturaVAT(obj, index);
         setJednostka(obj, index);
@@ -74,6 +83,11 @@ privileged aspect AukcjaDataOnDemand_Roo_DataOnDemand {
     public void AukcjaDataOnDemand.setCenaWywolawcza(Aukcja obj, int index) {
         double cenaWywolawcza = new Integer(index).doubleValue();
         obj.setCenaWywolawcza(cenaWywolawcza);
+    }
+    
+    public void AukcjaDataOnDemand.setCennikDostawy(Aukcja obj, int index) {
+        Aukcja cennikDostawy = obj;
+        obj.setCennikDostawy(cennikDostawy);
     }
     
     public void AukcjaDataOnDemand.setDodatkoweInformacjeODostawiePlatnosci(Aukcja obj, int index) {

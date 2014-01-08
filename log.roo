@@ -335,3 +335,28 @@ focus --class ~.model.Wartosc
 field reference --fieldName parametr --type ~.model.Parametr --cardinality MANY_TO_ONE 
 focus --class ~.model.Szczegoly
 field set --fieldName wybraneWartosci --type ~.model.Wartosc --cardinality MANY_TO_MANY 
+focus --class ~.model.Aukcja
+focus --class ~.model.Adres
+field set --fieldName aukcje --type ~.model.Aukcja --cardinality ONE_TO_MANY --mappedBy lokalizacja
+focus --class ~.model.Aukcja
+field reference --fieldName lokalizacja --type ~.model.Adres --cardinality MANY_TO_ONE 
+focus --class ~.model.CennikDostaw
+focus --class ~.model.Aukcja
+focus --class ~.model.CennikDostaw
+field set --fieldName aukcje --type ~.model.Aukcja --cardinality ONE_TO_MANY --mappedBy cennikDostawy
+focus --class ~.model.Aukcja
+field reference --fieldName cennikDostawy --cardinality MANY_TO_ONE --type ~.model.Aukcja
+focus --class ~.model.Uczestnik
+field set --fieldName obserwowaneAukcje --type ~.model.Aukcja --cardinality MANY_TO_MANY 
+field set --fieldName wystawioneAukcje --type ~.model.Aukcja --cardinality ONE_TO_MANY 
+focus --class ~.model.Aukcja
+field reference --fieldName sprzedawca --type ~.model.Uczestnik --cardinality MANY_TO_ONE 
+focus --class ~.model.AukcjaDataOnDemand
+focus --class ~.model.Uczestnik
+field set --fieldName wystawioneAukcje --type ~.model.Aukcja --cardinality ONE_TO_MANY --mappedBy sprzedawca
+field set --cardinality ONE_TO_MANY --fieldName otrzymaneUpomnienia --type ~.model.NaruszeniaRegulaminu --mappedBy naruszajacy
+focus --class ~.model.Aukcja
+field reference --fieldName naruszajacy --type ~.model.Uczestnik --cardinality MANY_TO_ONE 
+field reference --fieldName zglaszajacy --type ~.model.Uczestnik --cardinality MANY_TO_ONE 
+focus --class ~.model.Uczestnik
+field set --cardinality ONE_TO_MANY --fieldName zgloszoneUpomnienia --type ~.model.NaruszeniaRegulaminu --mappedBy zglaszajacy

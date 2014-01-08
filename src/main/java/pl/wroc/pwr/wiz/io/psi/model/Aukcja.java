@@ -143,4 +143,29 @@ public class Aukcja {
      */
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "towary")
     private Set<Parametr> parametry = new HashSet<Parametr>();
+
+    /**
+     */
+    @ManyToOne
+    private Adres lokalizacja;
+
+    /**
+     */
+    @ManyToOne
+    private Aukcja cennikDostawy;
+
+    /**
+     */
+    @ManyToOne
+    private Uczestnik sprzedawca;
+
+    /**
+     */
+    @ManyToOne
+    private Uczestnik naruszajacy;
+
+    /**
+     */
+    @ManyToOne
+    private Uczestnik zglaszajacy;
 }

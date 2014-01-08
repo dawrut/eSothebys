@@ -3,6 +3,8 @@
 
 package pl.wroc.pwr.wiz.io.psi.model;
 
+import java.util.Set;
+import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
 import pl.wroc.pwr.wiz.io.psi.model.CennikDostaw;
 
 privileged aspect CennikDostaw_Roo_JavaBean {
@@ -21,6 +23,14 @@ privileged aspect CennikDostaw_Roo_JavaBean {
     
     public void CennikDostaw.setSzablon(Boolean szablon) {
         this.szablon = szablon;
+    }
+    
+    public Set<Aukcja> CennikDostaw.getAukcje() {
+        return this.aukcje;
+    }
+    
+    public void CennikDostaw.setAukcje(Set<Aukcja> aukcje) {
+        this.aukcje = aukcje;
     }
     
 }

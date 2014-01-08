@@ -4,6 +4,9 @@
 package pl.wroc.pwr.wiz.io.psi.model;
 
 import java.util.Date;
+import java.util.Set;
+import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
+import pl.wroc.pwr.wiz.io.psi.model.NaruszeniaRegulaminu;
 import pl.wroc.pwr.wiz.io.psi.model.SposobAktywacji;
 import pl.wroc.pwr.wiz.io.psi.model.StanKonta;
 import pl.wroc.pwr.wiz.io.psi.model.Uczestnik;
@@ -168,6 +171,38 @@ privileged aspect Uczestnik_Roo_JavaBean {
     
     public void Uczestnik.setPowodZamknieciaKonta(String powodZamknieciaKonta) {
         this.powodZamknieciaKonta = powodZamknieciaKonta;
+    }
+    
+    public Set<Aukcja> Uczestnik.getObserwowaneAukcje() {
+        return this.obserwowaneAukcje;
+    }
+    
+    public void Uczestnik.setObserwowaneAukcje(Set<Aukcja> obserwowaneAukcje) {
+        this.obserwowaneAukcje = obserwowaneAukcje;
+    }
+    
+    public Set<Aukcja> Uczestnik.getWystawioneAukcje() {
+        return this.wystawioneAukcje;
+    }
+    
+    public void Uczestnik.setWystawioneAukcje(Set<Aukcja> wystawioneAukcje) {
+        this.wystawioneAukcje = wystawioneAukcje;
+    }
+    
+    public Set<NaruszeniaRegulaminu> Uczestnik.getOtrzymaneUpomnienia() {
+        return this.otrzymaneUpomnienia;
+    }
+    
+    public void Uczestnik.setOtrzymaneUpomnienia(Set<NaruszeniaRegulaminu> otrzymaneUpomnienia) {
+        this.otrzymaneUpomnienia = otrzymaneUpomnienia;
+    }
+    
+    public Set<NaruszeniaRegulaminu> Uczestnik.getZgloszoneUpomnienia() {
+        return this.zgloszoneUpomnienia;
+    }
+    
+    public void Uczestnik.setZgloszoneUpomnienia(Set<NaruszeniaRegulaminu> zgloszoneUpomnienia) {
+        this.zgloszoneUpomnienia = zgloszoneUpomnienia;
     }
     
 }

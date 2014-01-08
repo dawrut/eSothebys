@@ -5,6 +5,7 @@ package pl.wroc.pwr.wiz.io.psi.model;
 
 import java.util.Date;
 import java.util.Set;
+import pl.wroc.pwr.wiz.io.psi.model.Adres;
 import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
 import pl.wroc.pwr.wiz.io.psi.model.DefinicjaJednostkiPrzedmiotu;
 import pl.wroc.pwr.wiz.io.psi.model.HistoriaZmianOpisu;
@@ -14,6 +15,7 @@ import pl.wroc.pwr.wiz.io.psi.model.Oferta;
 import pl.wroc.pwr.wiz.io.psi.model.Parametr;
 import pl.wroc.pwr.wiz.io.psi.model.RodzajAukcji;
 import pl.wroc.pwr.wiz.io.psi.model.TerminWysylki;
+import pl.wroc.pwr.wiz.io.psi.model.Uczestnik;
 import pl.wroc.pwr.wiz.io.psi.model.Zdjecie;
 
 privileged aspect Aukcja_Roo_JavaBean {
@@ -224,6 +226,46 @@ privileged aspect Aukcja_Roo_JavaBean {
     
     public void Aukcja.setParametry(Set<Parametr> parametry) {
         this.parametry = parametry;
+    }
+    
+    public Adres Aukcja.getLokalizacja() {
+        return this.lokalizacja;
+    }
+    
+    public void Aukcja.setLokalizacja(Adres lokalizacja) {
+        this.lokalizacja = lokalizacja;
+    }
+    
+    public Aukcja Aukcja.getCennikDostawy() {
+        return this.cennikDostawy;
+    }
+    
+    public void Aukcja.setCennikDostawy(Aukcja cennikDostawy) {
+        this.cennikDostawy = cennikDostawy;
+    }
+    
+    public Uczestnik Aukcja.getSprzedawca() {
+        return this.sprzedawca;
+    }
+    
+    public void Aukcja.setSprzedawca(Uczestnik sprzedawca) {
+        this.sprzedawca = sprzedawca;
+    }
+    
+    public Uczestnik Aukcja.getNaruszajacy() {
+        return this.naruszajacy;
+    }
+    
+    public void Aukcja.setNaruszajacy(Uczestnik naruszajacy) {
+        this.naruszajacy = naruszajacy;
+    }
+    
+    public Uczestnik Aukcja.getZglaszajacy() {
+        return this.zglaszajacy;
+    }
+    
+    public void Aukcja.setZglaszajacy(Uczestnik zglaszajacy) {
+        this.zglaszajacy = zglaszajacy;
     }
     
 }

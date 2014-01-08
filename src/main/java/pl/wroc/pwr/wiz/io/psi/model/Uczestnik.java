@@ -11,6 +11,11 @@ import javax.validation.constraints.NotNull;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import org.springframework.beans.factory.annotation.Value;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
@@ -115,4 +120,24 @@ public class Uczestnik {
     /**
      */
     private String powodZamknieciaKonta;
+
+    /**
+     */
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Aukcja> obserwowaneAukcje = new HashSet<Aukcja>();
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sprzedawca")
+    private Set<Aukcja> wystawioneAukcje = new HashSet<Aukcja>();
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "naruszajacy")
+    private Set<NaruszeniaRegulaminu> otrzymaneUpomnienia = new HashSet<NaruszeniaRegulaminu>();
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "zglaszajacy")
+    private Set<NaruszeniaRegulaminu> zgloszoneUpomnienia = new HashSet<NaruszeniaRegulaminu>();
 }

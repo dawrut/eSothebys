@@ -3,7 +3,9 @@
 
 package pl.wroc.pwr.wiz.io.psi.model;
 
+import java.util.Set;
 import pl.wroc.pwr.wiz.io.psi.model.Adres;
+import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
 
 privileged aspect Adres_Roo_JavaBean {
     
@@ -29,6 +31,14 @@ privileged aspect Adres_Roo_JavaBean {
     
     public void Adres.setUlicaZNumerem(String ulicaZNumerem) {
         this.ulicaZNumerem = ulicaZNumerem;
+    }
+    
+    public Set<Aukcja> Adres.getAukcje() {
+        return this.aukcje;
+    }
+    
+    public void Adres.setAukcje(Set<Aukcja> aukcje) {
+        this.aukcje = aukcje;
     }
     
 }
