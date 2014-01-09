@@ -40,4 +40,9 @@ public class Oferta {
      */
     @ManyToOne
     private Aukcja aukcja;
+
+    /**
+     */
+    @ManyToOne
+    private Uczestnik kupujacy;
 }

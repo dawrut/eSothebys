@@ -4,7 +4,9 @@
 package pl.wroc.pwr.wiz.io.psi.model;
 
 import java.util.Date;
+import java.util.Set;
 import pl.wroc.pwr.wiz.io.psi.model.GraficznaOcenaSprzedazy;
+import pl.wroc.pwr.wiz.io.psi.model.Komentarz;
 
 privileged aspect GraficznaOcenaSprzedazy_Roo_JavaBean {
     
@@ -14,6 +16,14 @@ privileged aspect GraficznaOcenaSprzedazy_Roo_JavaBean {
     
     public void GraficznaOcenaSprzedazy.setDataWystawienia(Date dataWystawienia) {
         this.dataWystawienia = dataWystawienia;
+    }
+    
+    public Set<Komentarz> GraficznaOcenaSprzedazy.getKomentarze() {
+        return this.komentarze;
+    }
+    
+    public void GraficznaOcenaSprzedazy.setKomentarze(Set<Komentarz> komentarze) {
+        this.komentarze = komentarze;
     }
     
 }

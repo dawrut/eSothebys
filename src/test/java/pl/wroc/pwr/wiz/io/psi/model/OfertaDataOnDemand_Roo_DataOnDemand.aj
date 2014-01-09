@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 import pl.wroc.pwr.wiz.io.psi.model.AukcjaDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.Oferta;
 import pl.wroc.pwr.wiz.io.psi.model.OfertaDataOnDemand;
+import pl.wroc.pwr.wiz.io.psi.model.UczestnikDataOnDemand;
 
 privileged aspect OfertaDataOnDemand_Roo_DataOnDemand {
     
@@ -29,6 +30,9 @@ privileged aspect OfertaDataOnDemand_Roo_DataOnDemand {
     
     @Autowired
     AukcjaDataOnDemand OfertaDataOnDemand.aukcjaDataOnDemand;
+    
+    @Autowired
+    UczestnikDataOnDemand OfertaDataOnDemand.uczestnikDataOnDemand;
     
     public Oferta OfertaDataOnDemand.getNewTransientOferta(int index) {
         Oferta obj = new Oferta();

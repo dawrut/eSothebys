@@ -7,6 +7,10 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
@@ -19,4 +23,9 @@ public class GraficznaOcenaSprzedazy {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(style = "M-")
     private Date dataWystawienia;
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "graficznaOcena")
+    private Set<Komentarz> komentarze = new HashSet<Komentarz>();
 }

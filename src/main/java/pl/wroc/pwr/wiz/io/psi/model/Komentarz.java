@@ -10,6 +10,14 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.beans.factory.annotation.Value;
+import javax.persistence.ManyToOne;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+import javax.validation.constraints.Size;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @RooJavaBean
 @RooToString
@@ -37,4 +45,31 @@ public class Komentarz {
      */
     @Value("false")
     private Boolean uniewazniony;
+
+    /**
+     */
+    @ManyToOne
+    private Uczestnik wystawiajacy;
+
+    /**
+     */
+    @Size(max = 2)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "komentarz")
+    private Set<WniosekOUniewaznienie> wnioskiOUniewaznienie = new HashSet<WniosekOUniewaznienie>();
+
+    /**
+     */
+    @OneToOne
+    @JoinColumn(name = "komentarz")
+    private Ocena ocena;
+
+    /**
+     */
+    @ManyToOne
+    private Umowa umowa;
+
+    /**
+     */
+    @ManyToOne
+    private GraficznaOcenaSprzedazy graficznaOcena;
 }

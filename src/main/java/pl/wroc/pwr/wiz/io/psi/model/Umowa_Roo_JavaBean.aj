@@ -3,6 +3,8 @@
 
 package pl.wroc.pwr.wiz.io.psi.model;
 
+import java.util.Set;
+import pl.wroc.pwr.wiz.io.psi.model.Komentarz;
 import pl.wroc.pwr.wiz.io.psi.model.Umowa;
 
 privileged aspect Umowa_Roo_JavaBean {
@@ -13,6 +15,14 @@ privileged aspect Umowa_Roo_JavaBean {
     
     public void Umowa.setLiczbaSztuk(int liczbaSztuk) {
         this.liczbaSztuk = liczbaSztuk;
+    }
+    
+    public Set<Komentarz> Umowa.getKomentarze() {
+        return this.komentarze;
+    }
+    
+    public void Umowa.setKomentarze(Set<Komentarz> komentarze) {
+        this.komentarze = komentarze;
     }
     
 }

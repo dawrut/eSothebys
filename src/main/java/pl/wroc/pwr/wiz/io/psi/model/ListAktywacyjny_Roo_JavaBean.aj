@@ -5,6 +5,7 @@ package pl.wroc.pwr.wiz.io.psi.model;
 
 import java.util.Date;
 import pl.wroc.pwr.wiz.io.psi.model.ListAktywacyjny;
+import pl.wroc.pwr.wiz.io.psi.model.Uczestnik;
 
 privileged aspect ListAktywacyjny_Roo_JavaBean {
     
@@ -38,6 +39,14 @@ privileged aspect ListAktywacyjny_Roo_JavaBean {
     
     public void ListAktywacyjny.setWpisanyPoprawnie(Boolean wpisanyPoprawnie) {
         this.wpisanyPoprawnie = wpisanyPoprawnie;
+    }
+    
+    public Uczestnik ListAktywacyjny.getUczestnik() {
+        return this.uczestnik;
+    }
+    
+    public void ListAktywacyjny.setUczestnik(Uczestnik uczestnik) {
+        this.uczestnik = uczestnik;
     }
     
 }

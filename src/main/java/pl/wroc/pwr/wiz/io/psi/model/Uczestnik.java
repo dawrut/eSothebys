@@ -140,4 +140,39 @@ public class Uczestnik {
      */
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "zglaszajacy")
     private Set<NaruszeniaRegulaminu> zgloszoneUpomnienia = new HashSet<NaruszeniaRegulaminu>();
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "uczestnik")
+    private Set<ListAktywacyjny> listyAktywacyjne = new HashSet<ListAktywacyjny>();
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "kupujacy")
+    private Set<Oferta> zlozoneOferty = new HashSet<Oferta>();
+
+    /**
+     */
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "uczestnicy")
+    private Set<Regulamin> regulaminy = new HashSet<Regulamin>();
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "skladajacy")
+    private Set<WniosekOUniewaznienie> wnioskiOUniewaznienie = new HashSet<WniosekOUniewaznienie>();
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "wystawiajacy")
+    private Set<Komentarz> wystawioneKomentarze = new HashSet<Komentarz>();
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "uczestnik")
+    private Set<WniosekZmianyImieniaINazwiska> wnioskiZmianyDanych = new HashSet<WniosekZmianyImieniaINazwiska>();
+
+    /**
+     */
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Powiadomienie> wybranePowiadomienia = new HashSet<Powiadomienie>();
 }

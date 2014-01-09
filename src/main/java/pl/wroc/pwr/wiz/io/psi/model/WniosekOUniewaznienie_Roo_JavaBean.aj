@@ -4,6 +4,8 @@
 package pl.wroc.pwr.wiz.io.psi.model;
 
 import java.util.Date;
+import pl.wroc.pwr.wiz.io.psi.model.Komentarz;
+import pl.wroc.pwr.wiz.io.psi.model.Uczestnik;
 import pl.wroc.pwr.wiz.io.psi.model.WniosekOUniewaznienie;
 
 privileged aspect WniosekOUniewaznienie_Roo_JavaBean {
@@ -14,6 +16,22 @@ privileged aspect WniosekOUniewaznienie_Roo_JavaBean {
     
     public void WniosekOUniewaznienie.setDataZgloszenia(Date dataZgloszenia) {
         this.dataZgloszenia = dataZgloszenia;
+    }
+    
+    public Uczestnik WniosekOUniewaznienie.getSkladajacy() {
+        return this.skladajacy;
+    }
+    
+    public void WniosekOUniewaznienie.setSkladajacy(Uczestnik skladajacy) {
+        this.skladajacy = skladajacy;
+    }
+    
+    public Komentarz WniosekOUniewaznienie.getKomentarz() {
+        return this.komentarz;
+    }
+    
+    public void WniosekOUniewaznienie.setKomentarz(Komentarz komentarz) {
+        this.komentarz = komentarz;
     }
     
 }

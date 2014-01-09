@@ -5,6 +5,7 @@ package pl.wroc.pwr.wiz.io.psi.model;
 
 import java.util.Date;
 import pl.wroc.pwr.wiz.io.psi.model.PowodZmianyDanych;
+import pl.wroc.pwr.wiz.io.psi.model.Uczestnik;
 import pl.wroc.pwr.wiz.io.psi.model.WniosekZmianyImieniaINazwiska;
 
 privileged aspect WniosekZmianyImieniaINazwiska_Roo_JavaBean {
@@ -39,6 +40,14 @@ privileged aspect WniosekZmianyImieniaINazwiska_Roo_JavaBean {
     
     public void WniosekZmianyImieniaINazwiska.setPowod(PowodZmianyDanych powod) {
         this.powod = powod;
+    }
+    
+    public Uczestnik WniosekZmianyImieniaINazwiska.getUczestnik() {
+        return this.uczestnik;
+    }
+    
+    public void WniosekZmianyImieniaINazwiska.setUczestnik(Uczestnik uczestnik) {
+        this.uczestnik = uczestnik;
     }
     
 }

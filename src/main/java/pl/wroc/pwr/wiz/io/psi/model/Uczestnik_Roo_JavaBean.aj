@@ -6,10 +6,17 @@ package pl.wroc.pwr.wiz.io.psi.model;
 import java.util.Date;
 import java.util.Set;
 import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
+import pl.wroc.pwr.wiz.io.psi.model.Komentarz;
+import pl.wroc.pwr.wiz.io.psi.model.ListAktywacyjny;
 import pl.wroc.pwr.wiz.io.psi.model.NaruszeniaRegulaminu;
+import pl.wroc.pwr.wiz.io.psi.model.Oferta;
+import pl.wroc.pwr.wiz.io.psi.model.Powiadomienie;
+import pl.wroc.pwr.wiz.io.psi.model.Regulamin;
 import pl.wroc.pwr.wiz.io.psi.model.SposobAktywacji;
 import pl.wroc.pwr.wiz.io.psi.model.StanKonta;
 import pl.wroc.pwr.wiz.io.psi.model.Uczestnik;
+import pl.wroc.pwr.wiz.io.psi.model.WniosekOUniewaznienie;
+import pl.wroc.pwr.wiz.io.psi.model.WniosekZmianyImieniaINazwiska;
 
 privileged aspect Uczestnik_Roo_JavaBean {
     
@@ -203,6 +210,62 @@ privileged aspect Uczestnik_Roo_JavaBean {
     
     public void Uczestnik.setZgloszoneUpomnienia(Set<NaruszeniaRegulaminu> zgloszoneUpomnienia) {
         this.zgloszoneUpomnienia = zgloszoneUpomnienia;
+    }
+    
+    public Set<ListAktywacyjny> Uczestnik.getListyAktywacyjne() {
+        return this.listyAktywacyjne;
+    }
+    
+    public void Uczestnik.setListyAktywacyjne(Set<ListAktywacyjny> listyAktywacyjne) {
+        this.listyAktywacyjne = listyAktywacyjne;
+    }
+    
+    public Set<Oferta> Uczestnik.getZlozoneOferty() {
+        return this.zlozoneOferty;
+    }
+    
+    public void Uczestnik.setZlozoneOferty(Set<Oferta> zlozoneOferty) {
+        this.zlozoneOferty = zlozoneOferty;
+    }
+    
+    public Set<Regulamin> Uczestnik.getRegulaminy() {
+        return this.regulaminy;
+    }
+    
+    public void Uczestnik.setRegulaminy(Set<Regulamin> regulaminy) {
+        this.regulaminy = regulaminy;
+    }
+    
+    public Set<WniosekOUniewaznienie> Uczestnik.getWnioskiOUniewaznienie() {
+        return this.wnioskiOUniewaznienie;
+    }
+    
+    public void Uczestnik.setWnioskiOUniewaznienie(Set<WniosekOUniewaznienie> wnioskiOUniewaznienie) {
+        this.wnioskiOUniewaznienie = wnioskiOUniewaznienie;
+    }
+    
+    public Set<Komentarz> Uczestnik.getWystawioneKomentarze() {
+        return this.wystawioneKomentarze;
+    }
+    
+    public void Uczestnik.setWystawioneKomentarze(Set<Komentarz> wystawioneKomentarze) {
+        this.wystawioneKomentarze = wystawioneKomentarze;
+    }
+    
+    public Set<WniosekZmianyImieniaINazwiska> Uczestnik.getWnioskiZmianyDanych() {
+        return this.wnioskiZmianyDanych;
+    }
+    
+    public void Uczestnik.setWnioskiZmianyDanych(Set<WniosekZmianyImieniaINazwiska> wnioskiZmianyDanych) {
+        this.wnioskiZmianyDanych = wnioskiZmianyDanych;
+    }
+    
+    public Set<Powiadomienie> Uczestnik.getWybranePowiadomienia() {
+        return this.wybranePowiadomienia;
+    }
+    
+    public void Uczestnik.setWybranePowiadomienia(Set<Powiadomienie> wybranePowiadomienia) {
+        this.wybranePowiadomienia = wybranePowiadomienia;
     }
     
 }

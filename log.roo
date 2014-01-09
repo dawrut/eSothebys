@@ -360,3 +360,50 @@ field reference --fieldName naruszajacy --type ~.model.Uczestnik --cardinality M
 field reference --fieldName zglaszajacy --type ~.model.Uczestnik --cardinality MANY_TO_ONE 
 focus --class ~.model.Uczestnik
 field set --cardinality ONE_TO_MANY --fieldName zgloszoneUpomnienia --type ~.model.NaruszeniaRegulaminu --mappedBy zglaszajacy
+field set --cardinality ONE_TO_MANY --fieldName listyAktywacyjne --type ~.model.ListAktywacyjny --mappedBy uczestnik
+focus --class ~.model.ListAktywacyjny 
+field reference --fieldName uczestnik --type ~.model.Uczestnik --cardinality MANY_TO_ONE 
+focus --class ~.model.Uczestnik
+field set --cardinality ONE_TO_MANY --fieldName zlozoneOferty --type ~.model.Oferta --mappedBy kupujacy
+focus --class ~.model.Oferta
+field reference --fieldName kupujacy --type ~.model.Uczestnik --cardinality MANY_TO_ONE 
+focus --class ~.model.Regulamin
+field set --fieldName uczestnicy --type ~.model.Uczestnik --cardinality MANY_TO_MANY 
+focus --class ~.model.Uczestnik
+field set --fieldName regulaminy --type ~.model.Regulamin --cardinality MANY_TO_MANY --mappedBy uczestnicy
+field set --fieldName wnioskiOUniewaznienie --type ~.model.WniosekOUniewaznienie --cardinality ONE_TO_MANY --mappedBy skladajacy
+focus --class ~.model.WniosekOUniewaznienie
+field reference --fieldName skladajacy --type ~.model.Uczestnik --cardinality MANY_TO_ONE 
+focus --class ~.model.Uczestnik
+field set --fieldName wystawioneKomentarze --type ~.model.Komentarz --cardinality ONE_TO_MANY --mappedBy wystawiajacy
+focus --class ~.model.Komentarz
+field reference --fieldName wystawiajacy --type ~.model.Uczestnik --cardinality MANY_TO_ONE 
+field set --fieldName wnioskiOUniewaznienie --type ~.model.WniosekOUniewaznienie --cardinality ONE_TO_MANY --sizeMax 2 --mappedBy komentarz
+focus --class ~.model.WniosekOUniewaznienie
+field reference --fieldName komentarz --type ~.model.Komentarz --cardinality MANY_TO_ONE 
+entity jpa --class ~.model.Ocena --testAutomatically 
+field string --fieldName tresc --notNull 
+field date --fieldName dataWystawienia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
+
+field reference --fieldName komentarz --type ~.model.Komentarz --cardinality ONE_TO_ONE 
+focus --class ~.model.Komentarz
+focus --class ~.model.Komentarz
+field reference --fieldName ocena --type ~.model.Ocena --cardinality ONE_TO_ONE --joinColumnName komentarz
+focus --class ~.model.Umowa
+field set --fieldName komentarze --type ~.model.Komentarz --cardinality ONE_TO_MANY --mappedBy umowa --sizeMax 2
+focus --class ~.model.Komentarz
+field reference --fieldName umowa --type ~.model.Umowa --cardinality MANY_TO_ONE 
+focus --class ~.model.GraficznaOcenaSprzedazy
+field set --fieldName komentarze --type ~.model.Komentarz --cardinality ONE_TO_MANY --mappedBy graficznaOcena
+focus --class ~.model.GraficznaOcenaSprzedazy
+focus --class ~.model.Komentarz
+field reference --fieldName graficznaOcena --type ~.model.GraficznaOcenaSprzedazy --cardinality MANY_TO_ONE 
+focus --class ~.model.Uczestnik
+field set --fieldName wnioskiZmianyDanych --type ~.model.WniosekZmianyImieniaINazwiska --cardinality ONE_TO_MANY --mappedBy uczestnik
+focus --class ~.model.WniosekZmianyImieniaINazwiska
+field reference --fieldName uczestnik --type ~.model.Uczestnik --cardinality MANY_TO_ONE 
+focus --class ~.model.Uczestnik
+field set --fieldName wybranePowiadomienia --type ~.model.Powiadomienie --cardinality MANY_TO_MANY 
+focus --class ~.model.Kraj
+focus --class ~.model.Adres
+field reference --fieldName kraj --type ~.model.Kraj --cardinality MANY_TO_ONE 

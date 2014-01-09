@@ -10,9 +10,11 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pl.wroc.pwr.wiz.io.psi.model.Adres;
 import pl.wroc.pwr.wiz.io.psi.model.AdresDataOnDemand;
+import pl.wroc.pwr.wiz.io.psi.model.KrajDataOnDemand;
 
 privileged aspect AdresDataOnDemand_Roo_DataOnDemand {
     
@@ -21,6 +23,9 @@ privileged aspect AdresDataOnDemand_Roo_DataOnDemand {
     private Random AdresDataOnDemand.rnd = new SecureRandom();
     
     private List<Adres> AdresDataOnDemand.data;
+    
+    @Autowired
+    KrajDataOnDemand AdresDataOnDemand.krajDataOnDemand;
     
     public Adres AdresDataOnDemand.getNewTransientAdres(int index) {
         Adres obj = new Adres();

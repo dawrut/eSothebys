@@ -6,6 +6,7 @@ package pl.wroc.pwr.wiz.io.psi.model;
 import java.util.Set;
 import pl.wroc.pwr.wiz.io.psi.model.Adres;
 import pl.wroc.pwr.wiz.io.psi.model.Aukcja;
+import pl.wroc.pwr.wiz.io.psi.model.Kraj;
 
 privileged aspect Adres_Roo_JavaBean {
     
@@ -39,6 +40,14 @@ privileged aspect Adres_Roo_JavaBean {
     
     public void Adres.setAukcje(Set<Aukcja> aukcje) {
         this.aukcje = aukcje;
+    }
+    
+    public Kraj Adres.getKraj() {
+        return this.kraj;
+    }
+    
+    public void Adres.setKraj(Kraj kraj) {
+        this.kraj = kraj;
     }
     
 }

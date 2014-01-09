@@ -7,15 +7,12 @@ import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
-import java.util.HashSet;
-import java.util.Set;
-import javax.persistence.CascadeType;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord
-public class Regulamin {
+public class Ocena {
 
     /**
      */
@@ -26,10 +23,10 @@ public class Regulamin {
      */
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(style = "M-")
-    private Date odKiedy;
+    private Date dataWystawienia;
 
     /**
      */
-    @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Uczestnik> uczestnicy = new HashSet<Uczestnik>();
+    @OneToOne
+    private Komentarz komentarz;
 }

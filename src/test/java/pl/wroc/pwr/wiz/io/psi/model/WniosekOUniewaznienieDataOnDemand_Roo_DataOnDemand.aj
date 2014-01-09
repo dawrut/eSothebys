@@ -13,7 +13,10 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pl.wroc.pwr.wiz.io.psi.model.KomentarzDataOnDemand;
+import pl.wroc.pwr.wiz.io.psi.model.UczestnikDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.WniosekOUniewaznienie;
 import pl.wroc.pwr.wiz.io.psi.model.WniosekOUniewaznienieDataOnDemand;
 
@@ -24,6 +27,12 @@ privileged aspect WniosekOUniewaznienieDataOnDemand_Roo_DataOnDemand {
     private Random WniosekOUniewaznienieDataOnDemand.rnd = new SecureRandom();
     
     private List<WniosekOUniewaznienie> WniosekOUniewaznienieDataOnDemand.data;
+    
+    @Autowired
+    KomentarzDataOnDemand WniosekOUniewaznienieDataOnDemand.komentarzDataOnDemand;
+    
+    @Autowired
+    UczestnikDataOnDemand WniosekOUniewaznienieDataOnDemand.uczestnikDataOnDemand;
     
     public WniosekOUniewaznienie WniosekOUniewaznienieDataOnDemand.getNewTransientWniosekOUniewaznienie(int index) {
         WniosekOUniewaznienie obj = new WniosekOUniewaznienie();

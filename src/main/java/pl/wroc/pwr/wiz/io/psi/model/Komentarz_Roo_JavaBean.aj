@@ -4,8 +4,14 @@
 package pl.wroc.pwr.wiz.io.psi.model;
 
 import java.util.Date;
+import java.util.Set;
+import pl.wroc.pwr.wiz.io.psi.model.GraficznaOcenaSprzedazy;
 import pl.wroc.pwr.wiz.io.psi.model.Komentarz;
+import pl.wroc.pwr.wiz.io.psi.model.Ocena;
 import pl.wroc.pwr.wiz.io.psi.model.RodzajKomentarza;
+import pl.wroc.pwr.wiz.io.psi.model.Uczestnik;
+import pl.wroc.pwr.wiz.io.psi.model.Umowa;
+import pl.wroc.pwr.wiz.io.psi.model.WniosekOUniewaznienie;
 
 privileged aspect Komentarz_Roo_JavaBean {
     
@@ -39,6 +45,46 @@ privileged aspect Komentarz_Roo_JavaBean {
     
     public void Komentarz.setUniewazniony(Boolean uniewazniony) {
         this.uniewazniony = uniewazniony;
+    }
+    
+    public Uczestnik Komentarz.getWystawiajacy() {
+        return this.wystawiajacy;
+    }
+    
+    public void Komentarz.setWystawiajacy(Uczestnik wystawiajacy) {
+        this.wystawiajacy = wystawiajacy;
+    }
+    
+    public Set<WniosekOUniewaznienie> Komentarz.getWnioskiOUniewaznienie() {
+        return this.wnioskiOUniewaznienie;
+    }
+    
+    public void Komentarz.setWnioskiOUniewaznienie(Set<WniosekOUniewaznienie> wnioskiOUniewaznienie) {
+        this.wnioskiOUniewaznienie = wnioskiOUniewaznienie;
+    }
+    
+    public Ocena Komentarz.getOcena() {
+        return this.ocena;
+    }
+    
+    public void Komentarz.setOcena(Ocena ocena) {
+        this.ocena = ocena;
+    }
+    
+    public Umowa Komentarz.getUmowa() {
+        return this.umowa;
+    }
+    
+    public void Komentarz.setUmowa(Umowa umowa) {
+        this.umowa = umowa;
+    }
+    
+    public GraficznaOcenaSprzedazy Komentarz.getGraficznaOcena() {
+        return this.graficznaOcena;
+    }
+    
+    public void Komentarz.setGraficznaOcena(GraficznaOcenaSprzedazy graficznaOcena) {
+        this.graficznaOcena = graficznaOcena;
     }
     
 }

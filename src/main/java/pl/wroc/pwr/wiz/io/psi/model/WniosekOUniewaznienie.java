@@ -7,6 +7,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
+import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
@@ -19,4 +20,14 @@ public class WniosekOUniewaznienie {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(style = "M-")
     private Date dataZgloszenia;
+
+    /**
+     */
+    @ManyToOne
+    private Uczestnik skladajacy;
+
+    /**
+     */
+    @ManyToOne
+    private Komentarz komentarz;
 }

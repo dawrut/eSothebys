@@ -15,64 +15,39 @@ import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import pl.wroc.pwr.wiz.io.psi.model.GraficznaOcenaSprzedazyDataOnDemand;
-import pl.wroc.pwr.wiz.io.psi.model.Komentarz;
 import pl.wroc.pwr.wiz.io.psi.model.KomentarzDataOnDemand;
+import pl.wroc.pwr.wiz.io.psi.model.Ocena;
 import pl.wroc.pwr.wiz.io.psi.model.OcenaDataOnDemand;
-import pl.wroc.pwr.wiz.io.psi.model.RodzajKomentarza;
-import pl.wroc.pwr.wiz.io.psi.model.UczestnikDataOnDemand;
-import pl.wroc.pwr.wiz.io.psi.model.UmowaDataOnDemand;
 
-privileged aspect KomentarzDataOnDemand_Roo_DataOnDemand {
+privileged aspect OcenaDataOnDemand_Roo_DataOnDemand {
     
-    declare @type: KomentarzDataOnDemand: @Component;
+    declare @type: OcenaDataOnDemand: @Component;
     
-    private Random KomentarzDataOnDemand.rnd = new SecureRandom();
+    private Random OcenaDataOnDemand.rnd = new SecureRandom();
     
-    private List<Komentarz> KomentarzDataOnDemand.data;
-    
-    @Autowired
-    GraficznaOcenaSprzedazyDataOnDemand KomentarzDataOnDemand.graficznaOcenaSprzedazyDataOnDemand;
+    private List<Ocena> OcenaDataOnDemand.data;
     
     @Autowired
-    OcenaDataOnDemand KomentarzDataOnDemand.ocenaDataOnDemand;
+    KomentarzDataOnDemand OcenaDataOnDemand.komentarzDataOnDemand;
     
-    @Autowired
-    UmowaDataOnDemand KomentarzDataOnDemand.umowaDataOnDemand;
-    
-    @Autowired
-    UczestnikDataOnDemand KomentarzDataOnDemand.uczestnikDataOnDemand;
-    
-    public Komentarz KomentarzDataOnDemand.getNewTransientKomentarz(int index) {
-        Komentarz obj = new Komentarz();
+    public Ocena OcenaDataOnDemand.getNewTransientOcena(int index) {
+        Ocena obj = new Ocena();
         setDataWystawienia(obj, index);
-        setRodzaj(obj, index);
         setTresc(obj, index);
-        setUniewazniony(obj, index);
         return obj;
     }
     
-    public void KomentarzDataOnDemand.setDataWystawienia(Komentarz obj, int index) {
+    public void OcenaDataOnDemand.setDataWystawienia(Ocena obj, int index) {
         Date dataWystawienia = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
         obj.setDataWystawienia(dataWystawienia);
     }
     
-    public void KomentarzDataOnDemand.setRodzaj(Komentarz obj, int index) {
-        RodzajKomentarza rodzaj = RodzajKomentarza.class.getEnumConstants()[0];
-        obj.setRodzaj(rodzaj);
-    }
-    
-    public void KomentarzDataOnDemand.setTresc(Komentarz obj, int index) {
+    public void OcenaDataOnDemand.setTresc(Ocena obj, int index) {
         String tresc = "tresc_" + index;
         obj.setTresc(tresc);
     }
     
-    public void KomentarzDataOnDemand.setUniewazniony(Komentarz obj, int index) {
-        Boolean uniewazniony = Boolean.TRUE;
-        obj.setUniewazniony(uniewazniony);
-    }
-    
-    public Komentarz KomentarzDataOnDemand.getSpecificKomentarz(int index) {
+    public Ocena OcenaDataOnDemand.getSpecificOcena(int index) {
         init();
         if (index < 0) {
             index = 0;
@@ -80,36 +55,36 @@ privileged aspect KomentarzDataOnDemand_Roo_DataOnDemand {
         if (index > (data.size() - 1)) {
             index = data.size() - 1;
         }
-        Komentarz obj = data.get(index);
+        Ocena obj = data.get(index);
         Long id = obj.getId();
-        return Komentarz.findKomentarz(id);
+        return Ocena.findOcena(id);
     }
     
-    public Komentarz KomentarzDataOnDemand.getRandomKomentarz() {
+    public Ocena OcenaDataOnDemand.getRandomOcena() {
         init();
-        Komentarz obj = data.get(rnd.nextInt(data.size()));
+        Ocena obj = data.get(rnd.nextInt(data.size()));
         Long id = obj.getId();
-        return Komentarz.findKomentarz(id);
+        return Ocena.findOcena(id);
     }
     
-    public boolean KomentarzDataOnDemand.modifyKomentarz(Komentarz obj) {
+    public boolean OcenaDataOnDemand.modifyOcena(Ocena obj) {
         return false;
     }
     
-    public void KomentarzDataOnDemand.init() {
+    public void OcenaDataOnDemand.init() {
         int from = 0;
         int to = 10;
-        data = Komentarz.findKomentarzEntries(from, to);
+        data = Ocena.findOcenaEntries(from, to);
         if (data == null) {
-            throw new IllegalStateException("Find entries implementation for 'Komentarz' illegally returned null");
+            throw new IllegalStateException("Find entries implementation for 'Ocena' illegally returned null");
         }
         if (!data.isEmpty()) {
             return;
         }
         
-        data = new ArrayList<Komentarz>();
+        data = new ArrayList<Ocena>();
         for (int i = 0; i < 10; i++) {
-            Komentarz obj = getNewTransientKomentarz(i);
+            Ocena obj = getNewTransientOcena(i);
             try {
                 obj.persist();
             } catch (final ConstraintViolationException e) {

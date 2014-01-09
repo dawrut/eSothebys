@@ -13,8 +13,10 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pl.wroc.pwr.wiz.io.psi.model.PowodZmianyDanych;
+import pl.wroc.pwr.wiz.io.psi.model.UczestnikDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.WniosekZmianyImieniaINazwiska;
 import pl.wroc.pwr.wiz.io.psi.model.WniosekZmianyImieniaINazwiskaDataOnDemand;
 
@@ -25,6 +27,9 @@ privileged aspect WniosekZmianyImieniaINazwiskaDataOnDemand_Roo_DataOnDemand {
     private Random WniosekZmianyImieniaINazwiskaDataOnDemand.rnd = new SecureRandom();
     
     private List<WniosekZmianyImieniaINazwiska> WniosekZmianyImieniaINazwiskaDataOnDemand.data;
+    
+    @Autowired
+    UczestnikDataOnDemand WniosekZmianyImieniaINazwiskaDataOnDemand.uczestnikDataOnDemand;
     
     public WniosekZmianyImieniaINazwiska WniosekZmianyImieniaINazwiskaDataOnDemand.getNewTransientWniosekZmianyImieniaINazwiska(int index) {
         WniosekZmianyImieniaINazwiska obj = new WniosekZmianyImieniaINazwiska();

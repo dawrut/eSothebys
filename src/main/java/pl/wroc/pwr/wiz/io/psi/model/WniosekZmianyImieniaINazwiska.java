@@ -8,6 +8,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
@@ -35,4 +36,9 @@ public class WniosekZmianyImieniaINazwiska {
      */
     @Enumerated
     private PowodZmianyDanych powod;
+
+    /**
+     */
+    @ManyToOne
+    private Uczestnik uczestnik;
 }

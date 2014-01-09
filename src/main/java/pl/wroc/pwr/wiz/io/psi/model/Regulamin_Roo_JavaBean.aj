@@ -4,7 +4,9 @@
 package pl.wroc.pwr.wiz.io.psi.model;
 
 import java.util.Date;
+import java.util.Set;
 import pl.wroc.pwr.wiz.io.psi.model.Regulamin;
+import pl.wroc.pwr.wiz.io.psi.model.Uczestnik;
 
 privileged aspect Regulamin_Roo_JavaBean {
     
@@ -22,6 +24,14 @@ privileged aspect Regulamin_Roo_JavaBean {
     
     public void Regulamin.setOdKiedy(Date odKiedy) {
         this.odKiedy = odKiedy;
+    }
+    
+    public Set<Uczestnik> Regulamin.getUczestnicy() {
+        return this.uczestnicy;
+    }
+    
+    public void Regulamin.setUczestnicy(Set<Uczestnik> uczestnicy) {
+        this.uczestnicy = uczestnicy;
     }
     
 }
