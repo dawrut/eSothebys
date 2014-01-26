@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik" object="${uzytkownik}" path="/security/uzytkownicy" z="/8ulvjPQpBjdItUQDxIrtvhnOT0=">
+        <field:display field="email" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_email" object="${uzytkownik}" z="9HneTtEpAF4YRqZ3unXzb3HZrJA="/>
+        <field:display field="haslo" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_haslo" object="${uzytkownik}" z="UNT9YFUcOwvaSYcR4w1fSS1rF74="/>
+        <field:display field="imie" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_imie" object="${uzytkownik}" z="ZLbtvVxDjEoQbE/9mLpmNOTj8Sk="/>
+        <field:display field="nazwisko" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_nazwisko" object="${uzytkownik}" z="GsLSByeHfwffGXEXZOv58dVA40s="/>
+        <field:display field="firma" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_firma" object="${uzytkownik}" z="6ivwb9YVneFpetsaX+OqlKEcgI4="/>
+        <field:display field="pesel" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_pesel" object="${uzytkownik}" z="hXu+FVVjw73Vl0adiRl0hc4rCjU="/>
+        <field:display field="login" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_login" object="${uzytkownik}" z="huaSN/LCJWmrTg4qHlm6t2xGauE="/>
+        <field:display field="telefon" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_telefon" object="${uzytkownik}" z="NhFex1X1hsQdZDO7X5nPY/tqVR8="/>
+        <field:display field="drugiTelefon" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_drugiTelefon" object="${uzytkownik}" z="d98c3CSiVXftTNNI4T64kZNuWjQ="/>
+        <field:display date="true" dateTimePattern="${uzytkownik_dataurodzenia_date_format}" field="dataUrodzenia" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataUrodzenia" object="${uzytkownik}" z="iK43gTECcB5PugjzD3/jzqDJc9Y="/>
+        <field:display date="true" dateTimePattern="${uzytkownik_datautworzenia_date_format}" field="dataUtworzenia" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataUtworzenia" object="${uzytkownik}" z="aVbPy38MJfXp23cGPFBRBM5rHug="/>
+        <field:display date="true" dateTimePattern="${uzytkownik_dataostatniegologowania_date_format}" field="dataOstatniegoLogowania" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataOstatniegoLogowania" object="${uzytkownik}" z="oWTx7QCKD298nmv+kFRdo1DhfUc="/>
+        <field:display field="stanKonta" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_stanKonta" object="${uzytkownik}" z="M9N94dYvxcEBSaeqep8ai1o4qG0="/>
+        <field:display field="czyWykonalAkcje" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_czyWykonalAkcje" object="${uzytkownik}" z="/cuJJjMOOp/BU9HeE8durB3EMW4="/>
+        <field:display date="true" dateTimePattern="${uzytkownik_odkiedyzawieszone_date_format}" field="odKiedyZawieszone" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_odKiedyZawieszone" object="${uzytkownik}" z="I3JlLrzRIaT6WV8+tAWTAX9NXa0="/>
+        <field:display date="true" dateTimePattern="${uzytkownik_akceptacjazmianregulaminu_date_format}" field="akceptacjaZmianRegulaminu" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_akceptacjaZmianRegulaminu" object="${uzytkownik}" z="0OIK4E/FQGpiTzkTXiFLlczVrBc="/>
+        <field:display field="sposobAktywacji" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_sposobAktywacji" object="${uzytkownik}" z="ea1L23Ik3bagd4YO+xvKhXPK67s="/>
+        <field:display field="kodAktywacyjny" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_kodAktywacyjny" object="${uzytkownik}" z="4Z//PaUlJbDyO6zWHD5jBAufQ4M="/>
+        <field:display field="zamowioneZestawienieTransakcji" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_zamowioneZestawienieTransakcji" object="${uzytkownik}" z="cH5HS/LBRmPfBgxEgY1M5uYHB+A="/>
+        <field:display date="true" dateTimePattern="${uzytkownik_datarozpoczeciazamknieciakonta_date_format}" field="dataRozpoczeciaZamknieciaKonta" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataRozpoczeciaZamknieciaKonta" object="${uzytkownik}" z="sWRq6uHyZuwR785dpRvmUeoowh8="/>
+        <field:display date="true" dateTimePattern="${uzytkownik_datazamknieciakonta_date_format}" field="dataZamknieciaKonta" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataZamknieciaKonta" object="${uzytkownik}" z="YEaipJv545L8hbQ1uSaTDIYgMpw="/>
+        <field:display field="powodZamknieciaKonta" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_powodZamknieciaKonta" object="${uzytkownik}" z="rLXw9BfQzXMnH5X8rrYcd0IKxFY="/>
+        <field:display field="adresZamieszkania" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_adresZamieszkania" object="${uzytkownik}" z="49I1l7Hg1cIj3UPvudFzvd8jw5I="/>
+        <field:display field="wniosekRejestracyjny" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_wniosekRejestracyjny" object="${uzytkownik}" z="Mbe+Cgp8iGdp69vVbBDL9U65cbA="/>
+        <field:display field="kontoFakturowe" id="s_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_kontoFakturowe" object="${uzytkownik}" z="ssMvhhdOaAJgN8uzWFgwsQomTGA="/>
+    </page:show>
+</div>

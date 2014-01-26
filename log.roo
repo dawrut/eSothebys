@@ -1,0 +1,241 @@
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-25 17:55:10
+project --topLevelPackage pl.wroc.pwr.wiz.io.psi --projectName eSothebys --java 7 --packaging JAR
+logging setup --level DEBUG 
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY 
+enum type --class ~.model.PowodZmianyDanych
+enum constant --name ZMIANA_STANU_CYWILNEGO
+enum constant --name PRAWNIE_ZATWIERDZONA_ZMIANA
+enum constant --name BLEDNIE_PODANE_DANE
+enum type --class ~.model.TypLokalizacji
+enum constant --name KRAJ
+enum constant --name WOJEWODZTWO
+enum constant --name MOJE_WOJEWODZTWO
+enum constant --name MOJA_MIEJSCOWOSC
+enum constant --name INNA_MIEJSCOWOSC
+enum type --class ~.model.StanKonta
+enum constant --name SPRZEDAJACY
+enum constant --name KUPUJACY
+enum constant --name NIEAKTYWOWANE
+enum constant --name OCZEKUJACE_NA_DECYZJE
+enum constant --name ZAMKNIETE
+enum type --class ~.model.PowodZamknieciaKonta
+enum constant --name ODSTAPIENIE
+enum constant --name ZAMKNIECIE_PRZEZ_UZYTKOWNIKA
+enum constant --name ZAMKNIECIE_PRZEZ_ESOTHEBYS
+enum constant --name BRAK_AKCEPTACJI_REGULAMINU
+enum type --class ~.model.SposobAktywacji
+enum constant --name BRAK
+enum constant --name PAY_U
+enum constant --name PRZELEW
+enum constant --name KOD_AKTYWACYJNY
+entity jpa --class ~.model.Uzytkownik --testAutomatically 
+field string --fieldName email --notNull --unique true
+field string --fieldName haslo --notNull 
+field string --fieldName imie 
+field string --fieldName nazwisko
+field string --fieldName firma
+field string --fieldName pesel
+field string --fieldName login --unique 
+field string --fieldName telefon
+field string --fieldName drugiTelefon
+field date --fieldName dataUrodzenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
+field date --fieldName dataUtworzenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field date --fieldName dataOstatniegoLogowania --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
+field enum --fieldName stanKonta --type ~.model.StanKonta --enumType STRING --notNull
+field boolean --fieldName czyWykonalAkcje --value false
+field date --fieldName odKiedyZawieszone --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM 
+field date --fieldName akceptacjaZmianRegulaminu --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM
+field enum --fieldName sposobAktywacji --type ~.model.SposobAktywacji --enumType STRING 
+field number --fieldName kodAktywacyjny --type int
+field boolean --fieldName zamowioneZestawienieTransakcji 
+field date --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --fieldName dataRozpoczeciaZamknieciaKonta 
+field date --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --fieldName dataZamknieciaKonta
+field string --fieldName powodZamknieciaKonta
+entity jpa --class ~.model.Adres --testAutomatically 
+field string --fieldName kodPocztowy
+field string --fieldName miejscowosc
+field string --fieldName ulicaZNumerem
+entity jpa --class ~.model.Kraj --testAutomatically 
+field string --fieldName nazwa --notNull 
+entity jpa --class ~.model.Wojewodztwo --testAutomatically 
+field string --fieldName nazwa --notNull 
+focus --class ~.model.Kraj
+field set --fieldName wojewodztwa --type ~.model.Wojewodztwo --cardinality ONE_TO_MANY --mappedBy kraj
+focus --class ~.model.Wojewodztwo
+field reference --fieldName kraj --type ~.model.Kraj --cardinality MANY_TO_ONE --notNull
+focus --class ~.model.Adres
+field reference --fieldName kraj --type ~.model.Kraj --cardinality MANY_TO_ONE --notNull
+field reference --fieldName wojewodztwo --type ~.model.Wojewodztwo --cardinality MANY_TO_ONE
+field reference --fieldName uzytkownik --type ~.model.Uzytkownik
+entity jpa --class ~.model.WniosekRejestracyjny --testAutomatically 
+field string --fieldName haslo --notNull 
+field date --fieldName dataUrodzenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field string --fieldName email --notNull 
+field date --fieldName dataZlozenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field reference --fieldName uzytkownik --type ~.model.Uzytkownik
+entity jpa --class ~.model.WniosekZmianyImieniaINazwiska --testAutomatically 
+field string --fieldName imie --notNull 
+field string --fieldName nazwisko --notNull 
+field date --fieldName dataZlozenia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field enum --fieldName powod --type ~.model.PowodZmianyDanych --notNull
+field reference --fieldName uzytkownik --type ~.model.Uzytkownik --cardinality MANY_TO_ONE --notNull
+entity jpa --class ~.model.KontoFakturowe --testAutomatically 
+field string --fieldName nip --notNull 
+field string --fieldName nazwaDoFaktury
+field reference --fieldName uzytkownik --type ~.model.Uzytkownik
+entity jpa --class ~.model.ZawieszenieKonta --testAutomatically 
+field string --fieldName powod --notNull 
+field date --fieldName dataOd --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull
+field date --fieldName dataDo --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull
+field boolean --fieldName czyPerm --value false
+field reference --fieldName zawieszajacy --type ~.model.Uzytkownik --cardinality MANY_TO_ONE --notNull
+field reference --fieldName uzytkownik --type ~.model.Uzytkownik --cardinality MANY_TO_ONE
+entity jpa --class ~.model.ListAktywacyjny --testAutomatically
+field number --fieldName kodAktywacyjny --type int --notNull 
+field date --fieldName dataZamowienia --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field date --fieldName dataWyslania --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull 
+field boolean --fieldName wpisanyPoprawnie --value false
+field reference --fieldName uzytkownik --type ~.model.Uzytkownik --cardinality MANY_TO_ONE --notNull
+entity jpa --class ~.model.Regulamin --testAutomatically 
+field string --fieldName tresc --notNull 
+field date --fieldName odKiedy --type java.util.Date --persistenceType JPA_DATE --dateFormat MEDIUM --notNull
+field set --fieldName uczestnicy --type ~.model.Uzytkownik --cardinality MANY_TO_MANY 
+focus --class ~.model.Uzytkownik
+field reference --fieldName adresZamieszkania --type ~.model.Adres
+field reference --fieldName wniosekRejestracyjny --type ~.model.WniosekRejestracyjny --notNull
+field set --fieldName wnioskiZmianyDanych --type ~.model.WniosekZmianyImieniaINazwiska --cardinality ONE_TO_MANY --mappedBy uzytkownik
+field reference --fieldName kontoFakturowe --type ~.model.KontoFakturowe
+field set --fieldName zawieszenieKontaUzytkownika --type ~.model.ZawieszenieKonta --cardinality ONE_TO_MANY --mappedBy zawieszajacy
+field set --fieldName zawieszenieUzytkownika --type ~.model.ZawieszenieKonta --cardinality ONE_TO_MANY --mappedBy uzytkownik
+field set --fieldName listyAktywacyjne --type ~.model.ListAktywacyjny --cardinality ONE_TO_MANY --mappedBy uzytkownik
+field set --fieldName regulaminy --type ~.model.Regulamin --cardinality MANY_TO_MANY --mappedBy uczestnicy
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-25 17:55:27
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-25 17:55:27
+// script --file ../scripts/model.roo
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-25 17:55:27
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-25 17:55:36
+web mvc setup 
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-25 17:55:49
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-25 17:55:49
+// script --file ../scripts/web.roo
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-25 17:55:49
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-25 17:56:23
+security setup
+entity jpa --class ~.model.security.Rola
+field string --fieldName idRoli --notNull --sizeMax 10 --sizeMin 8
+field string --fieldName nazwaRoli --notNull --sizeMax 40 --sizeMin 5 --regexp ^ROLE_[A-Z]*
+entity jpa --class ~.model.security.RolaUzytkownik
+field reference --fieldName email --type ~.model.Uzytkownik
+field reference --fieldName idRoli --type ~.model.security.Rola
+web mvc scaffold --class ~.web.security.UzytkownikController --backingType ~.model.Uzytkownik --path /security/uzytkownicy
+web mvc scaffold --class ~.web.security.RolaController --backingType ~.model.security.Rola --path /security/role
+web mvc scaffold --class ~.web.security.RolaMappingController --backingType ~.model.security.RolaUzytkownik --path /security/zarzadzanieRolami
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-25 17:56:49
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-25 17:56:49
+// script --file ../scripts/security.roo
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-25 17:56:49
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-25 17:57:14
+email sender setup --hostServer smpt.google.com --protocol SMTP --port 587 --username esothebys.pwr@gmail.com --password politechnika1
+email template setup --from rejestracja@eSothebys.com --subject "Registration Confirmation"
+interface --class ~.utils.RegistrationEmailService
+class --class ~.utils.RegistrationEmailServiceImpl
+field email template --fieldName mailTemplate --class ~.utils.RegistrationEmailServiceImpl
+web mvc scaffold --class ~.web.RegistrationController --backingType ~.model.WniosekRejestracyjny
+web mvc controller --class ~.web.RegistrationConfirmerController --preferredMapping /registration/
+// [failed] properties list --name email --path SPRING_CONFIG_ROOT
+// [failed] properties list --name email --path SRC_MAIN_JAVA
+// [failed] properties list --name email --path ROOT
+// [failed] properties list --name email --path SRC_MAIN_WEBAPP
+// [failed] properties list --name email --path SPRING_CONFIG_ROOT
+// [failed] properties list --name email --path SRC_MAIN_JAVA
+service type --interface ~.dao.WniosekRejestracyjnyService --entity ~.model.WniosekRejestracyjny
+service type --interface ~.service.dao.UzytkownikService --entity ~.model.Uzytkownik
+service type --interface ~.service.dao.WniosekRejestracyjnyService --entity ~.model.WniosekRejestracyjny
+// [failed] enum type --class ~.model.security.Role
+enum type --class ~.model.security.Roles
+enum constant --class ~.model.security.Roles --name ROLE_KUP_TERAZ
+enum constant --class ~.model.security.Roles --name ROLE_LICYTATOR
+enum constant --class ~.model.security.Roles --name ROLE_WYSLIJ_WIADOMOSC
+// [failed] finder list
+focus --class ~.model.security.Rola
+finder list
+finder add --finderName findRolasByNazwaRoliLike
+service type --interface ~.dao.security.RolaService --entity ~.model.security.Rola
+service type --interface ~.service.dao.security.RolaService --entity ~.model.security.Rola
+focus --class ~.model.security.Roles
+enum constant --name ROLE_ADMIN
+service type --interface ~.service.dao.security.RolaUzytkownikService --entity ~.model.security.RolaUzytkownik
+service type --interface ~.service.dao.security.RegulaminService --entity ~.model.Regulamin
+service type --interface ~.service.dao.RegulaminService --entity ~.model.Regulamin
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-26 02:06:42
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-26 02:07:45
+focus --class ~.service.dao.UzytkownikService
+// [failed] finder list 
+focus --class ~.service.dao.UzytkownikServiceImpl
+// [failed] finder list 
+focus --class ~.model.Uzytkownik
+finder list 
+service type --interface ~.service.dao.KrajService --entity ~.model.Kraj
+focus --class ~.model.Kraj
+finder list
+finder add findKrajsByNazwaLike
+service type --interface ~.service.dao.WojewodztwoService --entity ~.model.Wojewodztwo
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-26 02:46:50
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-26 12:12:20
+web mvc scaffold --class ~.web.WniosekZmianyImieniaINazwiska --backingType ~.model.WniosekZmianyImieniaINazwiska
+web mvc scaffold --class ~.web.WniosekZmianyImieniaINazwiskaController --backingType ~.model.WniosekZmianyImieniaINazwiska
+service type --interface ~.service.dao.WniosekZmianyImieniaINazwiskaService --entity ~.model.WniosekZmianyImieniaINazwiska
+service type --interface ~.service.dao.ListAktywacyjnyService --entity ~.model.ListAktywacyjny
+service type --interface ~.service.dao.ZawieszenieKontaService --entity ~.model.ZawieszenieKonta
+web mvc scaffold --class ~.web.ZawieszenieKontaController --backingType ~.model.ZawieszenieKonta
+focus --class ~.model.security.Roles
+enum constant --name ROLE_MODERATOR
+enum constant --name ROLE_ZAWIESZONE
+enum type  --class ~.utils.helpers.Kraje
+enum type  --class ~.service.utils.helpers.Kraje
+enum constant --name POLSKA
+enum constant --name NIEMCY
+enum constant --name USA
+enum constant --name HIPSZANIA
+enum type  --class ~.utils.helpers.Wojewodztwa
+enum constant --name Dolnoslaskie
+enum constant --name Mazowieckie
+enum constant --name Branderburgia
+enum constant --name Bawaria
+enum constant --name Kastylia
+enum constant --name California
+enum constant --name Nowy_Jork
+// [failed] enum constant --name Katalonia
+class --class ~.service.utils.ShaHashingUtil
+focus --class ~.model.Wojewodztwo
+finder list
+finder add findWojewodztwoesByKraj
+service type --interface ~.service.dao.AdresService --entity ~.model.Adres
+web mvc scaffold --class ~.web.AdresController --backingType ~.model.Adres
+web mvc scaffold --class ~.web.KrajController --backingType ~.model.Kraj
+web mvc scaffold --class ~.web.WojewodztwoController --backingType ~.model.Wojewodztwo
+enum type  --class ~.service.utils.helpers.Miejscowosci
+enum constant --name WARSZAWA
+enum constant --name WROCLAW
+enum constant --name GDANSK
+enum constant --name POZNAN
+enum constant --name KRAKOW
+focus --class ~.model.security.Roles
+enum constant --name ROLE_SPRZEDAJACY
+focus --class ~.model.security.Rola
+finder list
+finder add findRolasByNazwaRoliLike
+service type --interface ~.service.dao.security.RolaUzytkownikService --entity ~.model.security.RolaUzytkownik
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-26 19:47:10
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-26 21:01:46
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-26 21:07:17
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-26 21:26:10
+web mvc install language --code de 
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-26 21:53:54
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-26 22:10:39
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-26 22:13:52
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-26 22:37:14
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-26 22:38:12

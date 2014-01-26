@@ -1,0 +1,6 @@
+package pl.wroc.pwr.wiz.io.psi.model.security;
+
+public enum Roles {
+
+    ROLE_KUPTERAZ, ROLE_LICYTATOR, ROLE_WYSLIJWIADOMOSC, ROLE_ADMIN, ROLE_MODERATOR, ROLE_ZAWIESZONE, ROLE_SPRZEDAJACY
+}

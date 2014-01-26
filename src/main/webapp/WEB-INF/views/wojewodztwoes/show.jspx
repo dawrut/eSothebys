@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_pl_wroc_pwr_wiz_io_psi_model_Wojewodztwo" object="${wojewodztwo}" path="/wojewodztwoes" z="yCkqlOTev9eraLDdq0bAy+4oAoE=">
+        <field:display field="nazwa" id="s_pl_wroc_pwr_wiz_io_psi_model_Wojewodztwo_nazwa" object="${wojewodztwo}" z="VQJoE8Sj5bHCxSfVBA9CgYXqyRE="/>
+        <field:display field="kraj" id="s_pl_wroc_pwr_wiz_io_psi_model_Wojewodztwo_kraj" object="${wojewodztwo}" z="jVsYAjZqyf5q7ZY6wz7jdXnotfY="/>
+    </page:show>
+</div>

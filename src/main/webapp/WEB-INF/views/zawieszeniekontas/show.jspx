@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta" object="${zawieszeniekonta}" path="/zawieszeniekontas" z="VSgSsCCp2/uaRE5LCCP4Z5DMWKY=">
+        <field:display field="powod" id="s_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta_powod" object="${zawieszeniekonta}" z="T8nuc3pgZkJBNdajBl9uW94bctY="/>
+        <field:display date="true" dateTimePattern="${zawieszenieKonta_dataod_date_format}" field="dataOd" id="s_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta_dataOd" object="${zawieszeniekonta}" z="4LFuaWLcMW0sJ+g8AVub1bX6sQU="/>
+        <field:display date="true" dateTimePattern="${zawieszenieKonta_datado_date_format}" field="dataDo" id="s_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta_dataDo" object="${zawieszeniekonta}" z="twRChH+zmirMBCP7cAQRKEqkuUM="/>
+        <field:display field="czyPerm" id="s_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta_czyPerm" object="${zawieszeniekonta}" z="/GBnEuKTGy67Q4etCAhY3N6WF+4="/>
+        <field:display field="zawieszajacy" id="s_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta_zawieszajacy" object="${zawieszeniekonta}" z="2+joTPvmx/+SFdBDQK59RUHcnY4="/>
+        <field:display field="uzytkownik" id="s_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta_uzytkownik" object="${zawieszeniekonta}" z="Fr0e+ufdGuIBYJGb6aghRCJKvtM="/>
+    </page:show>
+</div>

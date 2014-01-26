@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="zawieszeniekontas/list">
+        <put-attribute name="body" value="/WEB-INF/views/zawieszeniekontas/list.jspx"/>
+    </definition>
+<definition extends="default" name="zawieszeniekontas/show">
+        <put-attribute name="body" value="/WEB-INF/views/zawieszeniekontas/show.jspx"/>
+    </definition>
+<definition extends="default" name="zawieszeniekontas/create">
+        <put-attribute name="body" value="/WEB-INF/views/zawieszeniekontas/create.jspx"/>
+    </definition>
+<definition extends="default" name="zawieszeniekontas/update">
+        <put-attribute name="body" value="/WEB-INF/views/zawieszeniekontas/update.jspx"/>
+    </definition>
+</tiles-definitions>

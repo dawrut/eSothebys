@@ -1,0 +1,45 @@
+<aspectj>
+<aspects>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.ZawieszenieKontaDataOnDemand_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.ZawieszenieKontaIntegrationTest_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.UzytkownikIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.KontoFakturoweIntegrationTest_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.UzytkownikIntegrationTest_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.WojewodztwoIntegrationTest_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.ListAktywacyjnyDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.RegulaminDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.KrajDataOnDemand_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.AdresIntegrationTest_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.KontoFakturoweDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.RegulaminIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.WniosekZmianyImieniaINazwiskaDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.WniosekZmianyImieniaINazwiskaDataOnDemand_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.WojewodztwoDataOnDemand_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.AdresDataOnDemand_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.RegulaminIntegrationTest_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.WniosekRejestracyjnyIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.ZawieszenieKontaIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.ZawieszenieKontaDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.WojewodztwoIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.WniosekRejestracyjnyIntegrationTest_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.WniosekZmianyImieniaINazwiskaIntegrationTest_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.UzytkownikDataOnDemand_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.WniosekRejestracyjnyDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.UzytkownikDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.ListAktywacyjnyIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.KontoFakturoweIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.KontoFakturoweDataOnDemand_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.RegulaminDataOnDemand_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.KrajIntegrationTest_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.AdresDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.AdresIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.ListAktywacyjnyIntegrationTest_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.WojewodztwoDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.WniosekRejestracyjnyDataOnDemand_Roo_Configurable"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.WniosekZmianyImieniaINazwiskaIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.KrajDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.KrajIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="pl.wroc.pwr.wiz.io.psi.model.ListAktywacyjnyDataOnDemand_Roo_Configurable"/>
+</aspects>
+</aspectj>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_pl_wroc_pwr_wiz_io_psi_model_Adres" items="${adreses}" z="NUgNKYkKVq6eAw+2mYBh0YTMaLE=">
+        <table:table data="${adreses}" id="l_pl_wroc_pwr_wiz_io_psi_model_Adres" path="/adreses" z="8VMO3f4K/QbdAPKmrGR6P34r0vE=">
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_Adres_kodPocztowy" property="kodPocztowy" z="X80p6tE66NZ8JAKN4vnvw2a07g4="/>
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_Adres_miejscowosc" property="miejscowosc" z="rN+ds3mujj+pGtenpa1dz6ltOv0="/>
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_Adres_ulicaZNumerem" property="ulicaZNumerem" z="vLWDsE3tYSGUSQuPxwIgXB7FL8Y="/>
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_Adres_kraj" property="kraj" z="TKbUwCNKgh1I5XBxekZgfE08Q6c="/>
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_Adres_wojewodztwo" property="wojewodztwo" z="kIRSLVHQu6Go5Pbl9n+LIQfiq9o="/>
+        </table:table>
+    </page:list>
+</div>

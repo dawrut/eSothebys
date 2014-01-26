@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik" modelAttribute="uzytkownik" path="/security/uzytkownicy" render="${empty dependencies}" z="HIR/FvjBHh2kVcExpe7+XH+WqL4=">
+        <field:input disabled="true" field="email" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_email" required="true" validationMessageCode="field_invalid_email" z="user-managed"/>
+        <field:input field="haslo" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_haslo" render="false" required="true" z="user-managed"/>
+        <field:input field="imie" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_imie" z="7aEhC/Di4TFS82D1xqxnt30Bb+s="/>
+        <field:input field="nazwisko" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_nazwisko" z="lnppbCNTP59VuB4KmiIDbtTe1rM="/>
+        <field:input field="firma" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_firma" z="kFyfmFsfPO31JVGL9F52SV2rDmk="/>
+        <field:input field="pesel" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_pesel" z="IvXvIgMtWrqVwmTfAENPoo1S2ow="/>
+        <field:input field="login" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_login" z="l3hY28zGzQM9g132QcCUyFZc/Rc="/>
+        <field:input field="telefon" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_telefon" z="/945v4Ko/1SD3KFzXG0/ujQWWl0="/>
+        <field:input field="drugiTelefon" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_drugiTelefon" z="u+fWNcE87qTTCOAL9pfpSYag5vA="/>
+        <field:datetime dateTimePattern="${uzytkownik_dataurodzenia_date_format}" field="dataUrodzenia" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataUrodzenia" z="i2TBc4p5UNyj84rY9Jv4/PbEyxA="/>
+        <field:datetime dateTimePattern="${uzytkownik_datautworzenia_date_format}" field="dataUtworzenia" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataUtworzenia" render="false" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${uzytkownik_dataostatniegologowania_date_format}" field="dataOstatniegoLogowania" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataOstatniegoLogowania" render="false" z="user-managed"/>
+        <field:select field="stanKonta" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_stanKonta" items="${stankontas}" path="stankontas" render="false" required="true" z="user-managed"/>
+        <field:checkbox field="czyWykonalAkcje" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_czyWykonalAkcje" render="false" z="user-managed"/>
+        <field:datetime dateTimePattern="${uzytkownik_odkiedyzawieszone_date_format}" field="odKiedyZawieszone" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_odKiedyZawieszone" render="false" z="user-managed"/>
+        <field:datetime dateTimePattern="${uzytkownik_akceptacjazmianregulaminu_date_format}" field="akceptacjaZmianRegulaminu" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_akceptacjaZmianRegulaminu" render="false" z="user-managed"/>
+        <field:select field="sposobAktywacji" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_sposobAktywacji" items="${sposobaktywacjis}" path="sposobaktywacjis" render="false" z="user-managed"/>
+        <field:input field="kodAktywacyjny" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_kodAktywacyjny" render="false" z="user-managed"/>
+        <field:checkbox field="zamowioneZestawienieTransakcji" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_zamowioneZestawienieTransakcji" render="false" z="user-managed"/>
+        <field:datetime dateTimePattern="${uzytkownik_datarozpoczeciazamknieciakonta_date_format}" field="dataRozpoczeciaZamknieciaKonta" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataRozpoczeciaZamknieciaKonta" render="false" z="user-managed"/>
+        <field:datetime dateTimePattern="${uzytkownik_datazamknieciakonta_date_format}" field="dataZamknieciaKonta" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataZamknieciaKonta" render="false" z="user-managed"/>
+        <field:input field="powodZamknieciaKonta" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_powodZamknieciaKonta" render="false" z="user-managed"/>
+        <field:select field="adresZamieszkania" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_adresZamieszkania" itemValue="id" items="${adreses}" path="/adreses" z="lIlToj9luwh1+VQ1+KGVkwfj0kk="/>
+        <field:select field="wniosekRejestracyjny" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_wniosekRejestracyjny" itemValue="id" items="${wniosekrejestracyjnys}" path="/wniosekrejestracyjnys" render="false" required="true" z="user-managed"/>
+        <field:simple field="wnioskiZmianyDanych" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_wnioskiZmianyDanych" messageCode="entity_reference_not_managed" messageCodeAttribute="Wniosek Zmiany Imienia I Nazwiska" render="false" z="user-managed"/>
+        <field:select field="kontoFakturowe" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_kontoFakturowe" itemValue="id" items="${kontofakturowes}" path="/kontofakturowes" render="false" z="user-managed"/>
+        <field:simple field="zawieszenieKontaUzytkownika" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_zawieszenieKontaUzytkownika" messageCode="entity_reference_not_managed" messageCodeAttribute="Zawieszenie Konta" render="false" z="user-managed"/>
+        <field:simple field="zawieszenieUzytkownika" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_zawieszenieUzytkownika" messageCode="entity_reference_not_managed" messageCodeAttribute="Zawieszenie Konta" render="false" z="user-managed"/>
+        <field:simple field="listyAktywacyjne" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_listyAktywacyjne" messageCode="entity_reference_not_managed" messageCodeAttribute="List Aktywacyjny" render="false" z="user-managed"/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik" render="${not empty dependencies}" z="ZYsth1PHZ1ypY1hoyclOeB6J9GQ="/>
+</div>

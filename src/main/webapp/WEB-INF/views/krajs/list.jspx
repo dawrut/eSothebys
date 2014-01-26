@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_pl_wroc_pwr_wiz_io_psi_model_Kraj" items="${krajs}" z="pk7szf+PAocaCvdrUkdzG4ypSoU=">
+        <table:table data="${krajs}" id="l_pl_wroc_pwr_wiz_io_psi_model_Kraj" path="/krajs" z="nVYtoERY1bVNoPBIwu2tlozxnkU=">
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_Kraj_nazwa" property="nazwa" z="JtBwh898VCBrLWGZY+ejKtnIZxo="/>
+        </table:table>
+    </page:list>
+</div>

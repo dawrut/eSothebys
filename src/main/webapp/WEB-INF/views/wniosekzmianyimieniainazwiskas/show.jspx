@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_pl_wroc_pwr_wiz_io_psi_model_WniosekZmianyImieniaINazwiska" object="${wniosekzmianyimieniainazwiska}" path="/wniosekzmianyimieniainazwiskas" z="qSeOzm5sgpq8qb3V1UbVCUTqiXY=">
+        <field:display field="imie" id="s_pl_wroc_pwr_wiz_io_psi_model_WniosekZmianyImieniaINazwiska_imie" object="${wniosekzmianyimieniainazwiska}" z="mDH2E/aqudaOf+QMNTiyebehK9M="/>
+        <field:display field="nazwisko" id="s_pl_wroc_pwr_wiz_io_psi_model_WniosekZmianyImieniaINazwiska_nazwisko" object="${wniosekzmianyimieniainazwiska}" z="rWxhVhHqEsqBRRU53Li6CGOEjmI="/>
+        <field:display date="true" dateTimePattern="${wniosekZmianyImieniaINazwiska_datazlozenia_date_format}" field="dataZlozenia" id="s_pl_wroc_pwr_wiz_io_psi_model_WniosekZmianyImieniaINazwiska_dataZlozenia" object="${wniosekzmianyimieniainazwiska}" z="asD9fz6cDSRdunKSNkJPN6jAJ8Y="/>
+        <field:display field="powod" id="s_pl_wroc_pwr_wiz_io_psi_model_WniosekZmianyImieniaINazwiska_powod" object="${wniosekzmianyimieniainazwiska}" z="wV39E5Xic3efkTaZl7a/4cWe0/Q="/>
+        <field:display field="uzytkownik" id="s_pl_wroc_pwr_wiz_io_psi_model_WniosekZmianyImieniaINazwiska_uzytkownik" object="${wniosekzmianyimieniainazwiska}" z="cNHRFv1VYvSvARwZSq6K4gBSmpk="/>
+    </page:show>
+</div>

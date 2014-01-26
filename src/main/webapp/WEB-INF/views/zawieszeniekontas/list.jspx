@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta" items="${zawieszeniekontas}" z="Nn5Wzab56BGR69Pawp5FNARMbx4=">
+        <table:table data="${zawieszeniekontas}" id="l_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta" path="/zawieszeniekontas" z="p+H+Atv3BdTMoFqx8TiqSLqkRW4=">
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta_powod" property="powod" z="umSYjedGwIBJtszP6+UheedzSbQ="/>
+            <table:column date="true" dateTimePattern="${zawieszenieKonta_dataod_date_format}" id="c_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta_dataOd" property="dataOd" z="iX3e4IZwolpkKAG2+6LCwc8LJvM="/>
+            <table:column date="true" dateTimePattern="${zawieszenieKonta_datado_date_format}" id="c_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta_dataDo" property="dataDo" z="wO5sxRdRoLYRrtkA98FxBpeNuIo="/>
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta_czyPerm" property="czyPerm" z="nYJ7RRDxJubFonyDOx+hxTcNQTk="/>
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta_zawieszajacy" property="zawieszajacy" z="tS/kqKNzNEUvtP+hHAt+yR0ExZw="/>
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_ZawieszenieKonta_uzytkownik" property="uzytkownik" z="zjMZR2/V4jTXgun7tL1R9F1jtaM="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik" modelAttribute="uzytkownik" path="/security/uzytkownicy" versionField="Version" z="2vvsrrOeElRAzXMxTUY4mtoExNc=">
+        <field:input field="email" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_email" required="true" validationMessageCode="field_invalid_email" z="m79Qs5E53MRvuQMuI0tZtVtIbLo="/>
+        <field:input field="haslo" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_haslo" required="true" z="5Hf6Pl416qXWdm6QUJrZ8zQKcnQ="/>
+        <field:input field="imie" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_imie" z="7aEhC/Di4TFS82D1xqxnt30Bb+s="/>
+        <field:input field="nazwisko" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_nazwisko" z="lnppbCNTP59VuB4KmiIDbtTe1rM="/>
+        <field:input field="firma" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_firma" z="kFyfmFsfPO31JVGL9F52SV2rDmk="/>
+        <field:input field="pesel" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_pesel" z="IvXvIgMtWrqVwmTfAENPoo1S2ow="/>
+        <field:input field="login" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_login" z="l3hY28zGzQM9g132QcCUyFZc/Rc="/>
+        <field:input field="telefon" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_telefon" z="/945v4Ko/1SD3KFzXG0/ujQWWl0="/>
+        <field:input field="drugiTelefon" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_drugiTelefon" z="u+fWNcE87qTTCOAL9pfpSYag5vA="/>
+        <field:datetime dateTimePattern="${uzytkownik_dataurodzenia_date_format}" field="dataUrodzenia" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataUrodzenia" z="i2TBc4p5UNyj84rY9Jv4/PbEyxA="/>
+        <field:datetime dateTimePattern="${uzytkownik_datautworzenia_date_format}" field="dataUtworzenia" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataUtworzenia" required="true" z="JvX9p/ZQ+z4ECAXE1t0Tf2c6HT4="/>
+        <field:datetime dateTimePattern="${uzytkownik_dataostatniegologowania_date_format}" field="dataOstatniegoLogowania" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataOstatniegoLogowania" z="SB0YvjgWjgGZPQnaKHfvbbPuCAQ="/>
+        <field:select field="stanKonta" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_stanKonta" items="${stankontas}" path="stankontas" required="true" z="JV5MmaeIo2mEnbM1xIYfxjXm8Qk="/>
+        <field:checkbox field="czyWykonalAkcje" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_czyWykonalAkcje" z="kyfbY3hjlb9xjbFp+r+8BNVfO0k="/>
+        <field:datetime dateTimePattern="${uzytkownik_odkiedyzawieszone_date_format}" field="odKiedyZawieszone" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_odKiedyZawieszone" z="yzSaxlaFNCdHjroqkJxH5J5quXg="/>
+        <field:datetime dateTimePattern="${uzytkownik_akceptacjazmianregulaminu_date_format}" field="akceptacjaZmianRegulaminu" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_akceptacjaZmianRegulaminu" z="2CMgfZ4phgCvyKL75Tzy28s9tsg="/>
+        <field:select field="sposobAktywacji" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_sposobAktywacji" items="${sposobaktywacjis}" path="sposobaktywacjis" z="MLCw0apLgx+hUm2PyRIGJ6UbaPo="/>
+        <field:input field="kodAktywacyjny" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_kodAktywacyjny" z="H73gCP3yBwLX0jh9403e0zxNP1Y="/>
+        <field:checkbox field="zamowioneZestawienieTransakcji" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_zamowioneZestawienieTransakcji" z="BtuZJ31oW+qkrgdfHKSkQYQ8T6Y="/>
+        <field:datetime dateTimePattern="${uzytkownik_datarozpoczeciazamknieciakonta_date_format}" field="dataRozpoczeciaZamknieciaKonta" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataRozpoczeciaZamknieciaKonta" z="FpfQpSrDOUVspohjuEvbr2UY4wM="/>
+        <field:datetime dateTimePattern="${uzytkownik_datazamknieciakonta_date_format}" field="dataZamknieciaKonta" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_dataZamknieciaKonta" z="VWtOId5ouyGaYny4pYwbzCtDbAg="/>
+        <field:input field="powodZamknieciaKonta" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_powodZamknieciaKonta" z="I2wdopyS9zFrATppUAQjWA55GEA="/>
+        <field:select field="adresZamieszkania" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_adresZamieszkania" itemValue="id" items="${adreses}" path="/adreses" z="lIlToj9luwh1+VQ1+KGVkwfj0kk="/>
+        <field:select field="wniosekRejestracyjny" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_wniosekRejestracyjny" itemValue="id" items="${wniosekrejestracyjnys}" path="/wniosekrejestracyjnys" required="true" z="5l3FulyPr4uW2HPTwEdXIEYFge0="/>
+        <field:simple field="wnioskiZmianyDanych" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_wnioskiZmianyDanych" messageCode="entity_reference_not_managed" messageCodeAttribute="Wniosek Zmiany Imienia I Nazwiska" z="dIySAyZ6Ca+J8vUM5MmKCzW6a2I="/>
+        <field:select field="kontoFakturowe" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_kontoFakturowe" itemValue="id" items="${kontofakturowes}" path="/kontofakturowes" z="xwIXdz0itWEvQxk72c7guxv1h8c="/>
+        <field:simple field="zawieszenieKontaUzytkownika" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_zawieszenieKontaUzytkownika" messageCode="entity_reference_not_managed" messageCodeAttribute="Zawieszenie Konta" z="4HjUS39SNeBNt8SlqY7xVyQofec="/>
+        <field:simple field="zawieszenieUzytkownika" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_zawieszenieUzytkownika" messageCode="entity_reference_not_managed" messageCodeAttribute="Zawieszenie Konta" z="1Xsyu20RU/vT9LpasZKE7hB6qIc="/>
+        <field:simple field="listyAktywacyjne" id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_listyAktywacyjne" messageCode="entity_reference_not_managed" messageCodeAttribute="List Aktywacyjny" z="aVnWPxT+RJWkXIrGbQ4aW4SnUZ0="/>
+    </form:update>
+</div>

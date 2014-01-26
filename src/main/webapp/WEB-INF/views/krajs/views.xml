@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="krajs/list">
+        <put-attribute name="body" value="/WEB-INF/views/krajs/list.jspx"/>
+    </definition>
+<definition extends="default" name="krajs/show">
+        <put-attribute name="body" value="/WEB-INF/views/krajs/show.jspx"/>
+    </definition>
+<definition extends="default" name="krajs/create">
+        <put-attribute name="body" value="/WEB-INF/views/krajs/create.jspx"/>
+    </definition>
+<definition extends="default" name="krajs/update">
+        <put-attribute name="body" value="/WEB-INF/views/krajs/update.jspx"/>
+    </definition>
+</tiles-definitions>
