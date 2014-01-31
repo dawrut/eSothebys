@@ -240,3 +240,13 @@ web mvc install language --code de
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-26 22:37:14
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-26 22:38:12
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-26 22:54:22
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-31 19:03:42
+osgi start --url http://spring-roo-addon-typical-security.googlecode.com/files/com.xsoftwarelabs.spring.roo.addon.typicalsecurity-0.1.5.BUILD-SNAPSHOT.jar
+osgi ps
+osgi start --url http://spring-roo-addon-typical-security.googlecode.com/files/com.xsoftwarelabs.spring.roo.addon.typicalsecurity-0.1.5.BUILD-SNAPSHOT.jar
+osgi ps
+// [failed] script setup.roo
+osgi uninstall --bundleSymbolicName com.xsoftwarelabs.spring.roo.addon.typicalsecurity
+addon remove --bundleSymbolicName com.xsoftwarelabs.spring.roo.addon.typicalsecurity
+osgi start --url http://spring-roo-addon-typical-security.googlecode.com/files/com.xsoftwarelabs.spring.roo.addon.typicalsecurity-0.1.5.BUILD-SNAPSHOT.jar
+// [failed] script setup.roo
