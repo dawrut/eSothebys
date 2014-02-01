@@ -10,11 +10,10 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pl.wroc.pwr.wiz.io.psi.model.KontoFakturowe;
 import pl.wroc.pwr.wiz.io.psi.model.KontoFakturoweDataOnDemand;
-import pl.wroc.pwr.wiz.io.psi.model.UzytkownikDataOnDemand;
+import pl.wroc.pwr.wiz.io.psi.model.Uzytkownik;
 
 privileged aspect KontoFakturoweDataOnDemand_Roo_DataOnDemand {
     
@@ -24,13 +23,11 @@ privileged aspect KontoFakturoweDataOnDemand_Roo_DataOnDemand {
     
     private List<KontoFakturowe> KontoFakturoweDataOnDemand.data;
     
-    @Autowired
-    UzytkownikDataOnDemand KontoFakturoweDataOnDemand.uzytkownikDataOnDemand;
-    
     public KontoFakturowe KontoFakturoweDataOnDemand.getNewTransientKontoFakturowe(int index) {
         KontoFakturowe obj = new KontoFakturowe();
         setNazwaDoFaktury(obj, index);
         setNip(obj, index);
+        setUzytkownik(obj, index);
         return obj;
     }
     
@@ -42,6 +39,11 @@ privileged aspect KontoFakturoweDataOnDemand_Roo_DataOnDemand {
     public void KontoFakturoweDataOnDemand.setNip(KontoFakturowe obj, int index) {
         String nip = "nip_" + index;
         obj.setNip(nip);
+    }
+    
+    public void KontoFakturoweDataOnDemand.setUzytkownik(KontoFakturowe obj, int index) {
+        Uzytkownik uzytkownik = null;
+        obj.setUzytkownik(uzytkownik);
     }
     
     public KontoFakturowe KontoFakturoweDataOnDemand.getSpecificKontoFakturowe(int index) {

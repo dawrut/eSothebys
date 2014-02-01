@@ -9,6 +9,7 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
 import pl.wroc.pwr.wiz.io.psi.model.Adres;
 import pl.wroc.pwr.wiz.io.psi.model.Kraj;
+import pl.wroc.pwr.wiz.io.psi.model.UczestnikAdresWrapper;
 import pl.wroc.pwr.wiz.io.psi.model.Uzytkownik;
 import pl.wroc.pwr.wiz.io.psi.model.WniosekRejestracyjny;
 import pl.wroc.pwr.wiz.io.psi.model.WniosekZmianyImieniaINazwiska;
@@ -102,6 +103,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, pl.wroc.pwr.wiz.io.psi.model.Kraj>() {
             public pl.wroc.pwr.wiz.io.psi.model.Kraj convert(String id) {
                 return getObject().convert(getObject().convert(id, Long.class), Kraj.class);
+            }
+        };
+    }
+    
+    public Converter<UczestnikAdresWrapper, String> ApplicationConversionServiceFactoryBean.getUczestnikAdresWrapperToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<pl.wroc.pwr.wiz.io.psi.model.UczestnikAdresWrapper, java.lang.String>() {
+            public String convert(UczestnikAdresWrapper uczestnikAdresWrapper) {
+                return "(no displayable fields)";
+            }
+        };
+    }
+    
+    public Converter<Long, UczestnikAdresWrapper> ApplicationConversionServiceFactoryBean.getIdToUczestnikAdresWrapperConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, pl.wroc.pwr.wiz.io.psi.model.UczestnikAdresWrapper>() {
+            public pl.wroc.pwr.wiz.io.psi.model.UczestnikAdresWrapper convert(java.lang.Long id) {
+                return UczestnikAdresWrapper.findUczestnikAdresWrapper(id);
+            }
+        };
+    }
+    
+    public Converter<String, UczestnikAdresWrapper> ApplicationConversionServiceFactoryBean.getStringToUczestnikAdresWrapperConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, pl.wroc.pwr.wiz.io.psi.model.UczestnikAdresWrapper>() {
+            public pl.wroc.pwr.wiz.io.psi.model.UczestnikAdresWrapper convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), UczestnikAdresWrapper.class);
             }
         };
     }
@@ -281,6 +306,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getKrajToStringConverter());
         registry.addConverter(getIdToKrajConverter());
         registry.addConverter(getStringToKrajConverter());
+        registry.addConverter(getUczestnikAdresWrapperToStringConverter());
+        registry.addConverter(getIdToUczestnikAdresWrapperConverter());
+        registry.addConverter(getStringToUczestnikAdresWrapperConverter());
         registry.addConverter(getUzytkownikToStringConverter());
         registry.addConverter(getIdToUzytkownikConverter());
         registry.addConverter(getStringToUzytkownikConverter());

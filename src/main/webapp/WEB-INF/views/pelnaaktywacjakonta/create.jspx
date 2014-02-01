@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:form="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<form:create id="fc_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper"
+		modelAttribute="uczestnikAdresWrapper" path="/pelnaaktywacjakonta"
+		render="${empty dependencies}" z="HCC1Zkc98es0HRE42/ORpy+1qBw=">
+		<field:input field="kodPocztowy"
+			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_adres"
+			required="true" validationMessageCode="field_invalid_email"
+			z="user-managed" />
+		<field:input field="miejscowosc"
+			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_adres"
+			required="true" validationMessageCode="field_invalid_email"
+			z="user-managed" />
+		<field:input field="ulicaZNumerem"
+			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_adres"
+			required="true" validationMessageCode="field_invalid_email"
+			z="user-managed" />
+		<field:select field="kraj"
+			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_adres"
+			itemValue="id" items="${krajs}" path="/krajs" required="true"
+			z="mMxrrDfUN1WaN/iehYg1jc6sCCI=" />
+		<field:select field="wojewodztwo"
+			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_adres"
+			itemValue="id" items="${wojewodztwoes}" path="/wojewodztwoes"
+			z="aJVMF7IKzO+cHUF2ed50w+lNooo=" />
+	</form:create>
+	<form:dependency dependencies="${dependencies}"
+		id="d_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper"
+		render="${not empty dependencies}" z="mCa0V72Zz6zmqQzLOkwgZwfpbZg=" />
+</div>

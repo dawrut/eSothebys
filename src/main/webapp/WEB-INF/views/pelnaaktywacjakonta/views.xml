@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="pelnaaktywacjakonta/list">
+        <put-attribute name="body" value="/WEB-INF/views/pelnaaktywacjakonta/list.jspx"/>
+    </definition>
+<definition extends="default" name="pelnaaktywacjakonta/show">
+        <put-attribute name="body" value="/WEB-INF/views/pelnaaktywacjakonta/show.jspx"/>
+    </definition>
+<definition extends="default" name="pelnaaktywacjakonta/create">
+        <put-attribute name="body" value="/WEB-INF/views/pelnaaktywacjakonta/create.jspx"/>
+    </definition>
+<definition extends="default" name="pelnaaktywacjakonta/update">
+        <put-attribute name="body" value="/WEB-INF/views/pelnaaktywacjakonta/update.jspx"/>
+    </definition>
+</tiles-definitions>

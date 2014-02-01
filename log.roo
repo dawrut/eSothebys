@@ -262,3 +262,11 @@ finder add findWniosekRejestracyjnysByEmailEquals
 focus --class ~.model.security.RolaUzytkownik
 finder  list
 finder add findRolaUzytkowniksByEmail
+entity jpa --class ~.model.UczestnikAdresWrapper 
+web mvc scaffold --class ~.web.UczestnikAdresWrapperController --backingType ~.model.UczestnikAdresWrapper
+field reference --type ~.model.Adres --fieldName adres --notNull 
+field reference --type ~.model.Uzytkownik  --fieldName uzytkownik --notNull 
+web mvc scaffold --class ~.web.UczestnikAdresWrapperController --backingType ~.model.UczestnikAdresWrapper
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-02-01 23:53:35
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-02-02 00:04:26
+web mvc scaffold --class ~.web.UczestnikAdresWrapperController --backingType ~.model.UczestnikAdresWrapper --path pelnaaktywacjakonta
