@@ -24,8 +24,6 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 
     Uzytkownik uzytkownik = Uzytkownik.findUzytkowniksByEmailEquals(username).getSingleResult();
 
-    String password21 = uzytkownik.getHaslo();
-
     if (uzytkownik == null) {
       // TODO: dodac i18n
       throw new BadCredentialsException("Błędny użytkownik lub hasło.");
