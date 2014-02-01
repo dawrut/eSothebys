@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import pl.wroc.pwr.wiz.io.psi.model.Uzytkownik;
 import pl.wroc.pwr.wiz.io.psi.model.WniosekRejestracyjny;
 import pl.wroc.pwr.wiz.io.psi.service.utils.RegistrationEmailService;
-
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 
 @RequestMapping("/wniosekrejestracyjnys")
@@ -43,10 +42,10 @@ public class RegistrationController {
       populateEditForm(uiModel, wniosekRejestracyjny);
       return "wniosekrejestracyjnys/create";
     }
-    int size =
-        Uzytkownik.findUzytkowniksByEmailEquals(wniosekRejestracyjny.getEmail()).getResultList()
-            .size();
-    if (size > 0) {
+
+    String wniosekEmail = wniosekRejestracyjny.getEmail();
+
+    if (existUzytkownikWithEmail(wniosekEmail)) {
       bindingResult.addError(new FieldError("wniosekRejestracyjny", "email",
           "Email już istnieje w systemie."));
       // TODO: dodac do i18n wiadomosc
@@ -67,6 +66,12 @@ public class RegistrationController {
         wniosekRejestracyjny.getId());
     return "redirect:/wniosekrejestracyjnys/"
         + encodeUrlPathSegment(wniosekRejestracyjny.getId().toString(), httpServletRequest);
+  }
+
+  private boolean existUzytkownikWithEmail(String wniosekEmail) {
+    boolean check =
+        Uzytkownik.findUzytkowniksByEmailEquals(wniosekEmail).getResultList().size() > 0;
+    return check;
   }
 
   public RegistrationEmailService getRegistrationEmailService() {
