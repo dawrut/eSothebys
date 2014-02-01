@@ -133,7 +133,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<WniosekRejestracyjny, String> ApplicationConversionServiceFactoryBean.getWniosekRejestracyjnyToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<pl.wroc.pwr.wiz.io.psi.model.WniosekRejestracyjny, java.lang.String>() {
             public String convert(WniosekRejestracyjny wniosekRejestracyjny) {
-                return new StringBuilder().append(wniosekRejestracyjny.getHaslo()).append(' ').append(wniosekRejestracyjny.getDataUrodzenia()).append(' ').append(wniosekRejestracyjny.getEmail()).append(' ').append(wniosekRejestracyjny.getDataZlozenia()).toString();
+                return new StringBuilder().append(wniosekRejestracyjny.getRetypedPassword()).append(' ').append(wniosekRejestracyjny.getHaslo()).append(' ').append(wniosekRejestracyjny.getDataUrodzenia()).append(' ').append(wniosekRejestracyjny.getEmail()).toString();
             }
         };
     }
