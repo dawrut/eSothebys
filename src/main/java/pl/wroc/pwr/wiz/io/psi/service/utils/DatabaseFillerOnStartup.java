@@ -195,7 +195,7 @@ public class DatabaseFillerOnStartup implements ApplicationListener<ContextRefre
     admin.setStanKonta(StanKonta.SPRZEDAJACY);
     addUzytkownikToDb(admin);
 
-    List<Roles> adminRoles = roleGenerator.getSprzedajacyRoles();
+    List<Roles> adminRoles = roleGenerator.getAdminRoles();
     addRoleUzytkownikToDb(admin, adminRoles);
   }
 

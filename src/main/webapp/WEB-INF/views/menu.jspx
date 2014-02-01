@@ -1,46 +1,112 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
-        <menu:category id="c_uzytkownik" z="Y5zbwATr+6JP4FNq61YZchRhHXc=">
-            <menu:item id="i_uzytkownik_new" messageCode="global_menu_new" url="/security/uzytkownicy?form" z="VRLxHBcak24kvjeIfg2IAz3EQTU="/>
-            <menu:item id="i_uzytkownik_list" messageCode="global_menu_list" url="/security/uzytkownicy?page=1&amp;size=${empty param.size ? 10 : param.size}" z="WIQgxftvKxDIVBOFcgRZGplZ2y0="/>
-        </menu:category>
-        <menu:category id="c_rola" z="Vr1vK3ynE6+nppvVqMV0grNKbdA=">
-            <menu:item id="i_rola_new" messageCode="global_menu_new" url="/security/role?form" z="GmcdjsVG5Jh/XQcavOZ+R8XQDX4="/>
-            <menu:item id="i_rola_list" messageCode="global_menu_list" url="/security/role?page=1&amp;size=${empty param.size ? 10 : param.size}" z="icczVybmhyylAZJJ7E25jVuYIc4="/>
-        </menu:category>
-        <menu:category id="c_rolauzytkownik" z="8WmMQTOhcLgHisn8Q1YFAWny1Ds=">
-            <menu:item id="i_rolauzytkownik_new" messageCode="global_menu_new" url="/security/zarzadzanieRolami?form" z="fGfu13KP+YYvBYDrhisnlgyVWac="/>
-            <menu:item id="i_rolauzytkownik_list" messageCode="global_menu_list" url="/security/zarzadzanieRolami?page=1&amp;size=${empty param.size ? 10 : param.size}" z="NtYdYgNqNJzkUD/zW0lvDmr3K8E="/>
-        </menu:category>
-        <menu:category id="c_wniosekrejestracyjny" z="O1NTMaC73oEss9LPMHLuOi4RO6I=">
-            <menu:item id="i_wniosekrejestracyjny_new" messageCode="global_menu_new" url="/wniosekrejestracyjnys?form" z="PVkInpxt9tbSKIWjz6ceDivIIQg="/>
-            <menu:item id="i_wniosekrejestracyjny_list" messageCode="global_menu_list" url="/wniosekrejestracyjnys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="1ARIJRxt1unBLMPPQDFHPWE5D7g="/>
-        </menu:category>
-        <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
-            <menu:item id="i_controller__registrationindex_id" messageCode="global_generic" url="/registration/index" z="8LJfKZNA6gSootutBZhLNnSGvJw="/>
-        </menu:category>
-        <menu:category id="c_wniosekzmianyimieniainazwiska" z="CnutspLkRnosE49EgBF3xspPfeo=">
-            <menu:item id="i_wniosekzmianyimieniainazwiska_new" messageCode="global_menu_new" url="/wniosekzmianyimieniainazwiskas?form" z="KqmefBQiLPAMplJXI3laGTJ3pWc="/>
-            <menu:item id="i_wniosekzmianyimieniainazwiska_list" messageCode="global_menu_list" url="/wniosekzmianyimieniainazwiskas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="OYtD+nw6nxGfQcNvUGOkBz0WObI="/>
-        </menu:category>
-        <menu:category id="c_zawieszeniekonta" z="EaaFXx6sJAMAmI75F9Q5ZNI31us=">
-            <menu:item id="i_zawieszeniekonta_new" messageCode="global_menu_new" url="/zawieszeniekontas?form" z="PxFhzAVbthpFBlFN/rTVoFUnjmc="/>
-            <menu:item id="i_zawieszeniekonta_list" messageCode="global_menu_list" url="/zawieszeniekontas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="EyGNr1DTncizJBqGpqa2Qx/HJPs="/>
-        </menu:category>
-        <menu:category id="c_adres" z="iHZC0zh0CxL3LHX5LmrWRUhf0TM=">
-            <menu:item id="i_adres_new" messageCode="global_menu_new" url="/adreses?form" z="rtw51cyLJ3sq2g0JchsRG594lP4="/>
-            <menu:item id="i_adres_list" messageCode="global_menu_list" url="/adreses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="nQR9zHpTxC+HrniEBuht2NFx0/4="/>
-        </menu:category>
-        <menu:category id="c_kraj" z="XrYxUTuuxfAL6g1ZFheBwMsjwDc=">
-            <menu:item id="i_kraj_new" messageCode="global_menu_new" url="/krajs?form" z="qPeUVfod9hOB7KRP4JU51rgMtnI="/>
-            <menu:item id="i_kraj_list" messageCode="global_menu_list" url="/krajs?page=1&amp;size=${empty param.size ? 10 : param.size}" z="yJxUQL44QQdd++H6yyg9S6cntqI="/>
-        </menu:category>
-        <menu:category id="c_wojewodztwo" z="TEHoWPSRVPfBDhN8WNqQAfRIp/g=">
-            <menu:item id="i_wojewodztwo_new" messageCode="global_menu_new" url="/wojewodztwoes?form" z="8Ur2Ddrqyx9jxrwOYIOKt2ecgww="/>
-            <menu:item id="i_wojewodztwo_list" messageCode="global_menu_list" url="/wojewodztwoes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="G46KuHnvztBmrFaKN5lyoF4910Y="/>
-        </menu:category>
-    </menu:menu>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu"
+	xmlns:sec="http://www.springframework.org/security/tags" id="menu"
+	version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+			<menu:category id="c_uzytkownik" z="Y5zbwATr+6JP4FNq61YZchRhHXc=">
+				<menu:item id="i_uzytkownik_new" messageCode="global_menu_new"
+					url="/security/uzytkownicy?form" z="VRLxHBcak24kvjeIfg2IAz3EQTU=" />
+				<menu:item id="i_uzytkownik_list" messageCode="global_menu_list"
+					url="/security/uzytkownicy?page=1&amp;size=${empty param.size ? 10 : param.size}"
+					z="WIQgxftvKxDIVBOFcgRZGplZ2y0=" />
+			</menu:category>
+		</sec:authorize>
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+
+			<menu:category id="c_rola" z="Vr1vK3ynE6+nppvVqMV0grNKbdA=">
+				<menu:item id="i_rola_new" messageCode="global_menu_new"
+					url="/security/role?form" z="GmcdjsVG5Jh/XQcavOZ+R8XQDX4=" />
+				<menu:item id="i_rola_list" messageCode="global_menu_list"
+					url="/security/role?page=1&amp;size=${empty param.size ? 10 : param.size}"
+					z="icczVybmhyylAZJJ7E25jVuYIc4=" />
+			</menu:category>
+		</sec:authorize>
+
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+
+			<menu:category id="c_rolauzytkownik" z="8WmMQTOhcLgHisn8Q1YFAWny1Ds=">
+				<menu:item id="i_rolauzytkownik_new" messageCode="global_menu_new"
+					url="/security/zarzadzanieRolami?form"
+					z="fGfu13KP+YYvBYDrhisnlgyVWac=" />
+				<menu:item id="i_rolauzytkownik_list" messageCode="global_menu_list"
+					url="/security/zarzadzanieRolami?page=1&amp;size=${empty param.size ? 10 : param.size}"
+					z="NtYdYgNqNJzkUD/zW0lvDmr3K8E=" />
+			</menu:category>
+		</sec:authorize>
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+			<menu:category id="c_wniosekrejestracyjny"
+				z="O1NTMaC73oEss9LPMHLuOi4RO6I=">
+				<menu:item id="i_wniosekrejestracyjny_new"
+					messageCode="global_menu_new" url="/wniosekrejestracyjnys?form"
+					z="PVkInpxt9tbSKIWjz6ceDivIIQg=" />
+				<menu:item id="i_wniosekrejestracyjny_list"
+					messageCode="global_menu_list"
+					url="/wniosekrejestracyjnys?page=1&amp;size=${empty param.size ? 10 : param.size}"
+					z="1ARIJRxt1unBLMPPQDFHPWE5D7g=" />
+			</menu:category>
+		</sec:authorize>
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+			<menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
+				<menu:item id="i_controller__registrationindex_id"
+					messageCode="global_generic" url="/registration/index"
+					z="8LJfKZNA6gSootutBZhLNnSGvJw=" />
+			</menu:category>
+		</sec:authorize>
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+			<menu:category id="c_wniosekzmianyimieniainazwiska"
+				z="CnutspLkRnosE49EgBF3xspPfeo=">
+				<menu:item id="i_wniosekzmianyimieniainazwiska_new"
+					messageCode="global_menu_new"
+					url="/wniosekzmianyimieniainazwiskas?form"
+					z="KqmefBQiLPAMplJXI3laGTJ3pWc=" />
+				<menu:item id="i_wniosekzmianyimieniainazwiska_list"
+					messageCode="global_menu_list"
+					url="/wniosekzmianyimieniainazwiskas?page=1&amp;size=${empty param.size ? 10 : param.size}"
+					z="OYtD+nw6nxGfQcNvUGOkBz0WObI=" />
+			</menu:category>
+		</sec:authorize>
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+			<menu:category id="c_zawieszeniekonta"
+				z="EaaFXx6sJAMAmI75F9Q5ZNI31us=">
+				<menu:item id="i_zawieszeniekonta_new" messageCode="global_menu_new"
+					url="/zawieszeniekontas?form" z="PxFhzAVbthpFBlFN/rTVoFUnjmc=" />
+				<menu:item id="i_zawieszeniekonta_list"
+					messageCode="global_menu_list"
+					url="/zawieszeniekontas?page=1&amp;size=${empty param.size ? 10 : param.size}"
+					z="EyGNr1DTncizJBqGpqa2Qx/HJPs=" />
+			</menu:category>
+		</sec:authorize>
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+			<menu:category id="c_adres" z="iHZC0zh0CxL3LHX5LmrWRUhf0TM=">
+				<menu:item id="i_adres_new" messageCode="global_menu_new"
+					url="/adreses?form" z="rtw51cyLJ3sq2g0JchsRG594lP4=" />
+				<menu:item id="i_adres_list" messageCode="global_menu_list"
+					url="/adreses?page=1&amp;size=${empty param.size ? 10 : param.size}"
+					z="nQR9zHpTxC+HrniEBuht2NFx0/4=" />
+			</menu:category>
+		</sec:authorize>
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+
+			<menu:category id="c_kraj" z="XrYxUTuuxfAL6g1ZFheBwMsjwDc=">
+				<menu:item id="i_kraj_new" messageCode="global_menu_new"
+					url="/krajs?form" z="qPeUVfod9hOB7KRP4JU51rgMtnI=" />
+				<menu:item id="i_kraj_list" messageCode="global_menu_list"
+					url="/krajs?page=1&amp;size=${empty param.size ? 10 : param.size}"
+					z="yJxUQL44QQdd++H6yyg9S6cntqI=" />
+			</menu:category>
+		</sec:authorize>
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+			<menu:category id="c_wojewodztwo" z="TEHoWPSRVPfBDhN8WNqQAfRIp/g=">
+				<menu:item id="i_wojewodztwo_new" messageCode="global_menu_new"
+					url="/wojewodztwoes?form" z="8Ur2Ddrqyx9jxrwOYIOKt2ecgww=" />
+				<menu:item id="i_wojewodztwo_list" messageCode="global_menu_list"
+					url="/wojewodztwoes?page=1&amp;size=${empty param.size ? 10 : param.size}"
+					z="G46KuHnvztBmrFaKN5lyoF4910Y=" />
+			</menu:category>
+		</sec:authorize>
+	</menu:menu>
 </div>
