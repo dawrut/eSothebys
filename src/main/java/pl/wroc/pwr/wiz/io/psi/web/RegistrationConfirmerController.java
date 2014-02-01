@@ -40,24 +40,31 @@ public class RegistrationConfirmerController {
 
   @RequestMapping(value = "/{id}", produces = "text/html")
   public String show(@PathVariable("id") Long id, Model uiModel) {
+    LOGGER.info("Received confirmation registration request. ID: {}", id);
     WniosekRejestracyjny wniosekRejestracyjny =
         wniosekRejestracyjnyService.findWniosekRejestracyjny(id);
 
-    if (wniosekRejestracyjny != null && wniosekRejestracyjny.getUzytkownik() == null) {
-      Uzytkownik uzytkownik =
-          converter.convertWniosekRejestracyjnyToUzytkownik(wniosekRejestracyjny);
-
-      wniosekRejestracyjnyService.saveWniosekRejestracyjny(wniosekRejestracyjny);
-      uzytkownikService.saveUzytkownik(uzytkownik);
-
-      LOGGER.info("Uzytkownik {} created!", uzytkownik.getId());
-
-      // TODO: redirect to successfull registration process
+    if (isValidWniosekRejestracyjny(wniosekRejestracyjny)) {
+      completeProcessRegistration(wniosekRejestracyjny);
+      // TODO: redirect to successful registration process
       return "redirect:/";
     }
 
     // TODO: redirect to exception view
     return "redirect:/";
+  }
+
+  private void completeProcessRegistration(WniosekRejestracyjny wniosekRejestracyjny) {
+    Uzytkownik uzytkownik = converter.convertWniosekRejestracyjnyToUzytkownik(wniosekRejestracyjny);
+
+    wniosekRejestracyjnyService.saveWniosekRejestracyjny(wniosekRejestracyjny);
+    uzytkownikService.saveUzytkownik(uzytkownik);
+
+    LOGGER.info("Created new Uzytkownik in system! ID: {}", uzytkownik.getId());
+  }
+
+  private boolean isValidWniosekRejestracyjny(WniosekRejestracyjny wniosekRejestracyjny) {
+    return wniosekRejestracyjny != null && wniosekRejestracyjny.getUzytkownik() == null;
   }
 
   public WniosekRejestracyjnyService getWniosekRejestracyjnyService() {
