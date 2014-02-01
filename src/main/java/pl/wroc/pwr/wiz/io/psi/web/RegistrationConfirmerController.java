@@ -52,11 +52,11 @@ public class RegistrationConfirmerController {
 
       LOGGER.info("Uzytkownik {} created!", uzytkownik.getId());
 
-      // pomyslna rejestracja
+      // TODO: redirect to successfull registration process
       return "redirect:/";
     }
 
-    // blad
+    // TODO: redirect to exception view
     return "redirect:/";
   }
 
