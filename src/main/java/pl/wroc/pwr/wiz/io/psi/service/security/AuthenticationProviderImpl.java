@@ -22,21 +22,18 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
     String username = authentication.getName();
     String password = (String) authentication.getCredentials();
 
-    Uzytkownik uzytkownik = Uzytkownik.findUzytkowniksByEmailEquals(username).getSingleResult();
+    try {
+      Uzytkownik uzytkownik = Uzytkownik.findUzytkowniksByEmailEquals(username).getSingleResult();
+      if (!password.equals(uzytkownik.getHaslo())) {
+        throw new BadCredentialsException("Błędny użytkownik lub hasło");
+      }
+      Collection<GrantedAuthority> authorities = getUzytkownikAuthorities(uzytkownik);
 
-    if (uzytkownik == null) {
+      return new UsernamePasswordAuthenticationToken(username, password, authorities);
+    } catch (Exception e) {
       // TODO: dodac i18n
-      throw new BadCredentialsException("Błędny użytkownik lub hasło.");
+      throw new BadCredentialsException("Błędny użytkownik lub hasło");
     }
-
-    if (!password.equals(uzytkownik.getHaslo())) {
-      // TODO: dodac i18n
-      throw new BadCredentialsException("Błędny użytkownik lub hasło.");
-    }
-
-    Collection<GrantedAuthority> authorities = getUzytkownikAuthorities(uzytkownik);
-
-    return new UsernamePasswordAuthenticationToken(username, password, authorities);
   }
 
   private Collection<GrantedAuthority> getUzytkownikAuthorities(Uzytkownik uzytkownik) {
