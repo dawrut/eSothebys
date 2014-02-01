@@ -259,3 +259,6 @@ finder add findUzytkowniksByEmailEquals
 focus --class ~.model.WniosekRejestracyjny
 finder list
 finder add findWniosekRejestracyjnysByEmailEquals
+focus --class ~.model.security.RolaUzytkownik
+finder  list
+finder add findRolaUzytkowniksByEmail
