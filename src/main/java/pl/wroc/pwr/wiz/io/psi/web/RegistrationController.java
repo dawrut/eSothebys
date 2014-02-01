@@ -1,5 +1,7 @@
 package pl.wroc.pwr.wiz.io.psi.web;
 
+import static org.apache.commons.lang3.StringUtils.isEmpty;
+
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import pl.wroc.pwr.wiz.io.psi.model.Uzytkownik;
 import pl.wroc.pwr.wiz.io.psi.model.WniosekRejestracyjny;
 import pl.wroc.pwr.wiz.io.psi.service.utils.RegistrationEmailService;
-import static org.apache.commons.lang3.StringUtils.isEmpty;
 
 @RequestMapping("/wniosekrejestracyjnys")
 @Controller
@@ -29,6 +30,7 @@ public class RegistrationController {
 
   @RequestMapping(params = "form", produces = "text/html")
   public String createForm(Model uiModel) {
+
     WniosekRejestracyjny wniosekRejestracyjny = new WniosekRejestracyjny();
     populateEditForm(uiModel, wniosekRejestracyjny);
     return "wniosekrejestracyjnys/create";
@@ -45,7 +47,7 @@ public class RegistrationController {
 
     String wniosekEmail = wniosekRejestracyjny.getEmail();
 
-    if (existUzytkownikWithEmail(wniosekEmail)) {
+    if (existEmail(wniosekEmail)) {
       bindingResult.addError(new FieldError("wniosekRejestracyjny", "email",
           "Email już istnieje w systemie."));
       // TODO: dodac do i18n wiadomosc
@@ -68,10 +70,15 @@ public class RegistrationController {
         + encodeUrlPathSegment(wniosekRejestracyjny.getId().toString(), httpServletRequest);
   }
 
-  private boolean existUzytkownikWithEmail(String wniosekEmail) {
-    boolean check =
+  private boolean existEmail(String wniosekEmail) {
+    boolean uzytkownikCollectionSizePositive =
         Uzytkownik.findUzytkowniksByEmailEquals(wniosekEmail).getResultList().size() > 0;
-    return check;
+
+    boolean wniosekRejestracyjnyCollectionSizePositive =
+        WniosekRejestracyjny.findWniosekRejestracyjnysByEmailEquals(wniosekEmail).getResultList()
+            .size() > 0;
+
+    return (uzytkownikCollectionSizePositive || wniosekRejestracyjnyCollectionSizePositive);
   }
 
   public RegistrationEmailService getRegistrationEmailService() {

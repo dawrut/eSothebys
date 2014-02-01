@@ -254,3 +254,8 @@ osgi start --url http://spring-roo-addon-typical-security.googlecode.com/files/c
 focus --class ~.model.Uzytkownik
 finder list
 finder add findUzytkowniksByEmailEquals
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-02-01 20:14:56
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-02-01 20:21:21
+focus --class ~.model.WniosekRejestracyjny
+finder list
+finder add findWniosekRejestracyjnysByEmailEquals
