@@ -23,8 +23,7 @@ public class RegistrationEmailServiceImpl implements RegistrationEmailService {
 
   public void sendMessage(String mailTo, Long registrationId) {
     LOGGER.info("Preparing registration email id {} to {}", registrationId, mailTo);
-   SimpleMailMessage mailMessage =
-        new org.springframework.mail.SimpleMailMessage(templateMessage);
+    SimpleMailMessage mailMessage = new org.springframework.mail.SimpleMailMessage(templateMessage);
     mailMessage.setTo(mailTo);
     try {
       mailMessage.setText(createRegistrationEmailMessage(registrationId));
@@ -40,6 +39,7 @@ public class RegistrationEmailServiceImpl implements RegistrationEmailService {
     message
         .append("Hello!\n\nWelcome to eSothebys! This email was sent to you because someone used this email in registration process. If it is a mistake, please ignore.");
     message.append("\nTo complete registration click following link: ");
+    // TODO: amend host address !
     message.append(InetAddress.getLocalHost().toString());
     message.append("/eSothebys/registration/");
     message.append(registrationId);
