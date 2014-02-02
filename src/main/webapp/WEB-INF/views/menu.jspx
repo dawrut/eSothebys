@@ -41,20 +41,22 @@
 					z="1ARIJRxt1unBLMPPQDFHPWE5D7g=" />
 			</menu:category>
 		</sec:authorize>
-		<sec:authorize access="!hasAnyRole('ROLE_ZAWIESZONE')">
-			<menu:category id="c_wniosekzmianyimieniainazwiska"
-				z="CnutspLkRnosE49EgBF3xspPfeo=">
-				<menu:item id="i_wniosekzmianyimieniainazwiska_new"
-					messageCode="global_menu_new"
-					url="/wniosekzmianyimieniainazwiskas?form"
-					z="KqmefBQiLPAMplJXI3laGTJ3pWc=" />
-				<sec:authorize access="hasRole('ROLE_KUPTERAZ')">
-					<menu:item id="i_wniosekzmianyimieniainazwiska_list"
-						messageCode="global_menu_list"
-						url="/wniosekzmianyimieniainazwiskas?page=1&amp;size=${empty param.size ? 10 : param.size}"
-						z="OYtD+nw6nxGfQcNvUGOkBz0WObI=" />
-				</sec:authorize>
-			</menu:category>
+		<sec:authorize access="hasRole('ROLE_SPRZEDAJACY')">
+			<sec:authorize access="hasRole('ROLE_ZAWIESZONE')">
+				<menu:category id="c_wniosekzmianyimieniainazwiska"
+					z="CnutspLkRnosE49EgBF3xspPfeo=">
+					<menu:item id="i_wniosekzmianyimieniainazwiska_new"
+						messageCode="global_menu_new"
+						url="/wniosekzmianyimieniainazwiskas?form"
+						z="KqmefBQiLPAMplJXI3laGTJ3pWc=" />
+					<sec:authorize access="hasRole('ROLE_KUPTERAZ')">
+						<menu:item id="i_wniosekzmianyimieniainazwiska_list"
+							messageCode="global_menu_list"
+							url="/wniosekzmianyimieniainazwiskas?page=1&amp;size=${empty param.size ? 10 : param.size}"
+							z="OYtD+nw6nxGfQcNvUGOkBz0WObI=" />
+					</sec:authorize>
+				</menu:category>
+			</sec:authorize>
 		</sec:authorize>
 		<sec:authorize access="hasRole('ROLE_ADMIN')">
 			<menu:category id="c_zawieszeniekonta"
@@ -99,8 +101,8 @@
 			<menu:category id="c_uczestnikadreswrapper"
 				z="3arQu/43KaDx/vCRDE6G5nA7970=">
 				<menu:item id="i_uczestnikadreswrapper_new"
-					messageCode="global_menu_new" url="/pelnaaktywacjakonta?form"
-					z="+0W6UMRso/DgUwMUOBDSGQTHRek=" />
+					messageCode="global_menu_new_activation"
+					url="/pelnaaktywacjakonta?form" z="+0W6UMRso/DgUwMUOBDSGQTHRek=" />
 				<menu:item id="i_uczestnikadreswrapper_list"
 					messageCode="global_menu_list"
 					url="/pelnaaktywacjakonta?page=1&amp;size=${empty param.size ? 10 : param.size}"
