@@ -10,25 +10,25 @@
 		modelAttribute="uczestnikAdresWrapper" path="/pelnaaktywacjakonta"
 		render="${empty dependencies}" z="HCC1Zkc98es0HRE42/ORpy+1qBw=">
 		<field:input field="kodPocztowy"
-			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_adres"
+			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_kodpocztowy"
 			required="true" validationMessageCode="field_invalid_email"
 			z="user-managed" />
 		<field:input field="miejscowosc"
-			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_adres"
+			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_miejscowosc"
 			required="true" validationMessageCode="field_invalid_email"
 			z="user-managed" />
 		<field:input field="ulicaZNumerem"
-			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_adres"
+			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_ulicaznumerem"
 			required="true" validationMessageCode="field_invalid_email"
 			z="user-managed" />
-		<field:select field="kraj"
-			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_adres"
-			itemValue="id" items="${krajs}" path="/krajs" required="true"
-			z="mMxrrDfUN1WaN/iehYg1jc6sCCI=" />
 		<field:select field="wojewodztwo"
-			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_adres"
+			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_wojewodztwo"
 			itemValue="id" items="${wojewodztwoes}" path="/wojewodztwoes"
 			z="aJVMF7IKzO+cHUF2ed50w+lNooo=" />
+		<field:select field="kraj"
+			id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_kraj"
+			itemValue="id" items="${krajs}" path="/krajs" required="true"
+			z="mMxrrDfUN1WaN/iehYg1jc6sCCI=" />
 	</form:create>
 	<form:dependency dependencies="${dependencies}"
 		id="d_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper"
