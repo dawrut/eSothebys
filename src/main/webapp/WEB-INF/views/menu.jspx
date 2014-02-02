@@ -6,6 +6,7 @@
         <sec:authorize access="hasRole('ROLE_ADMIN')">
             <menu:category id="c_uzytkownik" z="Y5zbwATr+6JP4FNq61YZchRhHXc=">
                 <menu:item id="i_uzytkownik_list" messageCode="global_menu_list" url="/security/uzytkownicy?page=1&amp;size=${empty param.size ? 10 : param.size}" z="WIQgxftvKxDIVBOFcgRZGplZ2y0="/>
+                <menu:item id="i_uzytkownik_new" messageCode="global_menu_new" url="/security/uzytkownicy?form" z="VRLxHBcak24kvjeIfg2IAz3EQTU="/>
             </menu:category>
         </sec:authorize>
         <sec:authorize access="hasRole('ROLE_ADMIN')">
@@ -23,6 +24,7 @@
         <sec:authorize access="hasRole('ROLE_ADMIN')">
             <menu:category id="c_wniosekrejestracyjny" z="O1NTMaC73oEss9LPMHLuOi4RO6I=">
                 <menu:item id="i_wniosekrejestracyjny_list" messageCode="global_menu_list" url="/wniosekrejestracyjnys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="1ARIJRxt1unBLMPPQDFHPWE5D7g="/>
+                <menu:item id="i_wniosekrejestracyjny_new" messageCode="global_menu_new" url="/wniosekrejestracyjnys?form" z="PVkInpxt9tbSKIWjz6ceDivIIQg="/>
             </menu:category>
         </sec:authorize>
         <sec:authorize access="hasRole('ROLE_SPRZEDAJACY')">
