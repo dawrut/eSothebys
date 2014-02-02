@@ -16,6 +16,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.wroc.pwr.wiz.io.psi.model.PowodZmianyDanych;
 import pl.wroc.pwr.wiz.io.psi.model.Uzytkownik;
 import pl.wroc.pwr.wiz.io.psi.model.WniosekZmianyImieniaINazwiska;
+import pl.wroc.pwr.wiz.io.psi.service.dao.UzytkownikService;
 import pl.wroc.pwr.wiz.io.psi.service.dao.WniosekZmianyImieniaINazwiskaService;
 
 @RequestMapping("/wniosekzmianyimieniainazwiskas")
@@ -31,7 +33,10 @@ import pl.wroc.pwr.wiz.io.psi.service.dao.WniosekZmianyImieniaINazwiskaService;
 public class WniosekZmianyImieniaINazwiskaController {
 
   @Autowired
-  WniosekZmianyImieniaINazwiskaService wniosekZmianyImieniaINazwiskaService;
+  private WniosekZmianyImieniaINazwiskaService wniosekZmianyImieniaINazwiskaService;
+
+  @Autowired
+  private UzytkownikService uzytkownikService;
 
   @RequestMapping(params = "form", produces = "text/html")
   public String createForm(Model uiModel) {
@@ -52,11 +57,31 @@ public class WniosekZmianyImieniaINazwiskaController {
           wniosekZmianyImieniaINazwiskaService.findAllWniosekZmianyImieniaINazwiskas());
     else
       uiModel.addAttribute("wniosekzmianyimieniainazwiskas", WniosekZmianyImieniaINazwiska
-          .findWniosekZmianyImieniaINazwiskasByUzytkownik(getUzytkownikFromSession()).getResultList());
+          .findWniosekZmianyImieniaINazwiskasByUzytkownik(getUzytkownikFromSession())
+          .getResultList());
 
     addDateTimeFormatPatterns(uiModel);
     return "wniosekzmianyimieniainazwiskas/list";
   }
+
+  @RequestMapping(value = "/{id}", produces = "text/html")
+  public String show(@PathVariable("id") Long id, Model uiModel) {
+
+    if (isUzytkownikAdmin()) {
+      WniosekZmianyImieniaINazwiska wniosek =
+          wniosekZmianyImieniaINazwiskaService.findWniosekZmianyImieniaINazwiska(id);
+      Uzytkownik uzytkownik =
+          Uzytkownik.findUzytkowniksByEmailEquals(wniosek.getEmail()).getSingleResult();
+      uzytkownik.setImie(wniosek.getImie());
+      uzytkownik.setNazwisko(wniosek.getNazwisko());
+      uzytkownikService.saveUzytkownik(uzytkownik);
+      wniosekZmianyImieniaINazwiskaService
+          .deleteWniosekZmianyImieniaINazwiska(wniosek);
+    }
+
+    return "redirect:/wniosekzmianyimieniainazwiskas";
+  }
+
 
   private Uzytkownik getUzytkownikFromSession() {
     Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -72,6 +97,8 @@ public class WniosekZmianyImieniaINazwiskaController {
     }
     return false;
   }
+
+  // http://localhost:8080/eSothebys/wniosekzmianyimieniainazwiskas/1?form
 
   @RequestMapping(method = RequestMethod.POST, produces = "text/html")
   public String create(@Valid WniosekZmianyImieniaINazwiska wniosekZmianyImieniaINazwiska,
@@ -94,7 +121,6 @@ public class WniosekZmianyImieniaINazwiskaController {
     return "redirect:/wniosekzmianyimieniainazwiskas/"
         + encodeUrlPathSegment(wniosekZmianyImieniaINazwiska.getId().toString(), httpServletRequest);
   }
-
 
   void populateEditForm(Model uiModel, WniosekZmianyImieniaINazwiska wniosekZmianyImieniaINazwiska) {
     uiModel.addAttribute("wniosekZmianyImieniaINazwiska", wniosekZmianyImieniaINazwiska);

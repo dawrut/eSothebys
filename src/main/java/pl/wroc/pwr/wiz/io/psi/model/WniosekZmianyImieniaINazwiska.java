@@ -1,9 +1,7 @@
 package pl.wroc.pwr.wiz.io.psi.model;
 
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.EntityManager;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -49,4 +47,8 @@ public class WniosekZmianyImieniaINazwiska {
   @ManyToOne
   private Uzytkownik uzytkownik;
 
+
+  public String getEmail() {
+    return uzytkownik.getEmail();
+  }
 }

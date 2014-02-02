@@ -21,14 +21,6 @@ import pl.wroc.pwr.wiz.io.psi.web.WniosekZmianyImieniaINazwiskaController;
 
 privileged aspect WniosekZmianyImieniaINazwiskaController_Roo_Controller {
     
-    @RequestMapping(value = "/{id}", produces = "text/html")
-    public String WniosekZmianyImieniaINazwiskaController.show(@PathVariable("id") Long id, Model uiModel) {
-        addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("wniosekzmianyimieniainazwiska", wniosekZmianyImieniaINazwiskaService.findWniosekZmianyImieniaINazwiska(id));
-        uiModel.addAttribute("itemId", id);
-        return "wniosekzmianyimieniainazwiskas/show";
-    }
-    
     @RequestMapping(method = RequestMethod.PUT, produces = "text/html")
     public String WniosekZmianyImieniaINazwiskaController.update(@Valid WniosekZmianyImieniaINazwiska wniosekZmianyImieniaINazwiska, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
