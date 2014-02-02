@@ -281,8 +281,4 @@ focus --class ~.service.dao.WniosekZmianyImieniaINazwiskaService
 focus --class ~.model.WniosekZmianyImieniaINazwiska
 finder list
 finder add findWniosekZmianyImieniaINazwiskasByUzytkownik
-<<<<<<< HEAD
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-02-02 23:25:28
-=======
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-02-02 23:32:17
->>>>>>> 5caaf335a996550aa633282998cee4fa6c1b7cbf

@@ -2,6 +2,7 @@ target/
 bin/
 *.aj
 *.class
+<<<<<<< HEAD
 
 
 documentation/System-Wide Requirements Specification.docx
@@ -9,3 +10,7 @@ documentation/System-Wide Requirements Specification.docx
 documentation/~$stem-Wide Requirements Specification.docx
 
 documentation/~WRL0494.tmp
+=======
+>>>>>>> 5caaf335a996550aa633282998cee4fa6c1b7cbf
+
+documentation/~$chitecture Notebook.docx
