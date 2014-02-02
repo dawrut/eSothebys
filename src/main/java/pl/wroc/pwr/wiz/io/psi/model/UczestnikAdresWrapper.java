@@ -67,6 +67,10 @@ public class UczestnikAdresWrapper {
     adres.setWojewodztwo(wojewodztwo);
   }
 
+  public String getImie() {
+    return uzytkownik.getImie();
+  }
+
   public void setImie(String imie) {
     uzytkownik.setImie(imie);
   }
