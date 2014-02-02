@@ -1,19 +1,23 @@
 package pl.wroc.pwr.wiz.io.psi.model;
 
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
-import javax.validation.constraints.NotNull;
-import java.util.Date;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import org.springframework.format.annotation.DateTimeFormat;
-import javax.persistence.Enumerated;
-import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord
+@RooJpaActiveRecord(finders = {"findWniosekZmianyImieniaINazwiskasByUzytkownik"})
 public class WniosekZmianyImieniaINazwiska {
 
   /**
@@ -44,4 +48,5 @@ public class WniosekZmianyImieniaINazwiska {
   @NotNull
   @ManyToOne
   private Uzytkownik uzytkownik;
+
 }

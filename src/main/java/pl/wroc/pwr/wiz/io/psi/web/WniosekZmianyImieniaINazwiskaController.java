@@ -11,12 +11,14 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.wroc.pwr.wiz.io.psi.model.PowodZmianyDanych;
 import pl.wroc.pwr.wiz.io.psi.model.Uzytkownik;
@@ -40,10 +42,35 @@ public class WniosekZmianyImieniaINazwiskaController {
     return "wniosekzmianyimieniainazwiskas/create";
   }
 
+  @RequestMapping(produces = "text/html")
+  public String list(@RequestParam(value = "page", required = false) Integer page,
+      @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+
+
+    if (isUzytkownikAdmin())
+      uiModel.addAttribute("wniosekzmianyimieniainazwiskas",
+          wniosekZmianyImieniaINazwiskaService.findAllWniosekZmianyImieniaINazwiskas());
+    else
+      uiModel.addAttribute("wniosekzmianyimieniainazwiskas", WniosekZmianyImieniaINazwiska
+          .findWniosekZmianyImieniaINazwiskasByUzytkownik(getUzytkownikFromSession()).getResultList());
+
+    addDateTimeFormatPatterns(uiModel);
+    return "wniosekzmianyimieniainazwiskas/list";
+  }
+
   private Uzytkownik getUzytkownikFromSession() {
     Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     String email = auth.getName();
     return Uzytkownik.findUzytkowniksByEmailEquals(email).getSingleResult();
+  }
+
+  private boolean isUzytkownikAdmin() {
+    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    for (GrantedAuthority grant : auth.getAuthorities()) {
+      if ("ROLE_ADMIN".equals(grant.getAuthority())
+          || "ROLE_MODERATOR".equals(grant.getAuthority())) return true;
+    }
+    return false;
   }
 
   @RequestMapping(method = RequestMethod.POST, produces = "text/html")
@@ -67,7 +94,6 @@ public class WniosekZmianyImieniaINazwiskaController {
     return "redirect:/wniosekzmianyimieniainazwiskas/"
         + encodeUrlPathSegment(wniosekZmianyImieniaINazwiska.getId().toString(), httpServletRequest);
   }
-
 
 
   void populateEditForm(Model uiModel, WniosekZmianyImieniaINazwiska wniosekZmianyImieniaINazwiska) {

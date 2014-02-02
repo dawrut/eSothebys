@@ -276,3 +276,8 @@ focus --class ~.model.StanKonta
 enum constant --name AKTYWOWANE
 focus --class ~.model.WniosekRejestracyjny
 finder list
+focus --class ~.service.dao.WniosekZmianyImieniaINazwiskaService
+// [failed] finder list
+focus --class ~.model.WniosekZmianyImieniaINazwiska
+finder list
+finder add findWniosekZmianyImieniaINazwiskasByUzytkownik
