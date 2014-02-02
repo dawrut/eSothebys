@@ -41,17 +41,19 @@
 					z="1ARIJRxt1unBLMPPQDFHPWE5D7g=" />
 			</menu:category>
 		</sec:authorize>
-		<sec:authorize access="hasRole('ROLE_ADMIN')">
+		<sec:authorize access="!hasAnyRole('ROLE_ZAWIESZONE')">
 			<menu:category id="c_wniosekzmianyimieniainazwiska"
 				z="CnutspLkRnosE49EgBF3xspPfeo=">
 				<menu:item id="i_wniosekzmianyimieniainazwiska_new"
 					messageCode="global_menu_new"
 					url="/wniosekzmianyimieniainazwiskas?form"
 					z="KqmefBQiLPAMplJXI3laGTJ3pWc=" />
-				<menu:item id="i_wniosekzmianyimieniainazwiska_list"
-					messageCode="global_menu_list"
-					url="/wniosekzmianyimieniainazwiskas?page=1&amp;size=${empty param.size ? 10 : param.size}"
-					z="OYtD+nw6nxGfQcNvUGOkBz0WObI=" />
+				<sec:authorize access="hasRole('ROLE_KUPTERAZ')">
+					<menu:item id="i_wniosekzmianyimieniainazwiska_list"
+						messageCode="global_menu_list"
+						url="/wniosekzmianyimieniainazwiskas?page=1&amp;size=${empty param.size ? 10 : param.size}"
+						z="OYtD+nw6nxGfQcNvUGOkBz0WObI=" />
+				</sec:authorize>
 			</menu:category>
 		</sec:authorize>
 		<sec:authorize access="hasRole('ROLE_ADMIN')">
@@ -92,7 +94,8 @@
 					z="yJxUQL44QQdd++H6yyg9S6cntqI=" />
 			</menu:category>
 		</sec:authorize>
-		<sec:authorize access="!hasRole('ROLE_SPRZEDAJACY')">
+		<sec:authorize
+			access="!hasAnyRole('ROLE_SPRZEDAJACY', 'ROLE_ZAWIESZONE')">
 			<menu:category id="c_uczestnikadreswrapper"
 				z="3arQu/43KaDx/vCRDE6G5nA7970=">
 				<menu:item id="i_uczestnikadreswrapper_new"

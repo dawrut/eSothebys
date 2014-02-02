@@ -25,25 +25,35 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
     try {
       Uzytkownik uzytkownik = Uzytkownik.findUzytkowniksByEmailEquals(username).getSingleResult();
       if (!password.equals(uzytkownik.getHaslo())) {
-        throw new BadCredentialsException("Błędny użytkownik lub hasło");
+        badRoleException();
       }
       Collection<GrantedAuthority> authorities = getUzytkownikAuthorities(uzytkownik);
 
-      return new UsernamePasswordAuthenticationToken(username, password, authorities);
+      authentication = new UsernamePasswordAuthenticationToken(username, password, authorities);
     } catch (Exception e) {
-      // TODO: dodac i18n
-      throw new BadCredentialsException("Błędny użytkownik lub hasło");
+      badRoleException();
     }
+    return authentication;
   }
 
   private Collection<GrantedAuthority> getUzytkownikAuthorities(Uzytkownik uzytkownik) {
     Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-
+    boolean kupujacy = false;
     for (RolaUzytkownik rola : RolaUzytkownik.findRolaUzytkowniksByEmail(uzytkownik)
         .getResultList()) {
+      if ("ROLE_ZAWIESZONE".equals(rola.getIdRoli().getIdRoli())) badRoleException();
+      if (("ROLE_KUPTERAZ".equals(rola.getIdRoli().getIdRoli()))) kupujacy = true;
+
       authorities.add(new SimpleGrantedAuthority(rola.getIdRoli().getNazwaRoli()));
     }
+
+    if (!kupujacy) badRoleException();
+
     return authorities;
+  }
+
+  private void badRoleException() {
+    throw new BadCredentialsException("Błędny użytkownik lub hasło");
   }
 
   public boolean supports(Class<? extends Object> authentication) {

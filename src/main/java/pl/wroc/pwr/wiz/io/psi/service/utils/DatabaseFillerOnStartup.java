@@ -182,8 +182,6 @@ public class DatabaseFillerOnStartup implements ApplicationListener<ContextRefre
     nieaktywowane.setStanKonta(StanKonta.NIEAKTYWOWANE);
     addUzytkownikToDb(nieaktywowane);
 
-    List<Roles> nieaktywowaneRoles = roleGenerator.getSprzedajacyRoles();
-    addRoleUzytkownikToDb(nieaktywowane, nieaktywowaneRoles);
   }
 
   private void initAdmin() throws NoSuchAlgorithmException {
