@@ -1,5 +1,7 @@
 package pl.wroc.pwr.wiz.io.psi.web;
 
+import static org.apache.commons.lang3.StringUtils.isEmpty;
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +11,7 @@ import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,6 +42,7 @@ public class UczestnikAdresWrapperController {
     uczestnikAdresWrapper.setUzytkownik(uzytkownik);
     uczestnikAdresWrapper.setAdres(adres);
     List<Wojewodztwo> findAllWojewodztwoes = wojewodztwoService.findAllWojewodztwoes();
+    adres.setWojewodztwo(findAllWojewodztwoes.get(0));
     uiModel.addAttribute("wojewodztwa", findAllWojewodztwoes);
     uiModel.addAttribute("uczestnikAdresWrapper", uczestnikAdresWrapper);
 
@@ -50,10 +54,40 @@ public class UczestnikAdresWrapperController {
   public String create(
       @ModelAttribute("uczestnikAdresWrapper") UczestnikAdresWrapper uczestnikAdresWrapper,
       BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-    // TODO: walidacja danych
-    System.out.println(uczestnikAdresWrapper.getImie());
+    validateWrapper(uczestnikAdresWrapper, bindingResult);
     return "pelnaaktywacjakonta/create";
   }
+
+  private void validateWrapper(UczestnikAdresWrapper uczestnikAdresWrapper,
+      BindingResult bindingResult) {
+    if (isEmpty(uczestnikAdresWrapper.getImie())) {
+      // TODO: i18n
+      System.out.println("\n\n\n\nPUSTY!!!\n\n\n");
+      bindingResult.addError(new FieldError("uzytkownik", "imie", "Nie moze byc puste"));
+    }
+    if (isEmpty(uczestnikAdresWrapper.getNazwisko())) {
+      // TODO: i18n
+      System.out.println("\n\n\n\nPUSTY!!!\n\n\n");
+      bindingResult.addError(new FieldError("uzytkownik", "nazwisko", "Nie moze byc puste"));
+    }
+    if (isEmpty(uczestnikAdresWrapper.getMiejscowosc())) {
+      // TODO: i18n
+      System.out.println("\n\n\n\nPUSTY!!!\n\n\n");
+      bindingResult.addError(new FieldError("adres", "miejscowosc", "Nie moze byc puste"));
+    }
+    if (isEmpty(uczestnikAdresWrapper.getKodPocztowy())) {
+      // TODO: i18n
+      System.out.println("\n\n\n\nPUSTY!!!\n\n\n");
+      bindingResult.addError(new FieldError("adres", "kodpocztowy", "Nie moze byc puste"));
+    }
+    if (isEmpty(uczestnikAdresWrapper.getUlicaZNumerem())) {
+      // TODO: i18n
+      System.out.println("\n\n\n\nPUSTY!!!\n\n\n");
+      bindingResult.addError(new FieldError("adres", "ulicaznumerem", "Nie moze byc puste"));
+    }
+
+  }
+
 
   @RequestMapping(value = "/{id}", produces = "text/html")
   public String show(Model uiModel) {

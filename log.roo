@@ -271,3 +271,6 @@ web mvc scaffold --class ~.web.UczestnikAdresWrapperController --backingType ~.m
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-02-02 00:04:26
 web mvc scaffold --class ~.web.UczestnikAdresWrapperController --backingType ~.model.UczestnikAdresWrapper --path pelnaaktywacjakonta
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-02-02 01:28:37
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-02-02 13:37:45
+focus --class ~.model.StanKonta
+enum constant --name AKTYWOWANE

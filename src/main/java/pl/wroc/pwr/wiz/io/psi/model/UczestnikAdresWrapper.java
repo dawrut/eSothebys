@@ -59,8 +59,8 @@ public class UczestnikAdresWrapper {
     adres.setKraj(kraj);
   }
 
-  public Wojewodztwo getWojewodztwo() {
-    return adres.getWojewodztwo();
+  public String getWojewodztwo() {
+    return adres.getWojewodztwo().getNazwa();
   }
 
   public void setWojewodztwo(Wojewodztwo wojewodztwo) {

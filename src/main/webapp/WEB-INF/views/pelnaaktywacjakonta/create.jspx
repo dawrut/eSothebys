@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <div xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:form="http://www.springframework.org/tags/form"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:spring="http://www.springframework.org/tags" version="2.0">
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
-	<form:form method="POST" modelAttribute="uczestnikAdresWrapper"
-		action="pelnaaktywacjakonta" class="pure-form pure-form-stacked">
+	<form:form action="pelnaaktywacjakonta"
+		class="pure-form pure-form-stacked" method="POST"
+		modelAttribute="uczestnikAdresWrapper">
 		<fieldset>
 			<form:label path="uzytkownik.imie">Imie: </form:label>
 			<form:input path="uzytkownik.imie" />
-			<form:errors path="uzytkownik.imie" />
+			<form:errors cssStyle="color:red" path="uzytkownik.imie" />
 			<!-- <fmt:message key="save.title" var="save.message"/> -->
 			<form:label path="uzytkownik.nazwisko">Nazwisko: </form:label>
 			<form:input path="uzytkownik.nazwisko" />
@@ -26,12 +27,11 @@
 			<form:input path="adres.ulicaZNumerem" />
 			<form:errors path="adres.ulicaZNumerem" />
 			<br />
-			<form:label path="adres.wojewodztwo">Wojewodztwo: </form:label>
+<!--  			<form:label path="adres.wojewodztwo">Wojewodztwo: </form:label>
 			<form:select path="adres.wojewodztwo">
-				<form:option value="0" label="Select" />
-				<form:options items="${wojewodztwa}" itemValue="nazwa"
-					itemLabel="nazwa" />
-			</form:select>
+				<form:options itemLabel="nazwa" itemValue="nazwa"
+					items="${wojewodztwa}" />
+			</form:select>-->
 			<input type="submit" value="Aktywuj konto" />
 		</fieldset>
 	</form:form>

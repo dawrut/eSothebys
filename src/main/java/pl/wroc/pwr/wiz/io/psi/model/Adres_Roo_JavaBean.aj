@@ -5,7 +5,6 @@ package pl.wroc.pwr.wiz.io.psi.model;
 
 import pl.wroc.pwr.wiz.io.psi.model.Adres;
 import pl.wroc.pwr.wiz.io.psi.model.Kraj;
-import pl.wroc.pwr.wiz.io.psi.model.Wojewodztwo;
 
 privileged aspect Adres_Roo_JavaBean {
     
@@ -39,14 +38,6 @@ privileged aspect Adres_Roo_JavaBean {
     
     public void Adres.setKraj(Kraj kraj) {
         this.kraj = kraj;
-    }
-    
-    public Wojewodztwo Adres.getWojewodztwo() {
-        return this.wojewodztwo;
-    }
-    
-    public void Adres.setWojewodztwo(Wojewodztwo wojewodztwo) {
-        this.wojewodztwo = wojewodztwo;
     }
     
 }

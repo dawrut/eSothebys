@@ -34,6 +34,14 @@ public class Adres {
   @ManyToOne
   private Wojewodztwo wojewodztwo;
 
+  public void setWojewodztwo(Wojewodztwo wojewodztwo) {
+    this.wojewodztwo = wojewodztwo;
+  }
+
+  public Wojewodztwo getWojewodztwo() {
+    return wojewodztwo;
+  }
+
   /**
      */
   // @ManyToOne
