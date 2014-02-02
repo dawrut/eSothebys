@@ -4,13 +4,9 @@
 package pl.wroc.pwr.wiz.io.psi.web;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.joda.time.format.DateTimeFormat;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,42 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
-import pl.wroc.pwr.wiz.io.psi.model.PowodZmianyDanych;
-import pl.wroc.pwr.wiz.io.psi.model.Uzytkownik;
 import pl.wroc.pwr.wiz.io.psi.model.WniosekZmianyImieniaINazwiska;
-import pl.wroc.pwr.wiz.io.psi.service.dao.UzytkownikService;
-import pl.wroc.pwr.wiz.io.psi.service.dao.WniosekZmianyImieniaINazwiskaService;
 import pl.wroc.pwr.wiz.io.psi.web.WniosekZmianyImieniaINazwiskaController;
 
 privileged aspect WniosekZmianyImieniaINazwiskaController_Roo_Controller {
-    
-    @Autowired
-    WniosekZmianyImieniaINazwiskaService WniosekZmianyImieniaINazwiskaController.wniosekZmianyImieniaINazwiskaService;
-    
-    @Autowired
-    UzytkownikService WniosekZmianyImieniaINazwiskaController.uzytkownikService;
-    
-    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String WniosekZmianyImieniaINazwiskaController.create(@Valid WniosekZmianyImieniaINazwiska wniosekZmianyImieniaINazwiska, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, wniosekZmianyImieniaINazwiska);
-            return "wniosekzmianyimieniainazwiskas/create";
-        }
-        uiModel.asMap().clear();
-        wniosekZmianyImieniaINazwiskaService.saveWniosekZmianyImieniaINazwiska(wniosekZmianyImieniaINazwiska);
-        return "redirect:/wniosekzmianyimieniainazwiskas/" + encodeUrlPathSegment(wniosekZmianyImieniaINazwiska.getId().toString(), httpServletRequest);
-    }
-    
-    @RequestMapping(params = "form", produces = "text/html")
-    public String WniosekZmianyImieniaINazwiskaController.createForm(Model uiModel) {
-        populateEditForm(uiModel, new WniosekZmianyImieniaINazwiska());
-        List<String[]> dependencies = new ArrayList<String[]>();
-        if (uzytkownikService.countAllUzytkowniks() == 0) {
-            dependencies.add(new String[] { "uzytkownik", "security/uzytkownicy" });
-        }
-        uiModel.addAttribute("dependencies", dependencies);
-        return "wniosekzmianyimieniainazwiskas/create";
-    }
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String WniosekZmianyImieniaINazwiskaController.show(@PathVariable("id") Long id, Model uiModel) {
@@ -109,13 +73,6 @@ privileged aspect WniosekZmianyImieniaINazwiskaController_Roo_Controller {
     
     void WniosekZmianyImieniaINazwiskaController.addDateTimeFormatPatterns(Model uiModel) {
         uiModel.addAttribute("wniosekZmianyImieniaINazwiska_datazlozenia_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-    }
-    
-    void WniosekZmianyImieniaINazwiskaController.populateEditForm(Model uiModel, WniosekZmianyImieniaINazwiska wniosekZmianyImieniaINazwiska) {
-        uiModel.addAttribute("wniosekZmianyImieniaINazwiska", wniosekZmianyImieniaINazwiska);
-        addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("powodzmianydanyches", Arrays.asList(PowodZmianyDanych.values()));
-        uiModel.addAttribute("uzytkowniks", uzytkownikService.findAllUzytkowniks());
     }
     
     String WniosekZmianyImieniaINazwiskaController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

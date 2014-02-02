@@ -46,11 +46,9 @@ public class RegistrationConfirmerController {
 
     if (isValidWniosekRejestracyjny(wniosekRejestracyjny)) {
       completeProcessRegistration(wniosekRejestracyjny);
-      // TODO: redirect to successful registration process
       return "redirect:/";
     }
 
-    // TODO: redirect to exception view
     return "redirect:/";
   }
 
