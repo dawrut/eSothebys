@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:form="http://www.springframework.org/tags/form"
-	xmlns:jsp="http://java.sun.com/JSP/Page"
-	xmlns:spring="http://www.springframework.org/tags" version="2.0">
-	<jsp:directive.page contentType="text/html;charset=UTF-8" />
-	<jsp:output omit-xml-declaration="yes" />
-	<form:form action="pelnaaktywacjakonta"
-		class="pure-form pure-form-stacked" method="POST"
-		modelAttribute="uczestnikAdresWrapper">
-		<fieldset>
-			<form:label path="uzytkownik.imie">Imie: </form:label>
-			<form:input path="uzytkownik.imie" />
-			<form:errors cssStyle="color:red" path="uzytkownik.imie" />
-			<!-- <fmt:message key="save.title" var="save.message"/> -->
-			<form:label path="uzytkownik.nazwisko">Nazwisko: </form:label>
-			<form:input path="uzytkownik.nazwisko" />
-			<form:errors path="uzytkownik.nazwisko" />
-			<form:label path="adres.miejscowosc">Miejscowosc: </form:label>
-			<form:input path="adres.miejscowosc" />
-			<form:errors path="adres.miejscowosc" />
-			<form:label path="adres.kodPocztowy">Kod pocztowy: </form:label>
-			<form:input path="adres.kodPocztowy" />
-			<br />
-			<form:errors path="adres.kodPocztowy" />
-			<form:label path="adres.ulicaZNumerem">Ulica z numerem: </form:label>
-			<form:input path="adres.ulicaZNumerem" />
-			<form:errors path="adres.ulicaZNumerem" />
-			<br />
-<!--  			<form:label path="adres.wojewodztwo">Wojewodztwo: </form:label>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="http://www.springframework.org/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:form action="pelnaaktywacjakonta" class="pure-form pure-form-stacked" method="POST" modelAttribute="uczestnikAdresWrapper">
+        <fieldset>
+            <form:label path="uzytkownik.imie">Imie: </form:label>
+            <form:input path="uzytkownik.imie"/>
+            <form:errors cssStyle="color:red" path="uzytkownik.imie"/>
+            <!-- <fmt:message key="save.title" var="save.message"/> -->
+            <form:label path="uzytkownik.nazwisko">Nazwisko: </form:label>
+            <form:input path="uzytkownik.nazwisko"/>
+            <form:errors path="uzytkownik.nazwisko"/>
+            <form:label path="adres.miejscowosc">Miejscowosc: </form:label>
+            <form:input path="adres.miejscowosc"/>
+            <form:errors path="adres.miejscowosc"/>
+            <form:label path="adres.kodPocztowy">Kod pocztowy: </form:label>
+            <form:input path="adres.kodPocztowy"/>
+            <br/>
+            <form:errors path="adres.kodPocztowy"/>
+            <form:label path="adres.ulicaZNumerem">Ulica z numerem: </form:label>
+            <form:input path="adres.ulicaZNumerem"/>
+            <form:errors path="adres.ulicaZNumerem"/>
+            <br/>
+            <!--  			<form:label path="adres.wojewodztwo">Wojewodztwo: </form:label>
 			<form:select path="adres.wojewodztwo">
 				<form:options itemLabel="nazwa" itemValue="nazwa"
 					items="${wojewodztwa}" />
 			</form:select>-->
-			<input type="submit" value="Aktywuj konto" />
-		</fieldset>
-	</form:form>
+            <input type="submit" value="Aktywuj konto"/>
+        </fieldset>
+    </form:form>
+    <form:create id="fc_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper" modelAttribute="uczestnikAdresWrapper" path="/pelnaaktywacjakonta" render="${empty dependencies}" z="HCC1Zkc98es0HRE42/ORpy+1qBw=">
+        <field:select field="adres" id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_adres" itemValue="id" items="${adreses}" path="/adreses" required="true" z="Qn0CPrsGnQ56bjAvd16q7gNzWtU="/>
+        <field:select field="uzytkownik" id="c_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper_uzytkownik" itemValue="id" items="${uzytkowniks}" path="/security/uzytkownicy" required="true" z="kRTQMmOy5WOaDiaIDbEFKNI4A6w="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_pl_wroc_pwr_wiz_io_psi_model_UczestnikAdresWrapper" render="${not empty dependencies}" z="mCa0V72Zz6zmqQzLOkwgZwfpbZg="/>
 </div>
