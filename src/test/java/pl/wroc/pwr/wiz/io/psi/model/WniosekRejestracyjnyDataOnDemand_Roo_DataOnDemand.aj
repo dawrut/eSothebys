@@ -15,7 +15,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import pl.wroc.pwr.wiz.io.psi.model.Uzytkownik;
+import pl.wroc.pwr.wiz.io.psi.model.UzytkownikDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.model.WniosekRejestracyjny;
 import pl.wroc.pwr.wiz.io.psi.model.WniosekRejestracyjnyDataOnDemand;
 import pl.wroc.pwr.wiz.io.psi.service.dao.WniosekRejestracyjnyService;
@@ -29,6 +29,9 @@ privileged aspect WniosekRejestracyjnyDataOnDemand_Roo_DataOnDemand {
     private List<WniosekRejestracyjny> WniosekRejestracyjnyDataOnDemand.data;
     
     @Autowired
+    UzytkownikDataOnDemand WniosekRejestracyjnyDataOnDemand.uzytkownikDataOnDemand;
+    
+    @Autowired
     WniosekRejestracyjnyService WniosekRejestracyjnyDataOnDemand.wniosekRejestracyjnyService;
     
     public WniosekRejestracyjny WniosekRejestracyjnyDataOnDemand.getNewTransientWniosekRejestracyjny(int index) {
@@ -37,7 +40,6 @@ privileged aspect WniosekRejestracyjnyDataOnDemand_Roo_DataOnDemand {
         setDataZlozenia(obj, index);
         setEmail(obj, index);
         setHaslo(obj, index);
-        setUzytkownik(obj, index);
         return obj;
     }
     
@@ -54,11 +56,6 @@ privileged aspect WniosekRejestracyjnyDataOnDemand_Roo_DataOnDemand {
     public void WniosekRejestracyjnyDataOnDemand.setEmail(WniosekRejestracyjny obj, int index) {
         String email = "foo" + index + "@bar.com";
         obj.setEmail(email);
-    }
-    
-    public void WniosekRejestracyjnyDataOnDemand.setUzytkownik(WniosekRejestracyjny obj, int index) {
-        Uzytkownik uzytkownik = null;
-        obj.setUzytkownik(uzytkownik);
     }
     
     public WniosekRejestracyjny WniosekRejestracyjnyDataOnDemand.getSpecificWniosekRejestracyjny(int index) {

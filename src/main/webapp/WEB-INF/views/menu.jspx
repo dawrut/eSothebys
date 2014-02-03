@@ -30,9 +30,9 @@
         <sec:authorize access="hasRole('ROLE_SPRZEDAJACY')">
             <sec:authorize access="!hasRole('ROLE_ZAWIESZONE')">
                 <menu:category id="c_wniosekzmianyimieniainazwiska" z="CnutspLkRnosE49EgBF3xspPfeo=">
-                    <menu:item id="i_wniosekzmianyimieniainazwiska_new" messageCode="global_menu_new" url="/wniosekZmianyImieniaiNazwiska?form" z="KqmefBQiLPAMplJXI3laGTJ3pWc="/>
+                    <menu:item id="i_wniosekzmianyimieniainazwiska_new" messageCode="global_menu_new" url="/wniosekZmianyImieniaiNazwiska?form" z="user-managed"/>
                     <sec:authorize access="hasRole('ROLE_KUPTERAZ')">
-                        <menu:item id="i_wniosekzmianyimieniainazwiska_list" messageCode="global_menu_list" url="/wniosekZmianyImieniaiNazwiska?page=1&amp;size=${empty param.size ? 10 : param.size}" z="OYtD+nw6nxGfQcNvUGOkBz0WObI="/>
+                        <menu:item id="i_wniosekzmianyimieniainazwiska_list" messageCode="global_menu_list" url="/wniosekZmianyImieniaiNazwiska?page=1&amp;size=${empty param.size ? 10 : param.size}" z="user-managed"/>
                     </sec:authorize>
                 </menu:category>
             </sec:authorize>
