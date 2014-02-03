@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_pl_wroc_pwr_wiz_io_psi_model_WniosekZmianyImieniaINazwiska" items="${wniosekzmianyimieniainazwiskas}" z="6HxgSLHNSVgK1oey0N5TSynomFc=">
+        <table:table data="${wniosekzmianyimieniainazwiskas}" id="l_pl_wroc_pwr_wiz_io_psi_model_WniosekZmianyImieniaINazwiska" path="/wniosekZmianyImieniaiNazwiska" z="atjfx3NWU/hWvN+RkhYRAA+G+0A=">
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekZmianyImieniaINazwiska_imie" property="imie" z="zbSTBEF3nhGg5MdU3hb84GezR5o="/>
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekZmianyImieniaINazwiska_nazwisko" property="nazwisko" z="A1GebDDGZTupyZuHazzmZyOsvvA="/>
+            <table:column date="true" dateTimePattern="${wniosekZmianyImieniaINazwiska_datazlozenia_date_format}" id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekZmianyImieniaINazwiska_dataZlozenia" property="dataZlozenia" z="eNiZlrFSTE33dKsClPTKgghoBqw="/>
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekZmianyImieniaINazwiska_powod" property="powod" z="Ld6DbXvjBw9OaJJaLKplvIjRBUs="/>
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekZmianyImieniaINazwiska_uzytkownik" property="uzytkownik" z="nqiSIkt6ZE2dmh+dHbX9+J9I574="/>
+        </table:table>
+    </page:list>
+</div>

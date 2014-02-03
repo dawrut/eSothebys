@@ -25,17 +25,17 @@ privileged aspect WniosekZmianyImieniaINazwiskaController_Roo_Controller {
     public String WniosekZmianyImieniaINazwiskaController.update(@Valid WniosekZmianyImieniaINazwiska wniosekZmianyImieniaINazwiska, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             populateEditForm(uiModel, wniosekZmianyImieniaINazwiska);
-            return "wniosekzmianyimieniainazwiskas/update";
+            return "wniosekZmianyImieniaiNazwiska/update";
         }
         uiModel.asMap().clear();
         wniosekZmianyImieniaINazwiskaService.updateWniosekZmianyImieniaINazwiska(wniosekZmianyImieniaINazwiska);
-        return "redirect:/wniosekzmianyimieniainazwiskas/" + encodeUrlPathSegment(wniosekZmianyImieniaINazwiska.getId().toString(), httpServletRequest);
+        return "redirect:/wniosekZmianyImieniaiNazwiska/" + encodeUrlPathSegment(wniosekZmianyImieniaINazwiska.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
     public String WniosekZmianyImieniaINazwiskaController.updateForm(@PathVariable("id") Long id, Model uiModel) {
         populateEditForm(uiModel, wniosekZmianyImieniaINazwiskaService.findWniosekZmianyImieniaINazwiska(id));
-        return "wniosekzmianyimieniainazwiskas/update";
+        return "wniosekZmianyImieniaiNazwiska/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
@@ -45,7 +45,7 @@ privileged aspect WniosekZmianyImieniaINazwiskaController_Roo_Controller {
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/wniosekzmianyimieniainazwiskas";
+        return "redirect:/wniosekZmianyImieniaiNazwiska";
     }
     
     void WniosekZmianyImieniaINazwiskaController.addDateTimeFormatPatterns(Model uiModel) {

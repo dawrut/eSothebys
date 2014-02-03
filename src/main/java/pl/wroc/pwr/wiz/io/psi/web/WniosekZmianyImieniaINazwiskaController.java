@@ -27,9 +27,9 @@ import pl.wroc.pwr.wiz.io.psi.model.WniosekZmianyImieniaINazwiska;
 import pl.wroc.pwr.wiz.io.psi.service.dao.UzytkownikService;
 import pl.wroc.pwr.wiz.io.psi.service.dao.WniosekZmianyImieniaINazwiskaService;
 
-@RequestMapping("/wniosekzmianyimieniainazwiskas")
+@RequestMapping("/wniosekZmianyImieniaiNazwiska")
 @Controller
-@RooWebScaffold(path = "wniosekzmianyimieniainazwiskas", formBackingObject = WniosekZmianyImieniaINazwiska.class)
+@RooWebScaffold(path = "wniosekZmianyImieniaiNazwiska", formBackingObject = WniosekZmianyImieniaINazwiska.class)
 public class WniosekZmianyImieniaINazwiskaController {
 
   @Autowired
@@ -44,7 +44,7 @@ public class WniosekZmianyImieniaINazwiskaController {
         new WniosekZmianyImieniaINazwiska();
 
     populateEditForm(uiModel, wniosekZmianyImieniaINazwiska);
-    return "wniosekzmianyimieniainazwiskas/create";
+    return "wniosekZmianyImieniaiNazwiska/create";
   }
 
   @RequestMapping(produces = "text/html")
@@ -53,15 +53,15 @@ public class WniosekZmianyImieniaINazwiskaController {
 
 
     if (isUzytkownikAdmin())
-      uiModel.addAttribute("wniosekzmianyimieniainazwiskas",
+      uiModel.addAttribute("wniosekZmianyImieniaiNazwiska",
           wniosekZmianyImieniaINazwiskaService.findAllWniosekZmianyImieniaINazwiskas());
     else
-      uiModel.addAttribute("wniosekzmianyimieniainazwiskas", WniosekZmianyImieniaINazwiska
+      uiModel.addAttribute("wniosekZmianyImieniaiNazwiska", WniosekZmianyImieniaINazwiska
           .findWniosekZmianyImieniaINazwiskasByUzytkownik(getUzytkownikFromSession())
           .getResultList());
 
     addDateTimeFormatPatterns(uiModel);
-    return "wniosekzmianyimieniainazwiskas/list";
+    return "wniosekZmianyImieniaiNazwiska/list";
   }
 
   @RequestMapping(value = "/{id}", produces = "text/html")
