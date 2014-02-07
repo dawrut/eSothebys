@@ -21,16 +21,12 @@
                 <menu:item id="i_rolauzytkownik_list" messageCode="global_menu_list" url="/security/zarzadzanieRolami?page=1&amp;size=${empty param.size ? 10 : param.size}" z="NtYdYgNqNJzkUD/zW0lvDmr3K8E="/>
             </menu:category>
         </sec:authorize>
-        <sec:authorize access="hasRole('ROLE_ADMIN')">
-            <menu:category id="c_wniosekrejestracyjny" z="O1NTMaC73oEss9LPMHLuOi4RO6I=">
-                <menu:item id="i_wniosekrejestracyjny_list" messageCode="global_menu_list" url="/wniosekrejestracyjnys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="1ARIJRxt1unBLMPPQDFHPWE5D7g="/>
-                <menu:item id="i_wniosekrejestracyjny_new" messageCode="global_menu_new" url="/wniosekrejestracyjnys?form" z="PVkInpxt9tbSKIWjz6ceDivIIQg="/>
-            </menu:category>
-        </sec:authorize>
         <sec:authorize access="hasRole('ROLE_SPRZEDAJACY')">
             <sec:authorize access="!hasRole('ROLE_ZAWIESZONE')">
                 <menu:category id="c_wniosekzmianyimieniainazwiska" z="CnutspLkRnosE49EgBF3xspPfeo=">
-                    <menu:item id="i_wniosekzmianyimieniainazwiska_new" messageCode="global_menu_new" url="/wniosekZmianyImieniaiNazwiska?form" z="user-managed"/>
+                    <sec:authorize access="!hasRole('ROLE_ADMIN')">
+                        <menu:item id="i_wniosekzmianyimieniainazwiska_new" messageCode="global_menu_new" url="/wniosekZmianyImieniaiNazwiska?form" z="user-managed"/>
+                    </sec:authorize>
                     <sec:authorize access="hasRole('ROLE_KUPTERAZ')">
                         <menu:item id="i_wniosekzmianyimieniainazwiska_list" messageCode="global_menu_list" url="/wniosekZmianyImieniaiNazwiska?page=1&amp;size=${empty param.size ? 10 : param.size}" z="user-managed"/>
                     </sec:authorize>
@@ -41,12 +37,6 @@
             <menu:category id="c_zawieszeniekonta" z="EaaFXx6sJAMAmI75F9Q5ZNI31us=">
                 <menu:item id="i_zawieszeniekonta_new" messageCode="global_menu_new" url="/zawieszeniekontas?form" z="PxFhzAVbthpFBlFN/rTVoFUnjmc="/>
                 <menu:item id="i_zawieszeniekonta_list" messageCode="global_menu_list" url="/zawieszeniekontas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="EyGNr1DTncizJBqGpqa2Qx/HJPs="/>
-            </menu:category>
-        </sec:authorize>
-        <sec:authorize access="hasRole('ROLE_ADMIN')">
-            <menu:category id="c_adres" z="iHZC0zh0CxL3LHX5LmrWRUhf0TM=">
-                <menu:item id="i_adres_new" messageCode="global_menu_new" url="/adreses?form" z="rtw51cyLJ3sq2g0JchsRG594lP4="/>
-                <menu:item id="i_adres_list" messageCode="global_menu_list" url="/adreses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="nQR9zHpTxC+HrniEBuht2NFx0/4="/>
             </menu:category>
         </sec:authorize>
         <sec:authorize access="hasRole('ROLE_ADMIN')">
@@ -67,5 +57,13 @@
                 <menu:item id="i_uczestnikadreswrapper_list" messageCode="global_menu_list" url="/pelnaaktywacjakonta?page=1&amp;size=${empty param.size ? 10 : param.size}" z="p6yDxHHCwEvZVAFVQkuK5oGU0wU="/>
             </menu:category>
         </sec:authorize>
+        <menu:category id="c_wniosekrejestracyjny" z="O1NTMaC73oEss9LPMHLuOi4RO6I=">
+            <menu:item id="i_wniosekrejestracyjny_new" messageCode="global_menu_new" url="/wniosekrejestracyjnys?form" z="PVkInpxt9tbSKIWjz6ceDivIIQg="/>
+            <menu:item id="i_wniosekrejestracyjny_list" messageCode="global_menu_list" url="/wniosekrejestracyjnys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="1ARIJRxt1unBLMPPQDFHPWE5D7g="/>
+        </menu:category>
+        <menu:category id="c_adres" z="iHZC0zh0CxL3LHX5LmrWRUhf0TM=">
+            <menu:item id="i_adres_new" messageCode="global_menu_new" url="/adreses?form" z="rtw51cyLJ3sq2g0JchsRG594lP4="/>
+            <menu:item id="i_adres_list" messageCode="global_menu_list" url="/adreses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="nQR9zHpTxC+HrniEBuht2NFx0/4="/>
+        </menu:category>
     </menu:menu>
 </div>

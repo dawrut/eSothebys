@@ -5,7 +5,7 @@
     <page:list id="pl_pl_wroc_pwr_wiz_io_psi_model_security_RolaUzytkownik" items="${rolauzytkowniks}" z="DTABPsiASjdb/3ORUeqb5svmebY=">
         <table:table data="${rolauzytkowniks}" id="l_pl_wroc_pwr_wiz_io_psi_model_security_RolaUzytkownik" path="/security/zarzadzanieRolami" z="p5p9UMUtlXCV4oBc2u4PxXkPN9o=">
             <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_security_RolaUzytkownik_email" property="nazwisko" z="user-managed"/>
-            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_security_RolaUzytkownik_idRoli" property="idRoli" z="xw/d8xZFYnur23OzFjO3kbkTeAE="/>
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_security_RolaUzytkownik_idRoli" property="nazwaRoli" z="user-managed"/>
         </table:table>
     </page:list>
 </div>

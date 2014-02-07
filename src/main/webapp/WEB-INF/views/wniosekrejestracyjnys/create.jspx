@@ -13,12 +13,13 @@
 			id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_email"
 			required="true" validationMessageCode="field_invalid_email"
 			z="RdDXWqQ8NRGouB+l1ct9D0cSV84=" />
-		<field:input field="haslo" type='password'
+		<field:input field="haslo"
 			id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_haslo"
-			required="true" z="ogU7lRRTXyHY9p0u54bOyAjKXd8=" />
-		<field:input field="retypedPassword" type='password'
+			required="true" type="password" z="user-managed" />
+		<field:input field="retypedPassword"
 			id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_retypedPassword"
-			labelCode="retypedPassword" required="true" z="user-managed" />
+			labelCode="retypedPassword" required="true" type="password"
+			z="user-managed" />
 		<field:datetime
 			dateTimePattern="${wniosekRejestracyjny_dataurodzenia_date_format}"
 			field="dataUrodzenia"

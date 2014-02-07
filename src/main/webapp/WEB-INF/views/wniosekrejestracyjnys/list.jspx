@@ -4,12 +4,12 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny" items="${wniosekrejestracyjnys}" z="r4Yt4kOv7T7PjhNVmqara4oKG6c=">
         <table:table data="${wniosekrejestracyjnys}" id="l_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny" path="/wniosekrejestracyjnys" z="LjqiEPAAA4XXkkxVtVWchOdN2mo=">
-            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_haslo" property="haslo" render="false" z="user-managed"/>
             <table:column date="true" dateTimePattern="${wniosekRejestracyjny_dataurodzenia_date_format}" id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_dataUrodzenia" property="dataUrodzenia" z="OL5fG1CcBt/hkYhTfLDrIKDR6uc="/>
             <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_email" property="email" z="RCkEv+3szG/x3cyXIkem//9+pgc="/>
             <table:column date="true" dateTimePattern="${wniosekRejestracyjny_datazlozenia_date_format}" id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_dataZlozenia" property="dataZlozenia" z="6bXGlvA5YSXdnzjOHGIXQD3r+T0="/>
-            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_uzytkownik" property="uzytkownik" z="+mqJFic2aEVQRsRHFn2PbVeju44="/>
             <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_retypedPassword" property="retypedPassword" z="/wqLbWkSq4eXP/sfub1mjuHBe2g="/>
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_haslo" property="haslo" z="lipKjGqt269ntdRzX0ZAH7FBxEU="/>
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_uzytkownik" property="uzytkownik" z="+mqJFic2aEVQRsRHFn2PbVeju44="/>
         </table:table>
     </page:list>
 </div>

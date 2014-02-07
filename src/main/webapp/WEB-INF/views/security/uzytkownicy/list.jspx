@@ -8,8 +8,8 @@
             <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_haslo" property="haslo" z="oCFA6X130KSNfWjqXUo87CblTrk="/>
             <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_imie" property="imie" z="6wXlTadCeMgLqWtVZ89i+onmAQE="/>
             <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_nazwisko" property="nazwisko" z="oiQNrqpkkk4LJBIogvHA9/uLTSc="/>
-            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_firma" property="firma" z="oVhPFt7BVdBhaFIdMbnJbBKqzB0="/>
             <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_pesel" property="pesel" z="1y4uU1MnpY0NhuW5DJ9L2JPuDtU="/>
+            <table:column id="c_pl_wroc_pwr_wiz_io_psi_model_Uzytkownik_firma" property="firma" z="oVhPFt7BVdBhaFIdMbnJbBKqzB0="/>
         </table:table>
     </page:list>
 </div>

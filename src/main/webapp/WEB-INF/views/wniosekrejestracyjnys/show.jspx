@@ -3,11 +3,11 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny" object="${wniosekrejestracyjny}" path="/wniosekrejestracyjnys" z="uJJ1TEEZIJdHVdnNP7zYiVaNyPs=">
-        <field:display field="haslo" id="s_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_haslo" object="${wniosekrejestracyjny}" z="npLybhJvGsIv8FhNIcZFp4rYZv4="/>
-        <field:display field="retypedPassword" id="s_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_retypedPassword" object="${wniosekrejestracyjny}" z="M681SWoRWHf7uVC0J0fHgc5OvEY="/>
         <field:display date="true" dateTimePattern="${wniosekRejestracyjny_dataurodzenia_date_format}" field="dataUrodzenia" id="s_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_dataUrodzenia" object="${wniosekrejestracyjny}" z="eyDcCK6QV8iiN6pYJjAL2nxgiEo="/>
         <field:display field="email" id="s_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_email" object="${wniosekrejestracyjny}" z="QlEiK939cqdyCgLpjB8Awy4tbX8="/>
         <field:display date="true" dateTimePattern="${wniosekRejestracyjny_datazlozenia_date_format}" field="dataZlozenia" id="s_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_dataZlozenia" object="${wniosekrejestracyjny}" render="false" z="user-managed"/>
         <field:display field="uzytkownik" id="s_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_uzytkownik" object="${wniosekrejestracyjny}" render="false" z="user-managed"/>
+        <field:display field="retypedPassword" id="s_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_retypedPassword" object="${wniosekrejestracyjny}" z="M681SWoRWHf7uVC0J0fHgc5OvEY="/>
+        <field:display field="haslo" id="s_pl_wroc_pwr_wiz_io_psi_model_WniosekRejestracyjny_haslo" object="${wniosekrejestracyjny}" z="npLybhJvGsIv8FhNIcZFp4rYZv4="/>
     </page:show>
 </div>

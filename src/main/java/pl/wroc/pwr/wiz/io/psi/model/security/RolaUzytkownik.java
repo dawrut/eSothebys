@@ -1,4 +1,5 @@
 package pl.wroc.pwr.wiz.io.psi.model.security;
+
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -10,22 +11,26 @@ import pl.wroc.pwr.wiz.io.psi.model.Uzytkownik;
 @RooJavaBean
 @RooToString
 @Table(name = "rola_uzytkownik")
-@RooJpaActiveRecord(finders = { "findRolaUzytkowniksByEmail" })
+@RooJpaActiveRecord(finders = {"findRolaUzytkowniksByEmail"})
 public class RolaUzytkownik {
 
-    /**
+  /**
      */
-    @ManyToOne
-    @JoinColumn(name = "email")
-    private Uzytkownik email;
+  @ManyToOne
+  @JoinColumn(name = "email")
+  private Uzytkownik email;
 
-    /**
+  /**
      */
-    @ManyToOne
-    @JoinColumn(name = "id_roli")
-    private Rola idRoli;
+  @ManyToOne
+  @JoinColumn(name = "id_roli")
+  private Rola idRoli;
 
-    public String getNazwisko() {
-        return email.getNazwisko();
-    }
+  public String getNazwisko() {
+    return email.getNazwisko();
+  }
+
+  public String getNazwaRoli() {
+    return idRoli.getNazwaRoli();
+  }
 }
