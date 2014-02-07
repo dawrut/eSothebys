@@ -292,3 +292,11 @@ exit
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-02-07 01:45:19
 exit
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-02-07 01:45:33
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-02-07 08:28:53
+focus --class ~.service.dao.WniosekRejestracyjnyService
+// [failed] finder list
+focus --class ~.model.WniosekRejestracyjny
+finder list
+finder add findWniosekRejestracyjnysByEmailEquals
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-02-07 08:30:26

@@ -83,7 +83,7 @@ public class WniosekZmianyImieniaINazwiskaController {
   }
 
 
-  private Uzytkownik getUzytkownikFromSession() {
+  public static Uzytkownik getUzytkownikFromSession() {
     Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     String email = auth.getName();
     return Uzytkownik.findUzytkowniksByEmailEquals(email).getSingleResult();
@@ -97,8 +97,6 @@ public class WniosekZmianyImieniaINazwiskaController {
     }
     return false;
   }
-
-  // http://localhost:8080/eSothebys/wniosekzmianyimieniainazwiskas/1?form
 
   @RequestMapping(method = RequestMethod.POST, produces = "text/html")
   public String create(@Valid WniosekZmianyImieniaINazwiska wniosekZmianyImieniaINazwiska,

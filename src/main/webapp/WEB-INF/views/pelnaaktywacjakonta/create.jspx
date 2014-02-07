@@ -6,22 +6,27 @@
 	xmlns:spring="http://www.springframework.org/tags" version="2.0">
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
-	<form:form action="zrob" method="POST"
+	<form:form action="/eSothebys/pelnaaktywacjakonta/zrob" method="POST"
 		modelAttribute="uczestnikAdresWrapper">
 		<form:label path="uzytkownik.imie">Imie: </form:label>
 		<form:input path="uzytkownik.imie" />
+		<form:errors cssclass="error" path="uzytkownik.imie" />
 		<br />
 		<form:label path="uzytkownik.nazwisko">Nazwisko: </form:label>
 		<form:input path="uzytkownik.nazwisko" />
+		<form:errors cssclass="error" path="uzytkownik.nazwisko" />
 		<br />
 		<form:label path="adres.miejscowosc">Miejscowosc: </form:label>
 		<form:input path="adres.miejscowosc" />
+		<form:errors cssclass="error" path="adres.miejscowosc" />
 		<br />
 		<form:label path="adres.kodPocztowy">Kod pocztowy: </form:label>
 		<form:input path="adres.kodPocztowy" />
+		<form:errors cssclass="error" path="adres.kodPocztowy" />
 		<br />
 		<form:label path="adres.ulicaZNumerem">Ulica z numerem: </form:label>
 		<form:input path="adres.ulicaZNumerem" />
+		<form:errors cssclass="error" path="adres.ulicaZNumerem" />
 		<br />
 		<input type="submit" value="Aktywuj konto" />
 	</form:form>

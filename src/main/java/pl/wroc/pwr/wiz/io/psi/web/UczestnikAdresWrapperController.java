@@ -3,13 +3,16 @@ package pl.wroc.pwr.wiz.io.psi.web;
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,11 +26,16 @@ import org.springframework.web.util.WebUtils;
 import pl.wroc.pwr.wiz.io.psi.model.Adres;
 import pl.wroc.pwr.wiz.io.psi.model.UczestnikAdresWrapper;
 import pl.wroc.pwr.wiz.io.psi.model.Uzytkownik;
+import pl.wroc.pwr.wiz.io.psi.model.WniosekRejestracyjny;
 import pl.wroc.pwr.wiz.io.psi.model.Wojewodztwo;
+import pl.wroc.pwr.wiz.io.psi.model.security.Rola;
+import pl.wroc.pwr.wiz.io.psi.model.security.RolaUzytkownik;
+import pl.wroc.pwr.wiz.io.psi.model.security.Roles;
 import pl.wroc.pwr.wiz.io.psi.service.dao.AdresService;
 import pl.wroc.pwr.wiz.io.psi.service.dao.KrajService;
 import pl.wroc.pwr.wiz.io.psi.service.dao.UzytkownikService;
 import pl.wroc.pwr.wiz.io.psi.service.dao.WojewodztwoService;
+import pl.wroc.pwr.wiz.io.psi.service.dao.security.RolaUzytkownikService;
 
 @RequestMapping("/pelnaaktywacjakonta")
 @Controller
@@ -47,9 +55,16 @@ public class UczestnikAdresWrapperController {
   @Autowired
   UzytkownikService uzytkownikService;
 
+  @Autowired
+  private RolaUzytkownikService rolaUzytkownikService;
+
 
   @RequestMapping(method = RequestMethod.GET)
   public String createForm(Model uiModel) {
+    if (isUzytkownikFullyRegistered()) {
+      return "index";
+    }
+
     Adres adres = new Adres();
     Uzytkownik uzytkownik = new Uzytkownik();
     UczestnikAdresWrapper uczestnikAdresWrapper = new UczestnikAdresWrapper();
@@ -69,37 +84,58 @@ public class UczestnikAdresWrapperController {
       @ModelAttribute("uczestnikAdresWrapper") UczestnikAdresWrapper uczestnikAdresWrapper,
       BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
 
-    System.out.println("BYLEM!");
+    validateWrapper(uczestnikAdresWrapper, bindingResult);
+    if (bindingResult.hasErrors()) {
+      return "pelnaaktywacjakonta/create";
+    }
+    createNewUzytkownik(uczestnikAdresWrapper);
+
     return "pelnaaktywacjakonta/create";
   }
 
-  // @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-  // public String create(@Valid UczestnikAdresWrapper uczestnikAdresWrapper,
-  // BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-  // if (bindingResult.hasErrors()) {
-  // populateEditForm(uiModel, uczestnikAdresWrapper);
-  // return "pelnaaktywacjakonta/create";
-  // }
-  // uiModel.asMap().clear();
-  // uczestnikAdresWrapper.persist();
-  // return "redirect:/pelnaaktywacjakonta/"
-  // + encodeUrlPathSegment(uczestnikAdresWrapper.getId().toString(), httpServletRequest);
-  // }
+  private void createNewUzytkownik(UczestnikAdresWrapper uczestnikAdresWrapper) {
+    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    String email = auth.getName();
+    WniosekRejestracyjny wniosek =
+        WniosekRejestracyjny.findWniosekRejestracyjnysByEmailEquals(email).getSingleResult();
 
-  // @RequestMapping(params = "form", produces = "text/html")
-  // public String createForm(Model uiModel) {
-  // // populateEditForm(uiModel, new UczestnikAdresWrapper());
-  // // List<String[]> dependencies = new ArrayList<String[]>();
-  // // if (adresService.countAllAdreses() == 0) {
-  // // dependencies.add(new String[] { "adres", "adreses" });
-  // // }
-  // // if (uzytkownikService.countAllUzytkowniks() == 0) {
-  // // dependencies.add(new String[] { "uzytkownik", "security/uzytkownicy" });
-  // // }
-  // // uiModel.addAttribute("dependencies", dependencies);
-  // return "pelnaaktywacjakonta/create";
-  // }
+    Uzytkownik uzytkownik = wniosek.getUzytkownik();
 
+    uzytkownik.setDataUrodzenia(wniosek.getDataUrodzenia());
+    uzytkownik.setDataOstatniegoLogowania(new Date());
+    uzytkownik.setEmail(email);
+    uzytkownik.setHaslo(wniosek.getEmail());
+    uzytkownik.setWniosekRejestracyjny(wniosek);
+    uzytkownik.setPesel("761214901321");
+
+    Adres adres = uczestnikAdresWrapper.getAdres();
+    adres.setWojewodztwo(wojewodztwoService.findWojewodztwo(1L));
+    adres.setKraj(adres.getWojewodztwo().getKraj());
+    RolaUzytkownik ru = new RolaUzytkownik();
+    Rola rola = Rola.findRolasByNazwaRoliLike(Roles.ROLE_SPRZEDAJACY.toString()).getSingleResult();
+    ru.setIdRoli(rola);
+    ru.setEmail(uzytkownik);
+
+    uzytkownikService.saveUzytkownik(uzytkownik);
+    rolaUzytkownikService.saveRolaUzytkownik(ru);
+  }
+
+  private boolean isUzytkownikFullyRegistered() {
+    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    for (GrantedAuthority grant : auth.getAuthorities()) {
+      if ("ROLE_SPRZEDAJACY".equals(grant.getAuthority())) return true;
+    }
+    try {
+      Uzytkownik uzytkownik =
+          Uzytkownik.findUzytkowniksByEmailEquals(auth.getName()).getSingleResult();
+      if (uzytkownik.getNazwisko() != null) return true;
+    } catch (Exception e) {
+      return false;
+    }
+
+
+    return false;
+  }
 
   void populateEditForm(Model uiModel, UczestnikAdresWrapper uczestnikAdresWrapper) {
     uiModel.addAttribute("uczestnikAdresWrapper", uczestnikAdresWrapper);
